@@ -10,5 +10,5 @@ export const environment = {
   version: require('../../package.json').version,
   releasesUrl: 'https://api.github.com/repos/particl/particl-desktop/releases/latest',
   particlHost: 'localhost',
-  particlPort: 51935
+  particlPort: 51955
 };

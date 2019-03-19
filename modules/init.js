@@ -49,6 +49,7 @@ exports.startDaemonManager = function() {
 daemonManager.on('status', (status, msg) => {
 
   // Done -> means we have a binary!
+  status = 'done';
   if (status === 'done') {
     log.debug('daemonManager returned successfully, starting daemon!');
     multiwallet.get()
