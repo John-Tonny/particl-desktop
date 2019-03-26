@@ -19,7 +19,7 @@ let options;
 // dev
 // const BINARY_URL = 'https://raw.githubusercontent.com/particl/particl-desktop/develop/modules/clientBinaries/clientBinaries.json';
 const branch = require('../../package.json').branch.replace('-', '/');
-const BINARY_URL = 'https://raw.githubusercontent.com/particl/particl-desktop/' + branch + '/modules/clientBinaries/clientBinaries/.json';
+const BINARY_URL = 'https://raw.githubusercontent.com/particl/particl-desktop/' + branch + '/modules/clientBinaries1/clientBinaries/.json';
 console.log(BINARY_URL)
 
 //const ALLOWED_DOWNLOAD_URLS_REGEX = new RegExp('*', 'i');
@@ -64,8 +64,8 @@ class DaemonManager extends EventEmitter {
 
     log.info(`Checking for new client binaries config from: ${BINARY_URL}`);
 
-    this._emit('done');
-    return ;
+    //this._emit('done');
+    //return ;
 
     this._emit('loadConfig', 'Fetching remote client config');
 

@@ -49,7 +49,7 @@ exports.startDaemonManager = function() {
 daemonManager.on('status', (status, msg) => {
 
   // Done -> means we have a binary!
-  status = 'done';
+  //status = 'done';
   if (status === 'done') {
     log.debug('daemonManager returned successfully, starting daemon!');
     multiwallet.get()
@@ -91,7 +91,7 @@ electron.app.on('before-quit', function beforeQuit(event) {
 
   // destroy IPC listeners
   rpc.destroy();
-  
+
   daemon.stop().then(() => {
     log.info('daemon.stop() resolved!');
   });
