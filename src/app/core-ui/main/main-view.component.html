@@ -17,7 +17,7 @@
             routerLinkActive="active" routerLink="/wallet/overview">
             <mat-list-item class="sidebar-item">
               <mat-icon class="icon" fontSet="partIcon" fontIcon="part-overview"></mat-icon>
-              <span class="text">Overview</span>
+              <span class="text">概览</span>
             </mat-list-item>
           </a>
         </mat-list><!-- .sidebar-item-group -->
@@ -26,7 +26,7 @@
       <mat-content class="sidebar-section" *ngIf="walletInitialized">
         <mat-accordion [multi]="'multi'">
           <mat-expansion-panel #panel2 expanded="true" class="no-padding arrow-colored">
-            <mat-expansion-panel-header>Market</mat-expansion-panel-header>
+            <mat-expansion-panel-header>商城</mat-expansion-panel-header>
             <mat-content>
               <mat-list class="sidebar-item-group">
 
@@ -35,7 +35,7 @@
                   <mat-list-item class="sidebar-item">
                     <mat-icon class="icon" fontSet="partIcon"
                       fontIcon="part-listings"></mat-icon>
-                    <span class="text">Listings</span>
+                    <span class="text">商品列表</span>
                   </mat-list-item>
                 </a>
 
@@ -44,8 +44,8 @@
                   <mat-list-item class="sidebar-item">
                     <mat-icon class="icon" fontSet="partIcon"
                       fontIcon="part-bag-buy"></mat-icon>
-                    <span class="text">Buy</span>
-                    <app-order-count [type]="'buy'" class="tag" matTooltip="Orders that need attention" matTooltipPosition="after"></app-order-count>
+                    <span class="text">购物</span>
+                    <app-order-count [type]="'buy'" class="tag" matTooltip="关注您的购物订单" matTooltipPosition="after"></app-order-count>
                   </mat-list-item>
                 </a>
 
@@ -54,8 +54,8 @@
                   <mat-list-item class="sidebar-item">
                     <mat-icon class="icon" fontSet="partIcon"
                       fontIcon="part-bag-sell"></mat-icon>
-                    <span class="text">Sell</span>
-                    <app-order-count [type]="'sell'" class="tag" matTooltip="Orders that need attention" matTooltipPosition="after"></app-order-count>
+                    <span class="text">销售</span>
+                    <app-order-count [type]="'sell'" class="tag" matTooltip="关注您的销售订单" matTooltipPosition="after"></app-order-count>
                   </mat-list-item>
                 </a>
 
@@ -68,7 +68,7 @@
       <mat-content class="sidebar-section" *ngIf="walletInitialized">
         <mat-accordion [multi]="'multi'">
           <mat-expansion-panel #panel1 expanded="true" class="no-padding arrow-colored">
-            <mat-expansion-panel-header>Wallet</mat-expansion-panel-header>
+            <mat-expansion-panel-header>您的钱包</mat-expansion-panel-header>
             <mat-content>
               <mat-list class="sidebar-item-group">
 
@@ -77,7 +77,7 @@
                   <mat-list-item class="sidebar-item">
                     <mat-icon class="icon" fontSet="partIcon"
                       fontIcon="part-send"></mat-icon>
-                    <span class="text">Send</span>
+                    <span class="text">付款</span>
                   </mat-list-item>
                 </a>
 
@@ -86,7 +86,7 @@
                   <mat-list-item class="sidebar-item">
                     <mat-icon class="icon" fontSet="partIcon"
                       fontIcon="part-receive"></mat-icon>
-                    <span class="text">Receive</span>
+                    <span class="text">收款</span>
                   </mat-list-item>
                 </a>
 
@@ -95,7 +95,7 @@
                   <mat-list-item class="sidebar-item">
                     <mat-icon class="icon"
                       fontSet="partIcon" fontIcon="part-date"></mat-icon>
-                    <span class="text">History</span>
+                    <span class="text">历史交易</span>
                   </mat-list-item>
                 </a>
 
@@ -104,7 +104,7 @@
                   <mat-list-item class="sidebar-item">
                     <mat-icon class="icon" fontSet="partIcon"
                       fontIcon="part-people"></mat-icon>
-                    <span class="text">Address Book</span>
+                    <span class="text">地址簿</span>
                   </mat-list-item>
                 </a>
 
@@ -127,7 +127,7 @@
                   <mat-list-item class="sidebar-item">
                     <mat-icon class="icon" fontSet="partIcon"
                       fontIcon="part-add-account"></mat-icon>
-                    <span class="text">New wallet</span>
+                    <span class="text">新钱包</span>
                   </mat-list-item>
                 </a>
 
@@ -143,7 +143,7 @@
             routerLinkActive="active" routerLink="/wallet/proposals">
             <mat-list-item class="sidebar-item">
               <mat-icon class="icon" fontSet="partIcon" fontIcon="part-notification-speaker"></mat-icon>
-              <span class="text">Proposals</span>
+              <span class="text">建议提案</span>
               <app-count-badge class="tag" [count]="proposalsNotificationsService?.proposalsCountRequiredVoteAction"></app-count-badge>
             </mat-list-item>
           </a>
@@ -155,7 +155,7 @@
           <a class="sidebar-item-link" routerLinkActive="active" routerLink="/wallet/settings">
             <mat-list-item class="sidebar-item">
               <mat-icon class="icon" fontSet="partIcon" fontIcon="part-cog"></mat-icon>
-              <span class="text">Settings</span>
+              <span class="text">设置</span>
             </mat-list-item>
           </a>
         </mat-list>
@@ -166,7 +166,7 @@
           <a class="sidebar-item-link" routerLinkActive="active" routerLink="/wallet/help">
             <mat-list-item class="sidebar-item">
               <mat-icon class="icon" fontSet="partIcon" fontIcon="part-circle-question"></mat-icon>
-              <span class="text">Help &amp; Support</span>
+              <span class="text">帮助 &amp; 支持</span>
             </mat-list-item>
           </a>
         </mat-list>
@@ -182,7 +182,7 @@
 
           <mat-list-item class="message sidebar-item" *ngIf="!daemonRunning">
             <mat-icon class="icon" fontSet="partIcon" fontIcon="part-console"></mat-icon>
-            <span class="text"><strong>Connecting</strong> to daemon...</span>
+            <span class="text"><strong>正在连接</strong>...</span>
           </mat-list-item>
 
           <mat-list-item class="error sidebar-item" *ngIf="daemonError != undefined && daemonError.error">
@@ -191,10 +191,10 @@
             <!-- TODO: better handling of errors / mix with modules/rpc/rpc.js -->
             <div *ngIf="daemonError.error.status">
               <span *ngIf="daemonError.error.status == 401" class="text">
-                <strong>RPC connection failed:</strong> check credentials
+                <strong>RPC 连接失败，</strong>请检查！
               </span>
               <span *ngIf="daemonError.error.status == 502" class="text">
-                <strong>Waiting for daemon</strong> initialisation...
+                <strong>等待</strong> 初始化...
               </span>
             </div>
 
@@ -207,14 +207,14 @@
 
           <mat-list-item class="error sidebar-item" *ngIf="walletInitialized === false && daemonRunning">
             <mat-icon class="icon" fontSet="partIcon" fontIcon="part-error"></mat-icon>
-            <span class="text"><strong>No wallet found</strong> &ndash; create or restore wallet first</span>
+            <span class="text"><strong>没有钱包</strong> &ndash; 请先创建或恢复钱包</span>
           </mat-list-item>
 
           <mat-list-item class="info sidebar-item" *ngIf="unlocked_until > 0">
             <mat-icon class="icon" fontSet="partIcon" fontIcon="part-lock-open"></mat-icon>
             <span class="text"
-              matTooltip="As a security measure, wallet auto-locks after 5 mins"
-              matTooltipPosition="above"><strong>Wallet unlocked</strong> for {{ time }}</span>
+              matTooltip="5分钟后，钱包会自动锁定"
+              matTooltipPosition="above"><strong>钱包解锁</strong> for {{ time }}</span>
           </mat-list-item>
 
         </mat-list>

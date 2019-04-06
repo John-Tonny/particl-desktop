@@ -18,7 +18,7 @@ const rpc = require('../rpc/rpc');
 // dev
 // const BINARY_URL = 'https://raw.githubusercontent.com/particl/particl-desktop/develop/modules/clientBinaries/clientBinaries.json';
 const branchName = (branch || 'develop').replace('-', '/');
-const BINARY_URL = `https://raw.githubusercontent.com/particl/particl-desktop/${branchName}/modules/clientBinaries/clientBinaries.json`;
+const BINARY_URL = `https://raw.githubusercontent.com/particl/particl-desktop/${branchName}/modules/clientBinaries/clientBinaries1.json`;
 
 //const ALLOWED_DOWNLOAD_URLS_REGEX = new RegExp('*', 'i');
 

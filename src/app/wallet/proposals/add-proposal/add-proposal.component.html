@@ -1,13 +1,13 @@
 <div class="container-block without-tab-bar">
   <div class="page-intro">
-    <h1>New Community Proposal</h1>
+    <h1>新的社区提案</h1>
     <div class="content">
       <p>
-        Submit a proposal on the Particl network for the community to vote on.<br>
-        Proposals can include: suggestions for features, community-led initiatives, partnership opportunities, protocol improvement ideas, and much more.
+        在维公链上提交一个提案供社区投票。<br>
+        提案可以包括：对特性的建议、社区主导的倡议、合作机会、协议改进想法等等。
       </p>
       <p class="widget-help">
-        Keep in mind that each Proposal fee costs depends on the content size to submit and that voting results do not guarantee implementation from the Particl team.
+        请注意：每个提案的费用成本取决于提交的内容大小，并且投票结果不能确保维公链的团队能够实现。
       </p>
     </div>
   </div><!-- .page-intro -->
@@ -17,20 +17,20 @@
     <div class="column">
 
       <mat-card>
-        <div class="title">Proposal details</div>
+        <div class="title">提案祥情</div>
 
         <mat-form-field class="full-width">
-          <input matInput #title placeholder="Proposal's title" formControlName="title">
+          <input matInput #title placeholder="提案标题" formControlName="title">
           <mat-hint align="end">{{ title.value?.length || 0 }} / 50</mat-hint>
         </mat-form-field>
 
         <mat-form-field class="full-width">
-          <textarea matInput #description rows="25" placeholder="Description" formControlName="description"></textarea>
+          <textarea matInput #description rows="25" placeholder="描述" formControlName="description"></textarea>
           <mat-hint align="end">{{ description.value?.length || 0 }} / 2000</mat-hint>
         </mat-form-field>
 
         <p class="widget-help">
-          Objectively describe your proposal in detail; explain what to change, how to do it and why.
+	  详细描述您的建议;解释要改变什么、如何改变、为什么要改变。
         </p>
       </mat-card>
 
@@ -66,11 +66,11 @@
 
       <mat-card>
         <div class="title">
-          Voting options
+          投票选项
           <button [disabled]="proposalFormGroup.controls.options.length >= 5" (click)="addNewInputField()" mat-button color="basic" class="small">
             <!-- TODO: allow max of 5 options total -->
             <mat-icon fontSet="partIcon" fontIcon="part-circle-plus"></mat-icon>
-            Add new option
+            增加选项
           </button>
         </div>
 
@@ -81,14 +81,14 @@
             <span class="no">{{i+1}}</span>
             <div class="content">
               <mat-form-field class="full-width">
-                <input matInput placeholder="Option #{{i+1}}" formControlName="option" maxlength="50">
+                <input matInput placeholder="选项 #{{i+1}}" formControlName="option" maxlength="50">
                 <mat-hint align="end">{{ option.value?.option?.length || 0 }} / 50</mat-hint>
               </mat-form-field>
             </div>
 
             <!-- remove button only visible from 3rd option -->
             <div class="remove-option" *ngIf="i > 1">
-              <button (click)="removeInputField(i)" mat-button class="small" color="warn" matTooltip="Remove option" matTooltipPosition="before">
+              <button (click)="removeInputField(i)" mat-button class="small" color="warn" matTooltip="删除选项" matTooltipPosition="before">
                 <mat-icon fontSet="partIcon" fontIcon="part-circle-remove"></mat-icon>
               </button>
             </div>
@@ -97,7 +97,7 @@
         <!-- voting options -->
 
         <p class="widget-help">
-          Add a minimum of 2 voting options for your proposal. In this case, less is usually more. As such, we recommend a maximum of 5 voting options to be added.
+	  您的提案至少需要两个投票选项。投票选项越少越好，我们建议最多增加5个投票选项。
         </p>
       </mat-card>
 
@@ -141,15 +141,15 @@
       </mat-card> -->
 
       <mat-card class="terms">
-        <div class="title">Terms &amp; Conditions</div>
+        <div class="title">条款和条件</div>
         <ul>
-          <li>Proposal fee costs depends on the content size of the Proposal</li>
-          <li>Fees are non-refundable</li>
-          <li>Fees are distributed to network staking nodes</li>
-          <li>Voting results do not represent any form of finality</li>
-          <li>Proposals may still be denied even though they were voted in favour of, and vice versa</li>
+          <li>提案费用取决于提案的内容大小</li>
+          <li>提案费用是不能够推出的</li>
+          <li>提案费用分配给网络节点</li>
+          <li>投票结果不代表任何形式的最终结果</li>
+          <li>即使提案被投了赞成票，也可能被否决，反之亦然</li>	  
         </ul>
-        <mat-checkbox (change)="isTnCAccepted = !isTnCAccepted">Yes, I understand &amp; agree</mat-checkbox>
+        <mat-checkbox (change)="isTnCAccepted = !isTnCAccepted">是的, 我理解并同意</mat-checkbox>
       </mat-card>
 
     </div>
@@ -165,7 +165,7 @@
   <!-- FIXME: this buttons should discard changes and redirect user back to Proposals page -->
   <button mat-button color="basic" (click)="backToProposals()">
     <mat-icon fontSet="partIcon" fontIcon="part-error"></mat-icon>
-    Cancel &amp; Discard
+    取消 &amp; 放弃
   </button>
   <!-- FIXME: button disabled until user checks Terms & Conditions checkbox -->
   <button
@@ -176,8 +176,8 @@
     mat-raised-button
     color="primary"
     (click)="submitProposal()"
-    matTooltip="Submit new proposal to Particl users">
+    matTooltip="在维公链上提交一个新的提案">
     <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-    Submit new Proposal
+    提交新提案
   </button>
 </div>

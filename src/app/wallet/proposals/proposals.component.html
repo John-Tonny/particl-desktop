@@ -4,19 +4,19 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-notification-speaker"></mat-icon>
-          Active proposals
+          当前的提案
         </ng-template>
       </mat-tab>
       <!-- <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-rocket"></mat-icon>
-          Planned proposals
+          计划的提案
         </ng-template>
       </mat-tab> -->
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-document"></mat-icon>
-          Past proposals
+          过去的提案
         </ng-template>
       </mat-tab>
     </mat-tab-group>
@@ -27,14 +27,14 @@
 <div class="container-block with-tab-bar">
 
   <div class="page-intro">
-    <h1>Community Proposals</h1>
+    <h1>社区提案</h1>
     <div class="content">
       <p>
-        As part of Particl's decentralized governance mechanism, you can submit and vote on any Particl-related proposal.<br>
-        Once a proposal is submitted, every PART holder can vote on it.
+	作为维公链分散治理机制的一部分，您可以提交和投票任何与维公链相关的提案。<br>
+	提案一旦提交，每个维公币的持有者都可以投票表决。
       </p>
       <p class="widget-help">
-        Anyone can submit and vote on proposals in a provably fair manner. The weight of your vote is equal to your PART balance.
+	任何人都可以以公平的方式提交和表决提案。你的选票比重等于你所拥有的维公币数量。        
       </p>
     </div>
   </div><!-- .page-intro -->
@@ -43,26 +43,26 @@
 
     <div class="new-proposal">
       <button mat-raised-button color="primary" class="full-width" (click)="addProposal()"
-              matTooltip="Add new voting proposal" matTooltipPosition="above">
+              matTooltip="增加新的提案" matTooltipPosition="above">
         <mat-icon fontSet="partIcon" fontIcon="part-circle-plus"></mat-icon>
-        Submit new proposal
+        提交新提案
       </button>
     </div>
 
     <!-- .search-sorting -->
     <!-- <div class="section search-sorting to-do">
-      <div class="subtitle">Search & Sort</div>
+      <div class="subtitle">查找 & 排序</div>
       <mat-card class="filter-card">
 
         <mat-form-field class="icon-input search-address">
           <input matInput type="text" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"
-                placeholder="Search proposals" (keyup.escape)="query = ''">
+                placeholder="查找提案" (keyup.escape)="query = ''">
           <mat-icon *ngIf="query" (click)="query=''" fontSet="partIcon" fontIcon="part-clear-all"></mat-icon>
           <mat-icon *ngIf="!query" fontSet="partIcon" fontIcon="part-search"></mat-icon>
         </mat-form-field>
 
         <mat-form-field class="sort-by filter-input" floatPlaceholder="never">
-          <mat-select placeholder="Sort proposals" [(ngModel)]="filters.sort" (change)="filter()">
+          <mat-select placeholder="提案排序" [(ngModel)]="filters.sort" (change)="filter()">
             <mat-option *ngFor="let sorting of sortings" [value]="sorting.value">
               {{ sorting.title }}
             </mat-option>
@@ -74,7 +74,7 @@
       <div class="subtitle">Filter</div>
       <mat-card class="filter-card">
         <mat-form-field class="filter-by filter-input" floatPlaceholder="never">
-          <mat-select placeholder="All proposals" [(ngModel)]="filters.filter" (change)="filter()">
+          <mat-select placeholder="所有提案" [(ngModel)]="filters.filter" (change)="filter()">
             <mat-option *ngFor="let filtering of filterings" [value]="filtering.value">
               {{ filtering.title }}
             </mat-option>
@@ -100,13 +100,13 @@
       <!-- FIXME: implement no results -->
       <div class="no-results" *ngIf="activeProposals?.length == 0">
         <p>
-          No active proposals at the moment
+          当前没有提案
         </p>
         <p class="widget-help">
-          If you have a Proposal for Particl, you can always submit it to Particl network:<br>
+          如果您有提案，可以提交到维公链上:<br>
           <button mat-button (click)="addProposal()">
             <mat-icon class="icon" fontSet="partIcon" fontIcon="part-circle-plus"></mat-icon>
-            Submit new proposal
+            提交新提案
           </button>
         </p>
       </div><!-- .no-results -->
@@ -124,13 +124,13 @@
       <!-- FIXME: implement no results -->
       <div class="no-results" *ngIf="pastProposals?.length == 0">
         <p>
-          No past proposals at the moment
+          没有任何提案
         </p>
         <p class="widget-help">
-          If you have a Proposal for Particl, you can always submit it to Particl network:<br>
+	  如果您有提案，可以提交到维公链上:<br>
           <button mat-button (click)="addProposal()">
             <mat-icon class="icon" fontSet="partIcon" fontIcon="part-circle-plus"></mat-icon>
-            Submit new proposal
+            提交新提案
           </button>
         </p>
       </div><!-- .no-results -->

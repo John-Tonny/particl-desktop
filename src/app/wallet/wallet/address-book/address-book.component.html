@@ -7,14 +7,14 @@
             matTooltip="{{ (introDisplayed) ? 'Hide intro': 'Show help' }}" matTooltipPosition="before">
       <mat-icon fontSet="partIcon" fontIcon="part-{{ (introDisplayed) ? 'cross': 'circle-question' }}"></mat-icon>
     </button-->
-    <h1>Address Book</h1>
+    <h1>地址簿</h1>
     <div class="content"><!-- *ngIf="introDisplayed" -->
       <p>
-        Address Book is your personal collection of saved addresses belonging to other parties.
+	地址簿用于保存与您相关联的地址。
       </p>
       <p class="widget-help">
-        Note that it is recommended that you mostly save Private addresses (if possible).<br>
-        Re-using the same Public addresses increases transaction traceability, which results in loss of privacy both for you and the other party.
+	建议您尽量保存为私有地址(如果可能的话)。<br>
+	重复使用相同的公共地址使您的交易可被跟踪，这将导致您和对方的隐私泄露。
       </p>
     </div>
   </div><!-- .page-intro -->
@@ -23,31 +23,31 @@
 
     <div class="add-address">
       <button mat-raised-button color="primary" (click)="openNewAddress()" class="full-width"
-              matTooltip="Save new address to your Address book" matTooltipPosition="above">
+              matTooltip="添加地址到地址簿" matTooltipPosition="above">
         <mat-icon fontSet="partIcon" fontIcon="part-circle-plus"></mat-icon>
-        Add new address
+        添加地址
       </button>
     </div>
 
     <div class="section search-sorting">
-      <div class="subtitle">Search</div>
+      <div class="subtitle">查询</div>
       <mat-card class="filter-card">
         <mat-form-field class="icon-input search-address">
           <input matInput type="text" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"
-                placeholder="Search Addresses" (keyup.escape)="query = ''">
-          <mat-icon *ngIf="query" (click)="query=''" matTooltip="Clear" fontSet="partIcon"
+                placeholder="查询地址" (keyup.escape)="query = ''">
+          <mat-icon *ngIf="query" (click)="query=''" matTooltip="清除" fontSet="partIcon"
                     fontIcon="part-clear-all"></mat-icon>
-          <mat-icon *ngIf="!query" fontSet="partIcon" fontIcon="part-search" matTooltip="Search For Address" matTooltipPosition="before"></mat-icon>
+          <mat-icon *ngIf="!query" fontSet="partIcon" fontIcon="part-search" matTooltip="查询地址" matTooltipPosition="before"></mat-icon>
         </mat-form-field>
       </mat-card>
 
-      <div class="subtitle">Filter by type</div>
+      <div class="subtitle">筛选(按地址类型)</div>
       <mat-card class="filter-card">
         <!-- FIXME: needs connecting to pagination (so that number of results/pages gets updated on selecting some type filter) -->
         <mat-select class="type-filter" name="type" (change)="filterType($event)" value="">
-          <mat-option value="">All types</mat-option>
-          <mat-option value="public">Public</mat-option>
-          <mat-option value="private">Private</mat-option>
+          <mat-option value="">所有类型</mat-option>
+          <mat-option value="public">公共地址</mat-option>
+          <mat-option value="private">私有地址</mat-option>
         </mat-select>
       </mat-card>
     </div><!-- .search-sorting -->

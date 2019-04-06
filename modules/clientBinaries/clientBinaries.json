@@ -46,10 +46,10 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/particl/particl-core/releases/download/v0.18.0.4alpha/particl-0.18.0.4-x86_64-linux-gnu_nousb.tar.gz",
+              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-core-0.18.0.4.tar.gz",
               "type": "tar",
-              "sha256": "07e603f3e9b5aade250cde857f94a16f22bc676f81beaa6a533fb497e47d1a3d",
-              "bin": "particl-0.18.0.4/bin/particld"
+              "sha256": "917e3623cc143b595c0df8181ff5d0ff92cf0424e55ea7859e67fef2efede2fe",
+              "bin": "particl-core-0.18.0.4/bin/particld"
             },
             "bin": "particld",
             "commands": {
@@ -90,9 +90,9 @@
         "win": {
           "ia32": {
             "download": {
-              "url": "https://github.com/particl/particl-core/releases/download/v0.18.0.4alpha/particl-0.18.0.4-win32.zip",
+              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-win32.zip",
               "type": "zip",
-              "sha256": "bbc19b4c24ae4374633d211cf3017218cfd95ab18961b53ec542d0a0dbf77093",
+              "sha256": "641551cb02fe8c708552e140ec6962958a24c689bac36e784383e19c417ce224",
               "bin": "particl-0.18.0.4/bin/particld.exe"
             },
             "bin": "particld.exe",
@@ -110,9 +110,9 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/particl/particl-core/releases/download/v0.18.0.4alpha/particl-0.18.0.4-win64.zip",
+              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-win64.zip",
               "type": "zip",
-              "sha256": "fe90a062e1ecc1808d508edbe55254574138a814171ccea23bd7b4a9dde0bb4e",
+              "sha256": "4f43d10d45a64570420851c10cfe553a4da90f0e545ea628589e0960058dbc0e",
               "bin": "particl-0.18.0.4/bin/particld.exe"
             },
             "bin": "particld.exe",

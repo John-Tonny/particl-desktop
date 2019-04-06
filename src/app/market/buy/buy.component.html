@@ -4,7 +4,7 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-cart"></mat-icon>
-          Your cart
+          我的购物车
           <!-- TODO? add current number of items in cart: -->
           <!--span class="tag to-do">2</span-->
         </ng-template>
@@ -12,14 +12,14 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-hamburger"></mat-icon>
-          Orders
+          我的订单
           <!--app-order-count [type]="'buy'" class="tag"></app-order-count-->
         </ng-template>
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-heart-outline"></mat-icon>
-          Favourites
+          我的收藏
         </ng-template>
       </mat-tab>
     </mat-tab-group>
@@ -42,10 +42,10 @@
     <h1>Buy Orders</h1>
     <div class="content">
       <p>
-        This is where you manage the orders you're in the process of buying from other vendors on the marketplace.
+	在本页中，您可以管理您正在从市场上的其他供应商购买的订单。
       </p>
       <p class="widget-help">
-        Each step of the purchasing process needs to be confirmed in this page (i.e. marking an order as "Delivered").
+        采购过程中的每一步都需要您在本页中确认(即将订单标记为“已交付”)。
       </p>
     </div>
   </div><!-- .page-intro -->
@@ -60,10 +60,10 @@
      *ngIf="tabLabels[selectedTab] == 'favourites'">
 
   <div class="page-intro">
-    <h1>Your Favourites</h1>
+    <h1>你的收藏</h1>
     <div class="content">
       <p>
-        Save your favourite listings to easily access them later on.
+	保存您最喜欢的商品，以便稍后方便地访问它们。
       </p>
       <p class="widget-help">
         Note that marketplace listings have a limited lifetime (they expire after some time), so make sure to check back here often as they might not be available on the marketplace anymore.
@@ -73,10 +73,10 @@
 
   <div class="no-results" *ngIf="favorites === undefined || favorites?.length == 0">
     <p>
-      You don't have any favourite listings yet
+      你还没有最喜欢的商品清单。
     </p>
     <p class="widget-help">
-      To add an item to favourites, click on the <mat-icon class="icon" fontSet="partIcon" fontIcon="part-heart-outline-add"></mat-icon> icon
+      如果想添加到收藏夹，请点击 <mat-icon class="icon" fontSet="partIcon" fontIcon="part-heart-outline-add"></mat-icon> icon
     </p>
   </div>
 
