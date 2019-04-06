@@ -11,11 +11,11 @@ export class HistoryComponent implements OnInit {
   @ViewChild('transactions') transactions: any;
 
   categories: Array<any> = [
-    { title: 'All transactions',   value: 'all',               icon: ''},
-    { title: 'Sent',               value: 'send',              icon: 'send'},
-    { title: 'Received',           value: 'receive',           icon: 'receive'},
-    { title: 'Staked',             value: 'stake',             icon: 'stake'},
-    { title: 'Balance Transfers',  value: 'internal_transfer', icon: 'transfer'},
+    { title: '所有交易',   value: 'all',               icon: ''},
+    { title: '付款',               value: 'send',              icon: 'send'},
+    { title: '收款',           value: 'receive',           icon: 'receive'},
+    { title: '收益',             value: 'stake',             icon: 'stake'},
+    { title: '地址转换',  value: 'internal_transfer', icon: 'transfer'},
     // { title: 'Immature',         value: 'immature'          },
     // { title: 'Coinbase',         value: 'coinbase'          },
     // { title: 'Orphan',           value: 'orphan'            },
@@ -23,19 +23,19 @@ export class HistoryComponent implements OnInit {
   ];
 
   sortings: Array<any> = [
-    { title: 'By time',                  value: 'time'          },
-    { title: 'By amount',                value: 'amount'        },
-    { title: 'By address',               value: 'address'       },
-    { title: 'By category',              value: 'category'      },
-    { title: 'By confirmations',         value: 'confirmations' },
-    { title: 'By transaction ID (txid)', value: 'txid'          }
+    { title: '按时间',                  value: 'time'          },
+    { title: '按金额',                value: 'amount'        },
+    { title: '按地址',               value: 'address'       },
+    { title: '按分类',              value: 'category'      },
+    { title: '按确认数',         value: 'confirmations' },
+    { title: '按交易哈希', value: 'txid'          }
   ];
 
   types: Array<any> = [
-    { title: 'All types', value: 'all'      },
-    { title: 'Public',  value: 'standard'   },
-    { title: 'Blind',     value: 'blind'    },
-    { title: 'Anonymous', value: 'anon'     },
+    { title: '所有类型', value: 'all'      },
+    { title: '公开',  value: 'standard'   },
+    { title: '混肴',     value: 'blind'    },
+    { title: '匿名', value: 'anon'     },
   ];
 
   filters: any = {
