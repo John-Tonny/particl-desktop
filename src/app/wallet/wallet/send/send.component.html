@@ -11,7 +11,7 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon fontSet="partIcon" fontIcon="part-transfer"></mat-icon>
-          转换（公开地址-私有地址）
+          地址转换（公开地址-私有地址）
         </ng-template>
       </mat-tab>
     </mat-tab-group>
@@ -34,11 +34,11 @@
     <h1 *ngIf="type === 'balanceTransfer'">转换(交易类型)</h1>
     <div class="content">
       <p *ngIf="type === 'sendPayment'">
-	在本页面的“交易类型”列表中选择您的交易类型，将能够调整您交易的隐私级别。
+	在本页面的“地址类型”列表中选择您的地址类型，将能够调整您交易的隐私级别。
       </p>
       <p *ngIf="type === 'balanceTransfer'">
         Convert your coins between public and private balances.<br>
-      	为了提高你的隐私水平，建议您总是把您的余额放在私有地址里（例如：混肴或匿名）。
+      	为了保护您的隐私，建议您总是把您的余额放在私有地址里（例如：混肴或匿名）。
       </p>
       <p class="widget-help">
 	Blind和Anon有何区别，它们是如何影响我的隐私，想了解更多内容可以在VPubChain Wiki：
@@ -54,7 +54,7 @@
   
     <div class="from-box" fxFlex="0 0 320px">
       <div class="sticky">
-        <div class="section-title">余额模式</div>
+        <div class="section-title">地址类型</div>
         <mat-card>
           <!-- Select "FROM" balance/account -->
           <mat-radio-group class="from-balance-type block-radio" name="sendInput" [(ngModel)]="send.input" 
@@ -79,13 +79,13 @@
     
           <!-- TX info help -->
           <p class="widget-help" *ngIf="send.input === 'part'">
-	    公开地址交易，在区块链上任何人都能够看到交易金额、发送方和接收方地址。	    
+	    使用公开地址交易，在区块链上任何人都能够看到交易金额、发送方和接收方地址。	    
           </p>
           <p class="widget-help" *ngIf="send.input === 'blind'">
-            混肴交易隐藏交易金额，在区块链任何人只能够看到发送方和接收方的地址。
+            使用混肴地址交易，则隐藏交易金额，在区块链仅仅能够看到发送方和接收方的地址。
           </p>
           <p class="widget-help" *ngIf="send.input === 'anon'">
-            匿名交易能提供最高级别的隐私保护；在区块链上将无法看到交易金额、发送方和接收方的真实信息。
+            使用匿名交易，则提供最高级别的隐私保护，在区块链上将无法看到交易金额、发送方和接收方的真实信息。
 	    隐私级别越高，需要支付的费用越大，高级用户还可以进一步调整环签名的数量。 
           </p>
     
@@ -188,7 +188,7 @@
               <mat-form-field fxFlex="1 1 100%" class="full-width larger">
                 <input #address name="toAddress" matInput
                       [ngClass]="{'verify-sucess': checkAddress() === true, 'verify-error': checkAddress() === false }"
-                      type="text" placeholder="接收地址" [(ngModel)]="send.toAddress"
+                      type="text" placeholder="接收的地址" [(ngModel)]="send.toAddress"
                       (ngModelChange)="verifyAddress()"/>
               </mat-form-field>
               <span fxFlex="0 0 16px">
@@ -205,7 +205,7 @@
               </span>
             </div>
             <mat-form-field class="full-width larger no-top-padding" floatPlaceholder="never">
-              <input name="toLabel" matInput type="text" placeholder="接收人的名称 (选项)"
+              <input name="toLabel" matInput type="text" placeholder="接收人的姓名 (选项)"
                     [(ngModel)]="send.toLabel">
             </mat-form-field>
             <p class="widget-help">
@@ -221,7 +221,7 @@
               <mat-hint align="end">{{narration.value.length}} / 24</mat-hint>
             </mat-form-field>
             <p class="widget-help">
-	      在付款时附上一段简短的说明。请注意：当发送到公开地址时，这些说明将被记录下来，并在区块链上公开可见；当发送混肴或匿名地址时，则只对发送方和接收方可见。
+	      请注意：付款时的简短说明，如果是发送到公开地址时，这些说明将将在区块链上公开可见；如果是发送到混肴或匿名地址时，则仅仅发送方和接收方可见。
             </p>
           </div><!-- .narration.section -->
         </mat-card><!-- .pay-to -->
