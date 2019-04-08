@@ -1,10 +1,10 @@
 <table class="shipping-address">
   <tr>
-    <th>Name</th>
+    <th>名称</th>
     <td>{{ shippingAddress?.firstName || '' }} {{ shippingAddress?.lastName || '' }}</td>
   </tr>
   <tr>
-    <th>Address</th>
+    <th>收货地址</th>
     <td>
       {{ shippingAddress?.addressLine1 || '' }}
       <div *ngIf="shippingAddress?.addressLine2">
@@ -13,19 +13,19 @@
     </td>
   </tr>
   <tr>
-    <th>City</th>
+    <th>城市</th>
     <td>{{shippingAddress?.city || '' }}</td>
   </tr>
   <tr *ngIf="shippingAddress?.state">
-    <th>State</th>
+    <th>省份</th>
     <td>{{ shippingAddress?.state }}</td>
   </tr>
   <tr>
-    <th>ZIP</th>
+    <th>邮编</th>
     <td>{{ shippingAddress?.zipCode || '' }}</td>
   </tr>
   <tr>
-    <th>Coutry</th>
+    <th>国家</th>
     <td>{{ country }}</td>
   </tr>
 </table>

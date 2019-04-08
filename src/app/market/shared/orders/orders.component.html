@@ -2,19 +2,19 @@
 <div class="filter">
 
   <div class="section search-sorting">
-    <div class="subtitle first">Search &amp; sort</div>
+    <div class="subtitle first">查询 &amp; 排序</div>
     <mat-card class="filter-card">
       <mat-form-field class="icon-input filter-input" floatPlaceholder="never">
-        <input matInput type="text" class="header-input" placeholder="Search orders" [(ngModel)]="filters.search"
+        <input matInput type="text" class="header-input" placeholder="查询订单" [(ngModel)]="filters.search"
             (keyup)="loadOrders()" (keyup.enter)="loadOrders()" (keyup.escape)="filters.search = ''; loadOrders()">
-        <mat-icon *ngIf="filters.search" matTooltip="Clear" fontSet="partIcon" fontIcon="part-clear-all"
+        <mat-icon *ngIf="filters.search" matTooltip="清除" fontSet="partIcon" fontIcon="part-clear-all"
                   (click)="filters.search=''; loadOrders()"></mat-icon>
-        <mat-icon *ngIf="!filters.search" matTooltip="Search" fontSet="partIcon" fontIcon="part-search"
+        <mat-icon *ngIf="!filters.search" matTooltip="查询" fontSet="partIcon" fontIcon="part-search"
                   (click)="loadOrders()"></mat-icon>
       </mat-form-field>
 
       <!--  <mat-form-field class="sort-by filter-input" floatPlaceholder="never">
-        <mat-select placeholder="Sort orders" [(ngModel)]="filters.sort" (change)="filter()">
+        <mat-select placeholder="订单排序" [(ngModel)]="filters.sort" (change)="filter()">
           <mat-option *ngFor="let sorting of order_sortings" [value]="sorting.value">
             {{ sorting.title }}
           </mat-option>
@@ -24,22 +24,22 @@
   </div>
 
   <div class="section filter-by-group">
-    <div class="subtitle">Filter</div>
+    <div class="subtitle">筛选</div>
     <mat-card class="filter-card">
       <div class="checkbox highlight">
-        <mat-checkbox [(ngModel)]="additionalFilter.requiredAttention" (change)="loadOrders()" color="primary">Orders requiring attention</mat-checkbox>
+        <mat-checkbox [(ngModel)]="additionalFilter.requiredAttention" (change)="loadOrders()" color="primary">订单</mat-checkbox>
       </div>
       <div class="checkbox">
-        <mat-checkbox [(ngModel)]="additionalFilter.hideCompleted" (change)="loadOrders()" color="primary">Hide completed</mat-checkbox>
+        <mat-checkbox [(ngModel)]="additionalFilter.hideCompleted" (change)="loadOrders()" color="primary">隐藏已完成订单</mat-checkbox>
       </div>
       <!-- <div class="checkbox">
-        <mat-checkbox matTooltip="Hide orders not updated in last 30 days">Hide old orders</mat-checkbox>
+        <mat-checkbox matTooltip="隐藏最近30天没有更新的订单">隐藏过去订单</mat-checkbox>
       </div> -->
     </mat-card>
   </div><!-- .filter-by-type -->
   
   <div class="section filter-by-type">
-    <div class="subtitle">Filter by status</div>
+    <div class="subtitle">筛选</div>
     <mat-card class="filter-card">
       <mat-radio-group class="radio-group block-radio" [(ngModel)]="filters.status" (change)="loadOrders()">
         <mat-radio-button class="filter-option" *ngFor="let status of order_filters?.order_filtering" value="{{ status.value }}" [disabled]="status.amount === 0" color="primary">
@@ -53,7 +53,7 @@
 
   <button mat-button color="basic" class="clear-filters" (click)="clear()">
     <mat-icon fontSet="partIcon" fontIcon="part-clear-all"></mat-icon>
-    Clear all filters
+    清除所有筛选
   </button>
 
 </div><!-- .filter -->
@@ -63,7 +63,7 @@
 <div class="orders section with-filter">
 
   <div class="no-results" *ngIf="orders?.length === 0">
-    You don't have any market orders yet
+    您还没有任何订单
   </div>
 
   <app-order-item *ngFor="let order of orders" [order]="order"></app-order-item>
