@@ -16,14 +16,14 @@
 
   <mat-step [completed]="stepper.selectedIndex >= 1" [stepControl]="cartFormGroup">
     <form [formGroup]="cartFormGroup" class="cart">
-      <ng-template matStepLabel>Your cart</ng-template>
+      <ng-template matStepLabel>您的购物车</ng-template>
 
       <div class="no-results" [hidden]="cart?.shoppingCartItems.length != 0">
         <p>
-          Oh no, your cart is empty! Let's fix this:<br>
+          您的购物车没有商品:<br>
           <button mat-button (click)="goToListings()">
             <mat-icon class="icon" fontSet="partIcon" fontIcon="part-search"></mat-icon>
-            Browse listings for sale
+            浏览商品列表
           </button>
         </p>
       </div>
@@ -35,10 +35,10 @@
           <!-- @TODO if quantity required then add this label before total  -->
           <!-- <th>Quantity</th> -->
           <tr>
-            <th>Items</th>
-            <th>Price</th>
-            <th *ngIf="listCache?.selectedCountry">Shipping Price</th>
-            <th class="text-right">Total</th>
+            <th>商品名称</th>
+            <th>价格</th>
+            <th *ngIf="listCache?.selectedCountry">邮费</th>
+            <th class="text-right">总价</th>
             <th></th>
           </tr>
           </thead>
@@ -64,7 +64,7 @@
                 <!-- expires soon warning -->
                 <div class="warning message" *ngIf="listing.isAboutToExpire">
                   <mat-icon fontSet="partIcon" fontIcon="part-circle-alert"></mat-icon>
-                  Listing expires in {{listing.expireIn}}
+                  过期列表在 {{listing.expireIn}}
                 </div>
                 <div class="category" *ngIf="!listing.errorMessage && !listing?.isAboutToExpire">
                   {{listing.category.name}}
@@ -73,11 +73,11 @@
             </td>
             <td class="price cell">
               {{listing.basePrice?.getIntegerPart()}}{{listing.basePrice?.dot()}}<small>{{listing.basePrice?.getFractionalPart()}}</small>
-              PART
+              VPC
             </td>
             <td *ngIf="listCache?.selectedCountry" class="price cell">
               {{ listing.shippingAmount(listCache?.selectedCountry?.iso)?.getIntegerPart()}}{{listing.shippingAmount(listCache?.selectedCountry?.iso)?.dot()}}<small>{{listing.shippingAmount(listCache?.selectedCountry?.iso)?.getFractionalPart()}}</small>
-              PART
+              VPC
             </td>
             <!--<td class="quantity cell">1 &times;</td>-->
 
@@ -93,11 +93,11 @@
              </td> -->
             <td *ngIf="!listCache?.selectedCountry" class="total cell">
               {{listing.basePrice?.getIntegerPart()}}{{listing.basePrice?.dot()}}<small>{{listing.basePrice?.getFractionalPart()}}</small>
-              PART
+              VPC
             </td>
             <td *ngIf="listCache?.selectedCountry" class="total cell">
               {{ listing.total(listCache?.selectedCountry?.iso)?.getIntegerPart()}}{{listing.total(listCache?.selectedCountry?.iso)?.dot()}}<small>{{listing.total(listCache?.selectedCountry?.iso)?.getFractionalPart()}}</small>
-              PART
+              VPC
             </td>
             <td class="remove">
               <button mat-button color="warn" class="small" matTooltip="Remove from cart" matTooltipPosition="above"
@@ -113,35 +113,35 @@
              fxLayout fxLayoutAlign="space-between start">
           <div class="subtotal-notice" fxFlex="0 1 500px">
             {{ listCache?.selectedCountry ? (
-              "Subtotal doesn't include escrow costs. You can review these in the summary before placing your order."
+              "小计不包括托管费用。您可以在下单前的摘要中查看。"
             ) : (
-              "Subtotal doesn't include shipping and escrow costs. You can review these in the summary before placing your order."
+              "小计不包括运费和托管费用。您可以在下单前的摘要中查看。"
             )}}
           </div>
           <table class="subtotals" fxFlex="0 0 250px">
             <tr>
-              <td class="desc total">Subtotal</td>
+              <td class="desc total">小计</td>
               <td *ngIf="!listCache?.selectedCountry" class="value total">
-                {{cart?.subTotal.amount}} PART
+                {{cart?.subTotal.amount}} VPC
               </td>
               <td *ngIf="listCache?.selectedCountry" class="value total">
-                {{cart?.getSubTotalWithShippingTotal(listCache?.selectedCountry?.iso)?.amount}} PART
+                {{cart?.getSubTotalWithShippingTotal(listCache?.selectedCountry?.iso)?.amount}} VPC
               </td>
             </tr>
-            <!--tr><td class="desc to-do">Shipping total</td><td class="value">2.<small>153</small> PART</td></tr>
-            <tr><td class="desc to-do">Escrow (?)</td><td class="value">170 PART</td></tr>
-            <tr><td class="desc total to-do">Total</td><td class="value total">342.<small>153</small> PART</td></tr-->
+            <!--tr><td class="desc to-do">Shipping total</td><td class="value">2.<small>153</small> VPC</td></tr>
+            <tr><td class="desc to-do">Escrow (?)</td><td class="value">170 VPC</td></tr>
+            <tr><td class="desc total to-do">Total</td><td class="value total">342.<small>153</small> VPC</td></tr-->
           </table>
         </div><!-- .order-detail -->
 
         <div class="action-buttons" fxLayoutAlign="space-between center" fxLayoutGap="8px">
           <button mat-button (click)="clearCart()">
             <mat-icon class="icon" fontSet="partIcon" fontIcon="part-clear-all"></mat-icon>
-            Clear cart
+            清空购物车
           </button>
           <button mat-raised-button color="primary" matStepperNext [disabled]="!cartFormGroup.valid">
             <mat-icon class="icon" fontSet="partIcon" fontIcon="part-next-single"></mat-icon>
-            Continue to shipping
+            继续到收货信息
           </button>
         </div>
       </div>
@@ -152,13 +152,13 @@
   <mat-step [completed]="cache.selectedIndex >=2" [stepControl]="shippingFormGroup" [disabled]="!cartFormGroup.valid">
 
     <form [formGroup]="shippingFormGroup" class="shipping">
-      <ng-template matStepLabel>Shipping details</ng-template>
+      <ng-template matStepLabel>收货祥情</ng-template>
       <div fxLayout="row" fxLayoutGap="30px">
 
         <!--Hide shipping profile -->
         <div class="shipping-profile" fxFlex>
           <mat-card>
-            <div class="title">Choose shipping profile</div>
+            <div class="title">选择收货信息</div>
             <mat-form-field class="full-width">
               <mat-select matNativeControl [(value)]="selectedAddress" [(ngModel)]="selectedAddress" name="selectedAddress"  [ngModelOptions]="{standalone: true}"
                           (change)="select(selectedAddress)"
@@ -171,13 +171,13 @@
               </mat-select>
             </mat-form-field>
             <p class="widget-help">
-              To save time, you can save your frequently used shipping addresses as your personal shipping profiles. You can create as many profiles as you need (e.g. home address, office address, etc.).
+	      为了节省时间，您可以将常用的收货地址保存为您的个人收货资料。您可以创建您需要的任意多个配置文件(例如家庭地址、办公室地址等)。
               <br><br>
-              To create a new shipping profile, fill out the form on the right and check "Save shipping profile".
+	      要创建一个新的收货信息，请填写右侧的表单并选中“保存收货信息”。
             </p>
-            <button mat-button color="basic" class="small" [disabled]="!profile?.shippingAddresses || profile?.shippingAddresses.length === 0 || (!selectedAddress?.id)" (click)="clearForm()" matTooltip="When you want to enter shipping details manually instead">
+            <button mat-button color="basic" class="small" [disabled]="!profile?.shippingAddresses || profile?.shippingAddresses.length === 0 || (!selectedAddress?.id)" (click)="clearForm()" matTooltip="当您想手工输入收货信息">
               <mat-icon class="icon" fontSet="partIcon" fontIcon="part-refresh"></mat-icon>
-              Unselect Shipping profile
+              不选择收货信息
             </button>
           </mat-card>
         </div>
@@ -186,36 +186,36 @@
 
         <div class="shipping-info" fxFlex>
           <mat-card>
-            <div class="title">Enter shipping address</div>
+            <div class="title">输入收货信息</div>
             <div class="row" fxLayout fxLayoutGap="30px">
               <!-- FIXME: First and Last name should be required as well (waiting for dapp shell integration) -->
               <mat-form-field class="full-width" fxFlex>
-                <input matInput formControlName="firstName" placeholder="First name">
+                <input matInput formControlName="firstName" placeholder="姓">
               </mat-form-field>
               <mat-form-field class="full-width" fxFlex>
-                <input matInput formControlName="lastName" placeholder="Last name">
+                <input matInput formControlName="lastName" placeholder="名">
               </mat-form-field>
             </div>
             <mat-form-field class="full-width">
-              <input matInput formControlName="addressLine1" placeholder="Address line 1">
+              <input matInput formControlName="addressLine1" placeholder="地址1">
             </mat-form-field>
             <mat-form-field class="full-width">
-              <input matInput formControlName="addressLine2" placeholder="Address line 2">
+              <input matInput formControlName="addressLine2" placeholder="地址2">
             </mat-form-field>
             <mat-form-field class="full-width">
-              <input matInput formControlName="city" placeholder="City">
+              <input matInput formControlName="city" placeholder="城市">
             </mat-form-field>
             <div class="row" fxLayout fxLayoutGap="30px">
               <mat-form-field class="full-width" fxFlex>
-                <input matInput formControlName="zipCode" placeholder="ZIP / Postal code">
+                <input matInput formControlName="zipCode" placeholder="邮政编码">
               </mat-form-field>
               <mat-form-field class="full-width" fxFlex>
-                <input matInput formControlName="state" placeholder="State">
+                <input matInput formControlName="state" placeholder="省份">
               </mat-form-field>
             </div>
 
             <!-- <mat-form-field class="full-width">
-              <mat-select formControlName="country" placeholder="Country">
+              <mat-select formControlName="country" placeholder="国家">
                 <mat-option *ngFor="let country of countryList.getList()" value="{{country.iso}}">{{country.name}}
                 </mat-option>
               </mat-select>
@@ -238,7 +238,7 @@
               <mat-checkbox formControlName="newShipping" fxFlex>{{ selectedAddress?.id ? 'Update' : 'Save' }} shipping profile
               </mat-checkbox>
               <mat-form-field class="full-width" fxFlex>
-                <input matInput formControlName="title" placeholder="Shipping profile name">
+                <input matInput formControlName="title" placeholder="收货信息">
               </mat-form-field>
             </div>
 
@@ -250,11 +250,11 @@
       <div class="action-buttons" fxLayoutAlign="space-between center" fxLayoutGap="8px">
         <button mat-button matStepperPrevious>
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-previous-single"></mat-icon>
-          Back to cart
+          返回购物车
         </button>
         <button mat-raised-button color="primary" [disabled]="!shippingFormGroup.valid" matStepperNext (click)="moveToConfirmation()">
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-next-single"></mat-icon>
-          Continue to confirmation
+          继续确认
         </button>
       </div>
     </form>
@@ -265,14 +265,14 @@
 
   <mat-step [stepControl]="confirmation" [disabled]="!shippingFormGroup.valid">
     <form class="confirmation">
-      <ng-template matStepLabel>Confirm & Place order</ng-template>
+      <ng-template matStepLabel>确认 & 下单</ng-template>
       <table class="cart-items summary">
         <thead>
         <tr>
-          <th>Items</th>
-          <th>Price</th>
-          <th>Shipping</th><!--<th>Quantity</th>-->
-          <th class="text-right">Total</th>
+          <th>商品名称</th>
+          <th>价格</th>
+          <th>邮费</th><!--<th>Quantity</th>-->
+          <th class="text-right">总价</th>
         </tr>
         </thead>
         <tbody>
@@ -293,14 +293,14 @@
           </td>
           <td class="price cell">
             {{listing.basePrice?.getIntegerPart()}}{{listing.basePrice?.dot()}}<small>{{listing.basePrice?.getFractionalPart()}}</small>
-            PART
+            VPC
           </td>
           <td class="shipping cell">{{listing?.shippingAmount(country)?.getIntegerPart()}}{{listing?.shippingAmount(country)?.dot()}}<small>{{listing?.shippingAmount(country)?.getFractionalPart()}}</small>
-            PART
+            VPC
           </td>
           <!--<td class="quantity cell">1 &times;</td>-->
           <td class="total cell">{{listing?.total(country)?.getIntegerPart()}}{{listing?.total(country)?.dot()}}<small>{{listing?.total(country)?.getFractionalPart()}}</small>
-            PART
+            VPC
           </td>
         </tr>
         </tbody>
@@ -308,25 +308,25 @@
 
       <div class="order-detail" fxLayout fxLayoutAlign="space-between start" fxLayoutGap="35px">
         <div class="shipping-overview" fxFlex="1 1 100%">
-          <div class="title">Shipping address</div>
+          <div class="title">收货地址</div>
           <app-shipping-address [shippingAddress]="shippingFormGroup.value"></app-shipping-address>
         </div>
         <table class="subtotals" fxFlex="0 0 250px">
           <tr>
-            <td class="desc">Subtotal</td>
-            <td class="value">{{cart?.subTotal.getAmountAsString()}} PART</td>
+            <td class="desc">小计</td>
+            <td class="value">{{cart?.subTotal.getAmountAsString()}} VPC</td>
           </tr>
           <tr>
-            <td class="desc">Shipping total</td>
-            <td class="value">{{cart?.getShippingTotal(country).getAmountAsString()}} PART</td>
+            <td class="desc">邮费总计</td>
+            <td class="value">{{cart?.getShippingTotal(country).getAmountAsString()}} VPC</td>
           </tr>
           <tr>
-            <td class="desc">Escrow</td>
-            <td class="value">{{cart?.getEscrowTotal(country).getAmountAsString()}} PART</td>
+            <td class="desc">托管费用</td>
+            <td class="value">{{cart?.getEscrowTotal(country).getAmountAsString()}} VPC</td>
           </tr>
           <tr>
-            <td class="desc total">Total</td>
-            <td class="value total">{{cart?.getTotal(country).getAmountAsString()}} PART</td>
+            <td class="desc total">总价</td>
+            <td class="value total">{{cart?.getTotal(country).getAmountAsString()}} VPC</td>
           </tr>
         </table>
 
@@ -335,11 +335,11 @@
       <div class="action-buttons" fxLayoutAlign="space-between center" fxLayoutGap="8px">
         <button mat-button matStepperPrevious (click)="backToShippingDetails()">
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-previous-single"></mat-icon>
-          Back to shipping
+          返回到收货信息
         </button>
         <button mat-raised-button color="primary" (click)="placeOrderModal()"><!-- placeOrder() moved to the modal -->
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-next-single"></mat-icon>
-          Place order
+          下订单
         </button>
       </div>
     </form>
