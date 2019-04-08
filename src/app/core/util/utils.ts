@@ -263,7 +263,7 @@ export const Messages = {
       'action_disabled': true,
       'action_icon': 'part-date',
       'allow_reject_order': false,
-      'status_info': 'Waiting for Seller to manually accept (or reject) your bid'
+      'status_info': '等待卖家确认或拒绝您的订单'
     },
     'sell': {
       'action_button': 'Accept bid',
@@ -271,7 +271,7 @@ export const Messages = {
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': true,
-      'status_info': 'Buyer wants to purchase this item - approve or reject this order to continue'
+      'status_info': '买家想购买此商品，等待卖家同意或拒绝'
     },
     'status' : 'bidding'
   },
@@ -282,7 +282,7 @@ export const Messages = {
       'action_disabled': true,
       'action_icon': 'part-error',
       'allow_reject_order': false,
-      'status_info': 'Seller rejected bid on this item, order has been cancelled (no money was spent)'
+      'status_info': '卖家已拒绝，此订单取消'
     },
     'sell': {
       'action_button': 'Order rejected',
@@ -290,7 +290,7 @@ export const Messages = {
       'action_icon': 'part-error',
       'action_disabled': true,
       'allow_reject_order': false,
-      'status_info': 'You have rejected this bid, order has been cancelled'
+      'status_info': '您已经拒绝，此订单已取消'
     },
     'status' : 'rejected'
   },
@@ -301,7 +301,7 @@ export const Messages = {
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': false,
-      'status_info': 'Seller accepted your bid - please proceed to making the payment (this will lock the funds to escrow)'
+      'status_info': '卖方已接受您的订单，请继续付款(锁定资金到第三方托管中)'
     },
     'sell': {
       'action_button': 'Waiting for Buyer',
@@ -309,7 +309,7 @@ export const Messages = {
       'action_icon': 'part-date',
       'action_disabled': true,
       'allow_reject_order': false,
-      'status_info': 'Waiting for Buyer to lock the payment into escrow'
+      'status_info': '等待买家付款，锁定资金到第三方托管中'
     },
     'status' : 'awaiting'
   },
@@ -320,7 +320,7 @@ export const Messages = {
       'action_icon': 'part-date',
       'action_disabled': true,
       'allow_reject_order': false,
-      'status_info': 'Funds locked in escrow, waiting for Seller to process order for shipping'
+      'status_info': '资金已锁定在第三方托管中，等待卖家发货'
     },
     'sell': {
       'action_button': 'Mark as shipped',
@@ -328,7 +328,7 @@ export const Messages = {
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': false,
-      'status_info': `Buyer\'s funds are locked in escrow, order is ready to ship - when sent, Mark order as shipped and await its delivery`
+      'status_info': `买方的资金已锁定在第三方托管中，请您准备发货，发货后，将订单标记为已发货，并等待其交付`
     },
     'status' : 'escrow'
   },
@@ -339,7 +339,7 @@ export const Messages = {
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': false,
-      'status_info': 'Order has been shipped - when you receive it, Mark it as delivered and the escrow funds will be released'
+      'status_info': '卖家已发货，当收到时，请您将标记为已交付，第三方托管资金将返回到您的账号中'
     },
     'sell': {
       'action_button': 'Waiting for delivery',
@@ -347,7 +347,7 @@ export const Messages = {
       'action_icon': 'part-date',
       'action_disabled': true,
       'allow_reject_order': false,
-      'status_info': 'Order sent to Buyer, waiting for Buyer to confirm the delivery'
+      'status_info': '卖家已发货，等待买方确认收到货'
     },
     'status' : 'shipping'
   },
@@ -358,15 +358,15 @@ export const Messages = {
       'action_icon': 'part-check',
       'action_disabled': true,
       'allow_reject_order': false,
-      'status_info': 'Successfully finalized order'
+      'status_info': '购物完成！'
     },
     'sell': {
       'action_button': 'Order Complete',
       'tooltip': '',
       'action_icon': 'part-check',
       'action_disabled': true,
-      'allow_reject_order': false,
-      'status_info': 'Order delivery confirmed by Buyer - order successfully finalized'
+      'allow_reject_order': false,   
+      'status_info': '买家确认收到货，订单完成！'
     },
     'status' : 'complete'
   }

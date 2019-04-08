@@ -9,12 +9,12 @@
 
       <mat-form-field fxFlex="1 1 100%" class="search-address icon-input">
         <input matInput type="text" name="query" (ngModelChange)="resetPagination()"
-               placeholder="Filter by label or address..." [(ngModel)]="query">
+               placeholder="查询标签或地址..." [(ngModel)]="query">
 
-        <mat-icon *ngIf="query" (click)="query=''" matTooltip="Clear" fontSet="partIcon"
+        <mat-icon *ngIf="query" (click)="query=''" matTooltip="清除" fontSet="partIcon"
                   fontIcon="part-clear-all"></mat-icon>
 
-        <mat-icon *ngIf="!query" fontSet="partIcon" fontIcon="part-search" matTooltip="Search">
+        <mat-icon *ngIf="!query" fontSet="partIcon" fontIcon="part-search" matTooltip="查询">
         </mat-icon>
       </mat-form-field>
 
@@ -33,9 +33,9 @@
 
     <mat-list-item class="list-header">
       <div class="address-list-header" fxFlex="row" fxLayoutGap="10px" layout-padding>
-        <div fxFlex="0 0 350px">Label</div>
-        <div fxFlex="0 0 300px">Address</div>
-        <div fxFlex="0 0 80px" class="text-right">Type</div>
+        <div fxFlex="0 0 350px">标签</div>
+        <div fxFlex="0 0 300px">地址</div>
+        <div fxFlex="0 0 80px" class="text-right">类型</div>
       </div>
     </mat-list-item>
 

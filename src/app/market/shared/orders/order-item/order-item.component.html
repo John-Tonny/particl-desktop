@@ -33,7 +33,7 @@
   <div class="detail" fxLayout="row" fxLayoutGap="30px">
 
     <div class="buyer-info" fxFlex="65%">
-      <div class="title">Shipping address</div>
+      <div class="title">收货地址</div>
       <app-shipping-address [shippingAddress]="order?.ShippingAddress"></app-shipping-address>
     </div><!-- .buyer-info -->
 
@@ -45,24 +45,24 @@
           <td>2</td>
         </tr-->
         <tr>
-          <th>Listing price</th>
-          <td>{{order?.listing?.basePrice?.getIntegerPart()}}{{order?.listing?.basePrice?.dot()}}<small>{{order?.listing?.basePrice?.getFractionalPart()}}</small> PART
+          <th>商品价格</th>
+          <td>{{order?.listing?.basePrice?.getIntegerPart()}}{{order?.listing?.basePrice?.dot()}}<small>{{order?.listing?.basePrice?.getFractionalPart()}}</small> VPC
           </td>
         </tr>
         <tr>
-          <th>Shipping</th>
-          <td >{{order?.listing?.shippingAmount(country).getIntegerPart()}}{{order?.listing?.shippingAmount(country).dot()}}<small>{{order?.listing?.shippingAmount(country).getFractionalPart()}}</small> PART
+          <th>邮费</th>
+          <td >{{order?.listing?.shippingAmount(country).getIntegerPart()}}{{order?.listing?.shippingAmount(country).dot()}}<small>{{order?.listing?.shippingAmount(country).getFractionalPart()}}</small> VPC
           </td>
         </tr>
         <tr>
-          <th>Escrow</th>
-          <td>{{order?.listing?.escrowAmount(country).getIntegerPart()}}{{order?.listing?.escrowAmount(country).dot()}}<small>{{order?.listing?.escrowAmount(country).getFractionalPart()}}</small> PART
+          <th>托管费用</th>
+          <td>{{order?.listing?.escrowAmount(country).getIntegerPart()}}{{order?.listing?.escrowAmount(country).dot()}}<small>{{order?.listing?.escrowAmount(country).getFractionalPart()}}</small> VPC
           </td>
         </tr>
         <tr>
-          <th>Total price</th>
+          <th>总费用</th>
           <td>
-            {{order?.listing?.totalAmount(country).getIntegerPart()}}{{order?.listing?.totalAmount(country).dot()}}<small>{{order?.listing?.totalAmount(country).getFractionalPart()}}</small> PART
+            {{order?.listing?.totalAmount(country).getIntegerPart()}}{{order?.listing?.totalAmount(country).dot()}}<small>{{order?.listing?.totalAmount(country).getFractionalPart()}}</small> VPC
           </td>
         </tr>
       </table>
@@ -77,22 +77,22 @@
               *ngIf="order?.messages?.allow_reject_order"
               class="small">
         <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-        Reject bid &amp; cancel order
+        拒绝 &amp; 取消订单
       </button>
       <!--button mat-button matTooltip="Edit order" class="small">
         <mat-icon fontSet="partIcon" fontIcon="part-pen-1"></mat-icon>
-        Edit
+        编辑
       </button-->
       <!-- TODO: link to TX ID on block explorer (if payment was made already) -->
       <button mat-button matTooltip="Escrow TX details"
               *ngIf="order?.show_escrow_txdetails" class="small">
         <mat-icon fontSet="partIcon" fontIcon="part-document"></mat-icon>
-        View payment
+        查看付款
       </button>
       <!-- TODO: shortcut to e2e message to buyer -->
       <!--button mat-button class="small">
         <mat-icon fontSet="partIcon" fontIcon="part-person-edit"></mat-icon>
-        Contact buyer
+        联系卖家
       </button-->
     </div>
     <div class="right">

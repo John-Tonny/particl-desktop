@@ -7,19 +7,19 @@
         </mat-list-item>
       </div>
     </mat-list>
-    <div *ngIf="displayLabel">Label</div>
-    <div *ngIf="displayAddress">Address</div>
-    <div *ngIf="displayPublicKey">Public Key</div>
-    <div *ngIf="displayType">Type</div>
-    <div *ngIf="displayPurpose">Purpose</div>
-    <div *ngIf="displayToolsMenu">Tools</div>
-    <div *ngIf="displayQrMenu">QR Code</div>
+    <div *ngIf="displayLabel">标签</div>
+    <div *ngIf="displayAddress">地址</div>
+    <div *ngIf="displayPublicKey">公开地址</div>
+    <div *ngIf="displayType">类型</div>
+    <div *ngIf="displayPurpose">目的</div>
+    <div *ngIf="displayToolsMenu">工具</div>
+    <div *ngIf="displayQrMenu">二维码</div>
   </div>
 
   <mat-list class="list-data">
 
     <div class="no-results" *ngIf="getSinglePage().length === 0">
-      No matching addresses found
+      未找到地址
     </div>
 
     <div *ngFor="let address of getSinglePage()">
@@ -34,15 +34,15 @@
         <!-- Actions/controls -->
         <div *ngIf="displayToolsMenu" class="address-actions">
           <!-- ICO: copy address -->
-          <mat-icon fontSet="partIcon" fontIcon="part-copy" class="cursor-pointer" matTooltip="Copy address" ngxClipboard [cbContent]="address.address" (click)="copyToClipBoard()"></mat-icon>
+          <mat-icon fontSet="partIcon" fontIcon="part-copy" class="cursor-pointer" matTooltip="复制地址" ngxClipboard [cbContent]="address.address" (click)="copyToClipBoard()"></mat-icon>
           <!-- ICO: verify message -->
           <mat-icon fontSet="partIcon" fontIcon="part-person-check" (click)="openSignatureModal(address.address)"
-                      class="cursor-pointer" matTooltip="Sign / Verify message"
+                      class="cursor-pointer" matTooltip="签名 / 验证信息"
                       ngxClipboard></mat-icon>
           <!-- ICO: delete -->
           <mat-icon color="warn" fontSet="partIcon" fontIcon="part-circle-remove"
                       class="cursor-pointer"
-                      (click)="deleteAddress(address.label, address.address)" matTooltip="Delete address"></mat-icon>
+                      (click)="deleteAddress(address.label, address.address)" matTooltip="删除地址"></mat-icon>
         </div>
 
       </mat-card>

@@ -7,14 +7,14 @@
   <form [formGroup]="addressForm" novalidate (ngSubmit)="onFormSubmit()">
     <div mat-dialog-container>
       <mat-tab-group>
-        <mat-tab label="Sign Message" *ngIf="type === 'sign'">
+        <mat-tab label="签名信息" *ngIf="type === 'sign'">
           <p>
-            You can sign messages/agreements with your address to prove you can receive Particl sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.
+	    您可以用您的地址签署消息/协议，来证明您的身份。请注意，为了防止网络钓鱼攻击，不要签署您不了解的消息，只签署您所了解消息/协议。
           </p>
         </mat-tab>
         <mat-tab label="Verify Message" *ngIf="type === 'verify'">
           <p>
-            Enter the receiver's address, message (ensure you copy line breaks, spaces, tabs etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!
+	    请输入收件人的地址、消息(包括换行符、空格、制表符等等)，签名验证消息。请注意：它只能证明信息来自这个地址，不能证明任何交易的发生!
           </p>
         </mat-tab>
       </mat-tab-group>
@@ -25,15 +25,15 @@
           <mat-form-field fxFlex="1 1 100%">
             <input matInput formControlName="address" [(ngModel)]="formData.address" #addressInput
                    [ngClass]="{'verify-sucess': validAddress === true, 'verify-error': validAddress === false }"
-                   placeholder="Enter a Particl address (e.g. PuMnFoGouqFkFZ1rs2PmVDUqp9psfQssre)"
+                   placeholder="输入一个地址 (例如： PuMnFoGouqFkFZ1rs2PmVDUqp9psfQssre)"
                    (input)="verifyAddress()">
           </mat-form-field>
 
           <div class="icons" fxFlex="0 0 65px">
-            <span class="icon" matTooltip="Address Lookup" (click)="openLookup()">
+            <span class="icon" matTooltip="地址查找" (click)="openLookup()">
               <mat-icon class="cursor-pointer" fontSet="partIcon" fontIcon="part-people"></mat-icon>
             </span>
-            <span class="icon" matTooltip="Paste" (click)="pasteAddress()">
+            <span class="icon" matTooltip="剪贴" (click)="pasteAddress()">
               <mat-icon class="cursor-pointer" fontSet="partIcon" fontIcon="part-past"></mat-icon>
             </span>
           </div>
@@ -42,7 +42,7 @@
 
         <mat-form-field>
           <textarea matInput formControlName="message" [(ngModel)]="formData.message" rows="10" cols="100"
-                    placeholder="Enter message to sign/verify"></textarea>
+                    placeholder="输入签名/验证的信息"></textarea>
         </mat-form-field>
 
         <div class="address-field" fxLayout="row" fxLayoutAlign="center center">
@@ -50,15 +50,15 @@
             <input matInput formControlName="signature" [(ngModel)]="formData.signature"
                    [disabled]="isDisabled"
                    #signatureInput
-                   placeholder="{{(type == 'sign')? 'Click [Sign Message] to generate signature': 'Signature'}}">
+                   placeholder="{{(type == 'sign')? '点击[签名信息]产生签名信息': '签名'}}">
           </mat-form-field>
 
           <div class="icons" fxFlex="0 0 45px">
-            <span class="icon" matTooltip="Copy" (click)="copyToClipBoard()" *ngIf="type == 'sign'" ngxClipboard
+            <span class="icon" matTooltip="复制" (click)="copyToClipBoard()" *ngIf="type == 'sign'" ngxClipboard
                   [cbContent]="formData.signature">
               <mat-icon class="cursor-pointer" fontSet="partIcon" fontIcon="part-copy"></mat-icon>
             </span>
-            <span class="icon" matTooltip="Paste" (click)="pasteSignature()" *ngIf="type == 'verify'">
+            <span class="icon" matTooltip="剪贴" (click)="pasteSignature()" *ngIf="type == 'verify'">
               <mat-icon class="cursor-pointer" fontSet="partIcon" fontIcon="part-past"></mat-icon>
             </span>
           </div>
@@ -68,11 +68,11 @@
     <mat-dialog-actions fxLayoutAlign="end center">
       <button type="reset" mat-button (click)="resetForm()">
         <mat-icon fontSet="partIcon" fontIcon="part-clear-all"></mat-icon>
-        Clear all
+        清除所有
       </button>
       <button mat-raised-button color="primary" class="capitalize" type="submit" [disabled]="!addressForm.valid">
         <mat-icon fontSet="partIcon" fontIcon="{{ (type == 'verify' ? 'part-check': 'part-pen-2') }}"></mat-icon>
-        {{type}} message
+        {{type}} 信息
       </button>
     </mat-dialog-actions>
   </form>
