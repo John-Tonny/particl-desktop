@@ -25,39 +25,39 @@
 
   <div class="detail" fxLayout="row" fxLayoutGap="30px">
     <div class="description" fxFlex="65%">
-      <div class="title">Listing description</div>
+      <div class="title">商品描述</div>
       <p>
         {{ listing?.longDescription }}
       </p>
     </div><!-- .description -->
     <div class="info" fxFlex="35%">
-      <div class="title">Price</div>
+      <div class="title">价格</div>
       <table class="prices">
-        <!--tr><th>Quantity</th><td>2</td></tr-->
+        <!--tr><th>数量</th><td>2</td></tr-->
         <tr>
-          <th>Price per item</th>
+          <th>每个</th>
           <td>
             {{ listing?.basePrice.getIntegerPart() }}{{ listing?.basePrice.dot() }}<small>{{ listing?.basePrice.getFractionalPart() }}</small>
-            PART
+            VPC
           </td>
         </tr>
-        <!--tr><th>Total price</th><td>46.<small>257</small> PART</td></tr-->
+        <!--tr><th>总价</th><td>46.<small>257</small> VPC</td></tr-->
       </table>
     </div>
   </div>
 
   <mat-action-row fxLayout fxLayoutAlign="space-between stretch">
     <div class="left">
-      <button mat-button color="warn" matTooltip="Delete listing" *ngIf="listing?.isUnpublished" (click)="confirmDeleteListing(listing)"
+      <button mat-button color="warn" matTooltip="删除商品" *ngIf="listing?.isUnpublished" (click)="confirmDeleteListing(listing)"
               class="small">
         <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
       </button>
-      <button mat-button matTooltip="Clone listing" (click)="addItem(listing?.id, true)" class="small">
+      <button mat-button matTooltip="复制商品" (click)="addItem(listing?.id, true)" class="small">
         <mat-icon fontSet="partIcon" fontIcon="part-copy"></mat-icon>
       </button>
-      <button mat-button matTooltip="Edit listing details" *ngIf="listing?.isUnpublished" (click)="addItem(listing?.id)" class="small">
+      <button mat-button matTooltip="编辑商品祥情" *ngIf="listing?.isUnpublished" (click)="addItem(listing?.id)" class="small">
         <mat-icon fontSet="partIcon" fontIcon="part-pen-1"></mat-icon>
-        Edit listing
+        编辑商品
       </button>
     </div>
     <div class="right" *ngFor="let status of getStatus(listing?.status)">

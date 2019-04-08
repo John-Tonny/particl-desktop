@@ -1,11 +1,11 @@
-<div class="container-block">
+
 
   <div class="row" fxLayout="row" fxLayoutGap="30px">
 
     <div class="left" fxFlex="50">
 
       <mat-card class="photos">
-        <div class="title">Upload photos</div>
+        <div class="title">上传照片</div>
         <div id="drag-n-drop" class="drag-n-drop">
           <mat-icon class="icon" fontSet="partIcon" fontIcon="part-select"></mat-icon>
 
@@ -14,12 +14,12 @@
                 accept="image/*" multiple="true" id="fileInput">
 
           <button mat-button color="primary" (click)="uploadPicture()">
-            Upload a photo
+            上传照片
           </button>
-          <p>or drag'n'drop it here</p>
+          <p>或 拖动照片到这里</p>
         </div>
         <p class="widget-help">
-          Upload photos of your listing item, then choose one of them as featured (this will be the main photo shown on market). Be sure to upload high quality &amp; focused images in good lighting where possible. Max file size per image is 2MB.
+	  上传您的商品的照片。请上传高质量图片，图片文件大小最大为2MB。
         </p>
         <div class="gallery" fxLayoutWrap>
 
@@ -29,10 +29,10 @@
               <img src="{{image.thumbnail}}">
               <div class="icons">
                 <mat-icon class="delete" fontSet="partIcon" fontIcon="part-cross"
-                          matTooltip="Remove image" (click)="removeExistingImage(image)">
+                          matTooltip="删除照片" (click)="removeExistingImage(image)">
                 </mat-icon>
                 <!--mat-icon class="featured" fontSet="partIcon" fontIcon="part-check"
-                          matTooltip="Set as featured" (click)="featurePicture(i)">
+                          matTooltip="设置为主图片" (click)="featurePicture(i)">
                 </mat-icon-->
               </div>
             </div>
@@ -46,11 +46,11 @@
               <img src="{{picture}}">
               <div class="icons">
                 <mat-icon class="delete" fontSet="partIcon" fontIcon="part-cross"
-                          matTooltip="Remove image" (click)="removePicture(i)">
+                          matTooltip="删除照片" (click)="removePicture(i)">
                 </mat-icon>
                 <!-- TODO: Fix set as featured img -->
                 <!-- <mat-icon class="featured" fontSet="partIcon" fontIcon="part-check"
-                          matTooltip="Set as featured" (click)="featurePicture(i)">
+                          matTooltip="设置为主图片" (click)="featurePicture(i)">
                 </mat-icon> -->
               </div>
             </div>
@@ -63,20 +63,20 @@
 
 
     <mat-card class="details" fxFlex="50" [formGroup]="itemFormGroup">
-      <div class="title">Listing details *</div>
+      <div class="title">商品祥情 *</div>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Listing title (product name) *" #title formControlName="title">
+        <input matInput placeholder="商品标题 (产品名称) *" #title formControlName="title">
         <mat-hint align="end">{{ title.value?.length || 0 }}/50</mat-hint>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <textarea matInput #summary rows="3" placeholder="Summary (short description) *"
+        <textarea matInput #summary rows="3" placeholder="摘要 *"
                   formControlName="shortDescription"></textarea>
         <mat-hint align="end">{{ summary.value?.length || 0 }}/200</mat-hint>
       </mat-form-field>
 
       <mat-form-field class="full-width">
-        <textarea matInput #description rows="12" placeholder="Description *"
+        <textarea matInput #description rows="12" placeholder="描述 *"
                   formControlName="longDescription"></textarea>
         <mat-hint align="end">{{ description.value?.length || 0 }}/1000</mat-hint>
       </mat-form-field>
@@ -103,7 +103,7 @@
       <!-- TODO: add another input for fiat value and inter-connect the two: -->
       <mat-form-field class="full-width">
         <mat-icon matPrefix class="icon" fontSet="partIcon" fontIcon="part-cryptocurrency-particl"></mat-icon>
-        <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="Price per item *" formControlName="basePrice" type="text">
+        <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="商品价格 *" formControlName="basePrice" type="text">
         <span matSuffix>PART</span>
       </mat-form-field>
 
@@ -112,31 +112,30 @@
           <input matInput placeholder="Quantity">
         </mat-form-field-->
         <mat-form-field fxFlex="50%" class="auto-width">
-          <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="Domestic shipping price *" formControlName="domesticShippingPrice" type="text">
-          <span matSuffix>PART</span>
+          <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="国内邮费 *" formControlName="domesticShippingPrice" type="text">
+          <span matSuffix>VPC</span>
         </mat-form-field>
         <mat-form-field fxFlex="50%" class="auto-width">
-          <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="International shipping price *" formControlName="internationalShippingPrice"
+          <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="国际邮费 *" formControlName="internationalShippingPrice"
                  type="text">
-          <span matSuffix>PART</span>
+          <span matSuffix>VPC</span>
         </mat-form-field>
       </div>
       <p class="widget-help">
-        Don't forget to include quantity units (e.g. 1 piece, 1 pair, 1 kg or 100 ml).<br>
-        Prices are in PART.
+	请注意：附上数量单位(例如1件、1对、1公斤或100毫升)。
       </p>
     </mat-card>
   </div>
 
   <p class="warning" *ngIf="!canPublish">
-    <strong>Error:</strong> maximum Listing size exceeded &ndash; try to reduce image or text sizes
+    <strong>错误:</strong> 尺寸超出范围，请减少图片或文字大小。
   </p>
 
   <div class="action-buttons" fxLayout fxLayoutAlign="space-between center">
     <div class="left">
       <button mat-button (click)="backToSell()" color="warn">
         <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-        Back to Listings
+        返回商品列表
       </button>
     </div>
     <div class="right">
