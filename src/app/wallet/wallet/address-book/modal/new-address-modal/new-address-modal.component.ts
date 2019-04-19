@@ -81,12 +81,12 @@ export class NewAddressModalComponent implements OnInit {
    */
   onSubmitForm(): void {
     if (!this.validAddress) {
-      this.flashNotificationService.open('Please enter a valid address');
+      this.flashNotificationService.open('请输入一个有效的地址');
       return;
     }
 
     if (this.isMine) {
-      this.flashNotificationService.open('Your own address can not be saved to Address Book');
+      this.flashNotificationService.open('地址无法保存到地址簿');
       return;
     }
 
@@ -109,8 +109,8 @@ export class NewAddressModalComponent implements OnInit {
   rpc_addAddressToBook_success(json: any): void {
     if (json.result === 'success') {
       this.closeModal();
-      const message: string = (this.isEdit) ? 'Address successfully updated'
-        : 'Address successfully added';
+      const message: string = (this.isEdit) ? '地址成功更新'
+        : '地址成功增加';
 
       this.flashNotificationService.open(message);
       // TODO: remove specialPoll! (updates the address table)
@@ -157,7 +157,7 @@ export class NewAddressModalComponent implements OnInit {
 
           if (this.isMine) {
             this.flashNotificationService
-            .open('Your own address can not be saved to Address Book', 'err');
+            .open('地址无法保存到地址簿', 'err');
           }
         },
         error => this.log.er('rpc_validateaddress_failed'));

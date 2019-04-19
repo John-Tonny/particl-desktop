@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Log } from 'ng2-logger';
 
+
 import { RpcService, RpcStateService } from '../../../core/core.module';
 import { ModalsHelperService } from 'app/modals/modals.module';
 
@@ -209,7 +210,7 @@ export class ReceiveComponent implements OnInit {
   }
 
   copyToClipBoard(): void {
-    this.flashNotificationService.open('Address copied to clipboard');
+    this.flashNotificationService.open('地址复制到剪贴板');
   }
 
   openSignatureModal(address: string): void {
