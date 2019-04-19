@@ -12,7 +12,7 @@
 	    您可以用您的地址签署消息/协议，来证明您的身份。请注意，为了防止网络钓鱼攻击，不要签署您不了解的消息，只签署您所了解消息/协议。
           </p>
         </mat-tab>
-        <mat-tab label="Verify Message" *ngIf="type === 'verify'">
+        <mat-tab label="验证消息" *ngIf="type === 'verify'">
           <p>
 	    请输入收件人的地址、消息(包括换行符、空格、制表符等等)，签名验证消息。请注意：它只能证明信息来自这个地址，不能证明任何交易的发生!
           </p>
@@ -42,7 +42,7 @@
 
         <mat-form-field>
           <textarea matInput formControlName="message" [(ngModel)]="formData.message" rows="10" cols="100"
-                    placeholder="输入签名/验证的信息"></textarea>
+                    placeholder="输入签名/验证的消息"></textarea>
         </mat-form-field>
 
         <div class="address-field" fxLayout="row" fxLayoutAlign="center center">
@@ -50,7 +50,7 @@
             <input matInput formControlName="signature" [(ngModel)]="formData.signature"
                    [disabled]="isDisabled"
                    #signatureInput
-                   placeholder="{{(type == 'sign')? '点击[签名信息]产生签名信息': '签名'}}">
+                   placeholder="{{(type == 'sign')? '点击[签名消息]产生签名消息': '签名'}}">
           </mat-form-field>
 
           <div class="icons" fxFlex="0 0 45px">
@@ -72,7 +72,7 @@
       </button>
       <button mat-raised-button color="primary" class="capitalize" type="submit" [disabled]="!addressForm.valid">
         <mat-icon fontSet="partIcon" fontIcon="{{ (type == 'verify' ? 'part-check': 'part-pen-2') }}"></mat-icon>
-        {{type}} 信息
+        {{type}} 消息
       </button>
     </mat-dialog-actions>
   </form>
