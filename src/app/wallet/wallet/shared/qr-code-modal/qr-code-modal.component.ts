@@ -33,7 +33,7 @@ export class QrCodeModalComponent implements OnInit {
   }
 
   copyToClipBoard(): void {
-    this.snackbar.open('Address copied to clipboard', '');
+    this.snackbar.open('地址复制到剪贴板', '');
   }
 
   dialogClose(): void {

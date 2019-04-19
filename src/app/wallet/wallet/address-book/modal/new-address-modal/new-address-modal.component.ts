@@ -46,9 +46,9 @@ export class NewAddressModalComponent implements OnInit {
   ngOnInit(): void {
     if (this.isEdit) {
       this.verifyAddress();
-      this.modalTitle = 'Edit address';
+      this.modalTitle = '编辑地址';
     } else {
-      this.modalTitle = 'Add new address';
+      this.modalTitle = '增加新地址';
     }
     this.buildForm();
   }

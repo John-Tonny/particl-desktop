@@ -105,12 +105,12 @@
       <div fxFlex="1 1 calc(100% - 260px)" fxLayout="column">
         <!-- To/from (detail) -->
         <div class="tx-detail-item" fxFlex>
-          <span fxFlex="0 0 80px">To/from:</span>
+          <span fxFlex="0 0 80px">向/从:</span>
           <input disabled fxFlex="1 1 calc(100% - 80px)" value="{{ tx.getAddress() }}" class="to-from-address input">
         </div>
         <!-- TX ID (detail) -->
         <div class="tx-detail-item" fxFlex>
-          <span fxFlex="0 0 80px">TXID:</span>
+          <span fxFlex="0 0 80px">交易哈希:</span>
           <a fxFlex="1 1 calc(100% - 80px)" class="tx-detail-link"
               href="http://18.221.230.113:3001/tx/{{tx.txid}}"
               target="_blank" matTooltip="在浏览器中查看">
@@ -121,13 +121,13 @@
       <div fxFlex="0 0 260px" fxLayout="column">
         <!-- TX fee (detail) -->
         <div class="tx-detail-item text-right" fxFlex>
-          <span>Fee:</span>
-          <span class="mat-right">{{tx.fee ? tx.fee : 0}} PART</span>
+          <span>手续费:</span>
+          <span class="mat-right">{{tx.fee ? tx.fee : 0}} VPC</span>
         </div>
         <!-- Net amount (detail) -->
         <div class="tx-detail-item text-right" fxFlex>
-          <span>Net amount:</span>
-          <span class="mat-right">{{ tx.getNetAmount()}} PART</span>
+          <span>金额:</span>
+          <span class="mat-right">{{ tx.getNetAmount()}} VPC</span>
         </div>
       </div>
 

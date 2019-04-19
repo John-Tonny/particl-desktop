@@ -56,7 +56,7 @@ export class DetailAddressComponent implements OnInit, OnChanges {
   }
 
   copyToClipBoard(): void {
-    this.snackbar.open('Address copied to clipboard', '');
+    this.snackbar.open('地址复制到剪贴板', '');
   }
 
   rpcCallAndNotify(call: string, callParams: any, msg: string): void {

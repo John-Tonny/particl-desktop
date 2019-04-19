@@ -203,7 +203,7 @@ export class AddressTableComponent implements OnInit, OnChanges {
   }
 
   copyToClipBoard(): void {
-    this.flashNotification.open('Address copied to clipboard.', '');
+    this.flashNotification.open('地址复制到剪贴板.', '');
   }
 
   openSignatureModal(address: string): void {
