@@ -1,12 +1,12 @@
 <div class="cart-info" routerLinkActive="active" [routerLink]="'/market/buy'"
-     matTooltip="View cart" matTooltipPosition="before">
+     matTooltip="查看购物车" matTooltipPosition="before">
   <mat-icon fontSet="partIcon" fontIcon="part-cart"></mat-icon>
   <strong class="tag">{{ cart?.countOfItems }}</strong>
   <!-- cart total without shipping price -->
-  <span *ngIf="cart?.countOfItems > 0 && !listCache?.selectedCountry" class="amount">({{cart?.subTotal.getAmountAsString()}} PART)</span>
+  <span *ngIf="cart?.countOfItems > 0 && !listCache?.selectedCountry" class="amount">({{cart?.subTotal.getAmountAsString()}} VPC)</span>
 
   <!-- cart total with shipping price -->
   <span *ngIf="cart?.countOfItems > 0 && listCache?.selectedCountry" class="amount">({{
       cart?.getSubTotalWithShippingTotal(listCache?.selectedCountry?.iso)?.getAmount()
-    }} PART)</span>
+    }} VPC)</span>
 </div>

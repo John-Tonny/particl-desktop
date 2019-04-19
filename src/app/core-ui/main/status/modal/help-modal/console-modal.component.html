@@ -5,10 +5,10 @@
 
   <div mat-dialog-container>
     <mat-tab-group (selectChange)="selectTab($event.index)">
-      <mat-tab label="Core console">
+      <mat-tab label="主控制台">
         
       </mat-tab>
-      <mat-tab label="Market console">
+      <mat-tab label="市场控制台">
         
       </mat-tab>
     </mat-tab-group>
@@ -16,17 +16,17 @@
   <div #debug class="console-modal-form" (scroll)="onScroll()">
     <div class="intro-text">
       <p class="console-info" *ngIf="activeTab !== 'market'">
-        Welcome to the <strong>Particl Core RPC</strong> console (for interacting with wallet).<br>
+        欢迎来到<strong>维公链的主RPC的</strong>控制台(用于与钱包的交互).<br>
         <!--Use up and down arrows to navigate history, and Ctrl-L to clear screen.-->
-        Type <code>help</code> for an overview of available commands.
+        输入 <code>‘help' ，</code>查看可用命令。
       </p>
       <p class="console-info" *ngIf="activeTab === 'market'">
-        Welcome to the <strong>Particl Marketplace</strong> console.<br>
+        欢迎来到 <strong>维公链的市场RPC的</strong>控制台.<br>
         <!--Use up and down arrows to navigate history, and Ctrl-L to clear screen.-->
-        Type <code>help</code> for an overview of available commands.
+        输入 <code>’help‘ ，</code>查看可用命令。
       </p>
       <p class="warn-text">
-        <strong>WARNING:</strong> Scammers have been active, telling users to type commands here, stealing their wallet contents. Do not use this console without fully understanding the ramification of a command.
+        <strong>警告:</strong>在完全理解命令之前，请不要使用此控制台。骗子总是要求您在这里输入命令，来窃取您钱包的东西。
       </p>
     </div>
 
@@ -43,7 +43,7 @@
 
   <div class="command-actions" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
     <mat-form-field fxFlex="1 1 100%" floatPlaceholder="never">
-      <input matInput [(ngModel)]="command" placeholder="Enter 'help' for an overview of available commands" [appFocusTimeout]="true">
+      <input matInput [(ngModel)]="command" placeholder="输入 'help' ，查看可用命令" [appFocusTimeout]="true">
     </mat-form-field>
     <button mat-raised-button color="primary" [disabled]="!command || !waitingForRPC" (click)="rpcCall()" fxFlex>
       <mat-icon fontSet="partIcon" fontIcon="part-next-single"></mat-icon>

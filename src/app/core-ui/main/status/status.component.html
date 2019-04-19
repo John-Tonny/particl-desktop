@@ -1,6 +1,6 @@
 <div class="status-icons">
 
-  <span class="status icon" matTooltip="Peers: {{ peerListCount }}">
+  <span class="status icon" matTooltip="连接数: {{ peerListCount }}">
     <img src="assets/icons/SVG/network/peers-{{ getIconNumber() }}.svg"/>
   </span>
 
@@ -14,7 +14,7 @@
 
   <span
     class="staking icon"
-    matTooltip="Cold staking {{ getColdStakingStatus() }}"
+    matTooltip="离线收益 {{ getColdStakingStatus() }}"
     [ngClass]="getColdStakingStatus()"
     container="body">
       <mat-icon fontSet="partIcon" fontIcon="part-snowflake"></mat-icon>
@@ -22,7 +22,7 @@
   
   <span
     class="console icon"
-    matTooltip="Debug Console"
+    matTooltip="调试控制台"
     container="body"
     (click)="openConsoleWindow()">
       <mat-icon class="icon" fontSet="partIcon" fontIcon="part-console-window"></mat-icon>
