@@ -51,7 +51,7 @@
       <div class="subtitle">查询 &amp; 排序</div>
       <mat-card class="filter-card">
         <mat-form-field class="icon-input filter-input" floatPlaceholder="never">
-          <input matInput type="text" class="header-input" placeholder="查找商品" [(ngModel)]="filters.search"
+          <input matInput type="text" class="header-input" placeholder="查询商品" [(ngModel)]="filters.search"
                  (keyup)="clearAndLoadPage()" (keyup.enter)="clearAndLoadPage()" (keyup.escape)="filters.search = ''; clearAndLoadPage()">
           <mat-icon *ngIf="filters.search" matTooltip="Clear" fontSet="partIcon" fontIcon="part-clear-all"
                     (click)="filters.search=''; clearAndLoadPage()"></mat-icon>

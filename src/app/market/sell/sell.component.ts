@@ -43,14 +43,14 @@ export class SellComponent implements OnInit, OnDestroy {
   // ];
 
   listing_sortings: Array<any> = [
-    { title: 'By title', value: 'TITLE' },
-    { title: 'By state', value: 'STATE' }
+    { title: '按商品标题', value: 'TITLE' },
+    { title: '按公布状态', value: 'STATE' }
   ];
 
   listing_filtering: Array<any> = [
-    { title: 'All listings',  value: '' },
-    { title: 'Published',     value: true },
-    { title: 'Unpublished',   value: false }
+    { title: '所有',  value: '' },
+    { title: '已公布',     value: true },
+    { title: '未公布',   value: false }
   ];
 
   templateSearchSubcription: any;

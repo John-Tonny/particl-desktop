@@ -258,7 +258,7 @@ export function dataURItoBlob(dataURI: string) {
 export const Messages = {
   'BIDDING': {
     'buy': {
-      'action_button': 'Waiting for Seller',
+      'action_button': '等待卖家',
       'tooltip': '',
       'action_disabled': true,
       'action_icon': 'part-date',
@@ -266,8 +266,8 @@ export const Messages = {
       'status_info': '等待卖家确认或拒绝您的订单'
     },
     'sell': {
-      'action_button': 'Accept bid',
-      'tooltip': 'Approve this order and sell to this Buyer',
+      'action_button': '接受订单',
+      'tooltip': '接收此订单并将商品销售给该买家',
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': true,
@@ -277,7 +277,7 @@ export const Messages = {
   },
   'REJECTED': {
     'buy': {
-      'action_button': 'Order rejected',
+      'action_button': '订单被拒绝',
       'tooltip': '',
       'action_disabled': true,
       'action_icon': 'part-error',
@@ -285,7 +285,7 @@ export const Messages = {
       'status_info': '卖家已拒绝，此订单取消'
     },
     'sell': {
-      'action_button': 'Order rejected',
+      'action_button': '拒绝订单',
       'tooltip': '',
       'action_icon': 'part-error',
       'action_disabled': true,
@@ -296,64 +296,64 @@ export const Messages = {
   },
   'AWAITING_ESCROW': {
     'buy': {
-      'action_button': 'Make payment',
-      'tooltip': 'Pay for your order and escrow',
+      'action_button': '支付',
+      'tooltip': '支付您的订单和资金托管',
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': false,
-      'status_info': '卖方已接受您的订单，请继续付款(锁定资金到第三方托管中)'
+      'status_info': '卖方已接受您的订单，请继续付款和资金托管'
     },
     'sell': {
-      'action_button': 'Waiting for Buyer',
-      'tooltip': 'Waiting for Buyer\'s Payment',
+      'action_button': '等待买家',
+      'tooltip': '等待买家付款',
       'action_icon': 'part-date',
       'action_disabled': true,
       'allow_reject_order': false,
-      'status_info': '等待买家付款，锁定资金到第三方托管中'
+      'status_info': '等待买家付款和资金托管'
     },
     'status' : 'awaiting'
   },
   'ESCROW_LOCKED': {
     'buy': {
-      'action_button': 'Waiting for shipping',
+      'action_button': '等待交付',
       'tooltip': '',
       'action_icon': 'part-date',
       'action_disabled': true,
       'allow_reject_order': false,
-      'status_info': '资金已锁定在第三方托管中，等待卖家发货'
+      'status_info': '资金已托管，等待卖家交付'
     },
     'sell': {
-      'action_button': 'Mark as shipped',
-      'tooltip': 'Confirm that the order has been shipped to Buyer',
+      'action_button': '交付给买家',
+      'tooltip': '确认订单已发送给买家',
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': false,
-      'status_info': `买方的资金已锁定在第三方托管中，请您准备发货，发货后，将订单标记为已发货，并等待其交付`
+      'status_info': `买方的资金已托管，请您准备发货，发货后，将订单标记为已交付，并等待买家确认`
     },
     'status' : 'escrow'
   },
   'SHIPPING': {
     'buy': {
-      'action_button': 'Mark as delivered',
-      'tooltip': 'Confirm that you have received the order',
+      'action_button': '等待收货',
+      'tooltip': '买家确认收到商品',
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': false,
-      'status_info': '卖家已发货，当收到时，请您将标记为已交付，第三方托管资金将返回到您的账号中'
+      'status_info': '卖家已发货，当收到时，请您将标记为已交付，托管资金将返回到您的账号中'
     },
     'sell': {
-      'action_button': 'Waiting for delivery',
-      'tooltip': 'Awaiting confirmation of successfull delivery by Buyer',
+      'action_button': '等待买家收货',
+      'tooltip': '等待买方确认交货成功',
       'action_icon': 'part-date',
       'action_disabled': true,
       'allow_reject_order': false,
-      'status_info': '卖家已发货，等待买方确认收到货'
+      'status_info': '卖家已交付，等待买方确认'
     },
     'status' : 'shipping'
   },
   'COMPLETE': {
     'buy': {
-      'action_button': 'Order complete',
+      'action_button': '购物完成',
       'tooltip': '',
       'action_icon': 'part-check',
       'action_disabled': true,
@@ -361,12 +361,12 @@ export const Messages = {
       'status_info': '购物完成！'
     },
     'sell': {
-      'action_button': 'Order Complete',
+      'action_button': '订单完成',
       'tooltip': '',
       'action_icon': 'part-check',
       'action_disabled': true,
       'allow_reject_order': false,   
-      'status_info': '买家确认收到货，订单完成！'
+      'status_info': '买家确认已收到，订单完成！'
     },
     'status' : 'complete'
   }
