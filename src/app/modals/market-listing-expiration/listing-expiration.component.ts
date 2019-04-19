@@ -24,9 +24,9 @@ export class ListingExpirationComponent {
   expiration: number = 0;
 
   expiredList: Array<ListingExpiryIface> = [
-    { title: 'Select expiry time', value: 0, estimateFee: new Amount(0) },
-    { title: '1 day', value: 1, estimateFee: new Amount(0) },
-    { title: '2 days', value: 2, estimateFee: new Amount(0) },
+    { title: '选择公布期限', value: 0, estimateFee: new Amount(0) },
+    { title: '1 天', value: 1, estimateFee: new Amount(0) },
+    { title: '2 天', value: 2, estimateFee: new Amount(0) },
     // @TODO uncomment the commented code once smsg issue goes fixed.
     // { title: '4 days', value: 4, estimateFee: new Amount(0) },
     // { title: '1 week', value: 7, estimateFee: new Amount(0) },

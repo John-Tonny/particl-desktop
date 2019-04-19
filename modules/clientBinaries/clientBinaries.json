@@ -46,10 +46,10 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-core-0.18.0.4.tar.gz",
+              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.8/particl-core-0.18.0.8.tar.gz",
               "type": "tar",
-              "sha256": "917e3623cc143b595c0df8181ff5d0ff92cf0424e55ea7859e67fef2efede2fe",
-              "bin": "particl-core-0.18.0.4/bin/particld"
+              "sha256": "b8a6811d3dcb1284c4a6c6db48eb8ce197f1a37c42fb9f1f581f7e5909e30a25",
+              "bin": "particl-core-0.18.0.8/bin/particld"
             },
             "bin": "particld",
             "commands": {

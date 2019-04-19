@@ -17,8 +17,8 @@ export class Status {
             status_info: 'Inactive, unpublished listing template – used to tweak your listing before publishing'
                 + '(or after you take down your active listings later)',
             action_icon: 'part-check',
-            action_button: 'Publish',
-            action_tooltip: 'Activate listing and put it on sale',
+            action_button: '公布',
+            action_tooltip: '向市场公布商品并销售',
             action_color: 'primary',
             action_disabled: false
         }, {
@@ -26,8 +26,8 @@ export class Status {
             class: 'pending',
             status_info: 'Awaiting publication!',
             action_icon: 'part-check',
-            action_button: 'Awaiting publication',
-            action_tooltip: 'Waiting for listing to become active on the network!',
+            action_button: '等待公布',
+            action_tooltip: '等待向市场公布商品!',
             action_color: 'primary',
             action_disabled: true
         },
@@ -36,8 +36,8 @@ export class Status {
             class: 'published',
             status_info: 'Active, published listing template',
             action_icon: 'part-check',
-            action_button: 'Published',
-            action_tooltip: 'Listing is active on the network!',
+            action_button: '已公布',
+            action_tooltip: '已在市场上公布!',
             action_color: 'primary',
             action_disabled: true
         }];

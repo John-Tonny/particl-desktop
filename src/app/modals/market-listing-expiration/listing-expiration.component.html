@@ -1,4 +1,4 @@
-<div mat-dialog-title>Choose Listing expiration</div>
+<div mat-dialog-title>选择商品公布期限</div>
 <button class="small-close-button pull-right" (click)="dialogClose()">
   <mat-icon fontSet="partIcon" fontIcon="part-circle-remove"></mat-icon>
 </button>
@@ -6,7 +6,7 @@
 <div mat-dialog-content class="dialog-content">
 
   <p class="lead">
-    For how long would you like to publish your Listing?
+    您希望将此商品公布多长时间?
   </p>
 
   <div class="row" fxLayout fxLayoutAlign="center center">
@@ -18,26 +18,25 @@
       </mat-select>
     </mat-form-field>
     <div class="est-fee" fxFlex="50%">
-      <span *ngIf="expiration && !txError">Approximate listing fee:
+      <span *ngIf="expiration && !txError">公布费用约为:
         <br>
       </span>
-      <span *ngIf="expiration && !txError">{{ txFee }} PART</span>
+      <span *ngIf="expiration && !txError">{{ txFee }} VPC</span>
       <span class="small" *ngIf="expiration && txError"> {{ txError }}</span>
     </div>
   </div>
   <p class="widget-help">
-    Each Listing is published to Market for a limited time. This helps fight spam and outdated Listings. Fees are proportional to duration.
+    每次向市场上公布商品都有有效期限。这有助于防止垃圾邮件和过时的商品。公布费用与有效期限成比例。
   </p>
-
 </div><!-- .dialog-content -->
 
 <mat-dialog-actions fxLayoutAlign="space-between center">
   <button mat-button mat-dialog-close (click)="dialogClose()">
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
   <button [disabled]="!expiration || (txError.length > 0 )" mat-raised-button color="primary" mat-dialog-close (click)="confirm()">
     <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-    Confirm &amp; Publish
+    确认 &amp; 公布
   </button>
 </mat-dialog-actions>
