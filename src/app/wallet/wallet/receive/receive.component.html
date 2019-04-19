@@ -28,7 +28,7 @@
     </div>
     <div class="buttons" fxLayout fxLayoutAlign="space-between center">
       <div class="left" fxFlex="30%">
-        <button mat-button color="primary" matTooltip="Generate fresh address" (click)="generateAddress()">
+        <button mat-button color="primary" matTooltip="生成新的地址" (click)="generateAddress()">
           <mat-icon fontSet="partIcon" fontIcon="part-plus"></mat-icon>
           新 {{ getAddressType() }} 地址
         </button>
@@ -71,7 +71,7 @@
       <mat-card class="filter-card">
         <mat-form-field class="icon-input search-address">
           <input matInput type="text" [(ngModel)]="query" [ngModelOptions]="{standalone: true}"
-                placeholder="查找的地址" (keyup.escape)="query = ''">
+                placeholder="查询的地址" (keyup.escape)="query = ''">
           <mat-icon *ngIf="query" (click)="query=''" matTooltip="清除" fontSet="partIcon"
                     fontIcon="part-clear-all"></mat-icon>
           <mat-icon *ngIf="!query" fontSet="partIcon" fontIcon="part-search" matTooltip="查询地址" matTooltipPosition="before"></mat-icon>

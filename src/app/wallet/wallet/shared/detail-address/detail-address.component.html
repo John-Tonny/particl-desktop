@@ -22,13 +22,13 @@
     <div class="address-label">
       <mat-form-field class="icon-input label-input full-width">
         <input matInput class="label" type="text" value="{{ selected?.label }}" [ngClass]="{'no-label': selected?.label === '(No label)'}" [disabled]="isEditableMode" [(ngModel)]="label" (keyup.enter)="updateLabel(selected?.address)">
-        <mat-icon matTooltip="Edit label" *ngIf="isEditableMode" fontSet="partIcon" fontIcon="part-pen-1" (click)="changeLabel()"></mat-icon>
-        <mat-icon matTooltip="Save label" *ngIf="!isEditableMode" fontSet="partIcon" fontIcon="part-circle-check" (click)="updateLabel(selected?.address)"></mat-icon>
+        <mat-icon matTooltip="编辑" *ngIf="isEditableMode" fontSet="partIcon" fontIcon="part-pen-1" (click)="changeLabel()"></mat-icon>
+        <mat-icon matTooltip="保存" *ngIf="!isEditableMode" fontSet="partIcon" fontIcon="part-circle-check" (click)="updateLabel(selected?.address)"></mat-icon>
       </mat-form-field>
     </div><!-- .address-label -->
 
     <!-- Address string -->
-    <div class="address address-string" fxLayoutWrap fxLayoutAlign="start center" matTooltip="Click to copy" matTooltipPosition="after" ngxClipboard [cbContent]="selected?.address" (click)="copyToClipBoard()">
+    <div class="address address-string" fxLayoutWrap fxLayoutAlign="start center" matTooltip="点击复制" matTooltipPosition="after" ngxClipboard [cbContent]="selected?.address" (click)="copyToClipBoard()">
       <div *ngFor="let word of selected?.readable" class="address-word" fxFlex="11.111">
         {{ word }}
       </div>
@@ -36,19 +36,19 @@
 
     <!-- if PUBLIC + MY address: -->
     <p class="widget-help" *ngIf="type === 'public' && selected?.owned === 'true' ">
-      This is your public address &ndash; its balance and transaction history is publicly visible on blockchain. If you would like to increase your privacy, use Private address instead.
+      这是您的公开地址，它的余额和交易历史在区块链上是公开可见的。如果您想保护您的隐私，请使用私有地址。
     </p>
     <!-- if PRIVATE + MY address: -->
     <p class="widget-help" *ngIf="type === 'private' && selected?.owned === 'true' ">
-      This is your private address &ndash; its balance and transaction history is hidden for public on blockchain. For auditable addresses, use Public addresses instead.
+      这是您的私有地址，它的余额和交易历史被隐藏在区块链上，是不可见的。对于需要审计的地址，请使用公开地址。
     </p>
     <!-- TODO: if PUBLIC + SAVED 3rd-PARTY (not mine) address: -->
     <p class="widget-help" *ngIf="type === 'public' && selected?.owned === 'false'">
-      3rd-party's Public address (not yours) &ndash; any payments made to this address will be publicly visible on the blockchain. For increased privacy, you should ask the recipient for their Private address instead.
+      任何支付到公开地址的金额和交易历史在区块链上都是公开可见的。为了增加您的隐私，您应该询问他们的私有地址。
     </p>
     <!-- TODO: if PRIVATE + SAVED 3rd-PARTY (not mine) address: -->
     <p class="widget-help" *ngIf="type === 'private' && selected?.owned === 'false'">
-      3rd-party's Private address (not yours) &ndash; any payments made to this address will be hidden for public on the blockchain.
+      任何支付到私有地址的金额和交易历史都被隐藏在区块链上，是不可见的。 
     </p>
 
   </div><!-- .main -->
