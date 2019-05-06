@@ -1,24 +1,24 @@
-<div mat-dialog-title class="title">Remove market listing/order</div>
+<div mat-dialog-title class="title">删除列表/订单</div>
 <mat-dialog-content class="modal-content">
   <p>
-    Are you sure you want to remove your listing/order?
+    确定要删除吗?
   </p>
   <table class="info">
-    <tr><th>Listing name</th><td><strong>{{templateToRemove?.title}}</strong></td></tr>
-    <tr><th>Category</th><td>{{templateToRemove?.category?.name}}</td></tr>
-    <tr><th>Price</th><td>{{templateToRemove?.basePrice?.getAmount()}}</td></tr>
+    <tr><th>名称</th><td><strong>{{templateToRemove?.title}}</strong></td></tr>
+    <tr><th>类别</th><td>{{templateToRemove?.category?.name}}</td></tr>
+    <tr><th>价格</th><td>{{templateToRemove?.basePrice?.getAmount()}}</td></tr>
   </table>
   <p class="widget-help">
-    This will completely remove the listing, including all associated data (like photos, descriptions etc.) and nobody will be able to purchase it.
+    这将被完全删除，包括所有相关数据(如照片、描述等)，任何人都将不能够购买它。
   </p>
 </mat-dialog-content>
 <mat-dialog-actions fxLayoutAlign="end center">
   <button type="button" mat-button mat-dialog-close>
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
   <button mat-raised-button color="warn" (click)="remove()">
     <mat-icon fontSet="partIcon" fontIcon="part-circle-minus"></mat-icon>
-    Yes, remove listing
+    确定
   </button>
 </mat-dialog-actions>

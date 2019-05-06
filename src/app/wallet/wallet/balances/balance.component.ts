@@ -39,15 +39,15 @@ export class BalanceComponent implements OnInit, OnDestroy {
 
     switch (this.type) {
       case 'total_balance':
-        return 'TOTAL BALANCE';
+        return '总资产';
       case 'balance':
-        return 'PUBLIC BALANCE';
+        return '公开资产';
       case 'anon_balance':
-        return 'PRIVATE BALANCE';
+        return '私有资产';
       case 'blind_balance':
-        return 'BLIND BALANCE';
+        return '混肴资产';
       case 'staked_balance':
-        return 'STAKE';
+        return '资产收益';
     }
 
     return this.type;

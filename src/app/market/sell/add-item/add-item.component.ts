@@ -582,7 +582,7 @@ export class AddItemComponent implements OnInit, OnDestroy {
     const dialog = this.dialog.open(ProcessingModalComponent, {
       disableClose: true,
       data: {
-        message: 'Hang on, we are busy processing your listing'
+        message: '请稍候，正在处理...'
       }
     });
   }

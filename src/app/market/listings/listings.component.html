@@ -4,7 +4,7 @@
 
     <!-- Search-->
     <div class="icon-input search-listings" fxFlex="1 1 25%">
-      <input type="text" class="header-input" id="searchbar" placeholder="Search items for sale.."
+      <input type="text" class="header-input" id="searchbar" placeholder="查询"
              [(ngModel)]="filters.search" (keyup)="clearAndLoadPage()" (keyup.enter)="clearAndLoadPage()"
              (keyup.escape)="filters.search = ''; clearAndLoadPage()">
       <mat-icon fontSet="partIcon" fontIcon="part-search"></mat-icon>
@@ -12,7 +12,7 @@
 
     <!-- Filtering -->
     <div class="filter-by seller-country" fxFlex="1 1 25%">
-      <mat-icon class="icon" fontSet="partIcon" fontIcon="part-filter" fxFlex="0 0 16px" matTooltip="Filter by seller country & categories" matTooltipPosition="below"></mat-icon>
+      <mat-icon class="icon" fontSet="partIcon" fontIcon="part-filter" fxFlex="0 0 16px" matTooltip="筛选按国家" matTooltipPosition="below"></mat-icon>
       <mat-select-search
         [options]="countryList?.countries"
         [defaultOption]="'All seller countries'"
@@ -23,7 +23,7 @@
     </div>
 
     <div class="filter-by category" fxFlex="1 1 25%">
-      <mat-icon class="icon" fontSet="partIcon" fontIcon="part-label" fxFlex="0 0 16px" matTooltip="Filter by categories" matTooltipPosition="below"></mat-icon>
+      <mat-icon class="icon" fontSet="partIcon" fontIcon="part-label" fxFlex="0 0 16px" matTooltip="筛选按类别" matTooltipPosition="below"></mat-icon>
       <mat-otpgroup-select-search
         [options]="_rootCategoryList?.subCategoryList"
         [defaultOption]="'All categories'"
@@ -32,7 +32,7 @@
     </div>
 
     <div class="filter-by buyer-country" fxFlex="1 1 25%">
-      <mat-icon class="icon" fontSet="partIcon" fontIcon="part-globe" fxFlex="0 0 16px" matTooltip="Select your country to calculate exact shipping & escrow prices" matTooltipPosition="below"></mat-icon>
+      <mat-icon class="icon" fontSet="partIcon" fontIcon="part-globe" fxFlex="0 0 16px" matTooltip="选择您的国家以计算邮费和托管费" matTooltipPosition="below"></mat-icon>
       <mat-select-search
         fxFlex="1 1 100%"
         [options]="countryList?.countries"
@@ -64,7 +64,7 @@
 
   <!-- div class="sidebar" fxFlex="25%">
 
-    <div class="subtitle first">Categories</div>
+    <div class="subtitle first">类别</div>
 
     <mat-expansion-panel *ngFor="let category of _rootCategoryList.subCategoryList" class="category-filter no-padding">
       <mat-expansion-panel-header class="category-filter-header">
@@ -75,7 +75,7 @@
       </mat-nav-list>
     </mat-expansion-panel>
 
-    <div class="subtitle">Filter by price range</div>
+    <div class="subtitle">筛选按价格</div>
     <mat-card>
       price filter
     </mat-card>
@@ -104,17 +104,17 @@
           <img src="./assets/particl-logo-symbol.svg">
         </div>
         <p class="title">
-          Hang on, we're loading the listings
+          请稍候，我们正在处理...
         </p>
         <p class="widget-help">
-          This might take a while
+          这可能需要一些时间
         </p>
       </div>
     </div><!-- .loading-container -->
 
     <div class="no-results" [hidden]="pages[0]?.listings.length !== 0">
       <p>
-        Sorry, no matching listings found
+        很抱歉，未找到！
       </p>
     </div>
 
@@ -130,7 +130,7 @@
 
     <div class="no-results" [hidden]="!noMoreListings">
       <p>
-        That's all folks!
+        这是所有的！
       </p>
     </div>
   </div><!-- .content -->
