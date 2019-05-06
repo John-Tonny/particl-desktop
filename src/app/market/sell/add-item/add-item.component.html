@@ -83,7 +83,7 @@
 
       <mat-otpgroup-select-search
         [options]="_rootCategoryList?.subCategoryList"
-        [placeHolder]="'Select category'"
+        [placeHolder]="'选择分类'"
         [isRequired]="'true'"
         [defaultSelectedValue]="selectedCategory"
         (change)="onCategoryChange($event)">
@@ -93,7 +93,7 @@
         class="full-width"
         [options]="countryList.getList()"
         [showValueOf]="'name'"
-        [placeHolder]="'Shipping from (your country)'"
+        [placeHolder]="'发货地(您的国家)'"
         [isRequired]="'true'"
         [defaultSelectedValue]="selectedCountry"
         [isLexigraphicalOrder]="true"
@@ -104,7 +104,7 @@
       <mat-form-field class="full-width">
         <mat-icon matPrefix class="icon" fontSet="partIcon" fontIcon="part-cryptocurrency-particl"></mat-icon>
         <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="商品价格 *" formControlName="basePrice" type="text">
-        <span matSuffix>PART</span>
+        <span matSuffix>VP</span>
       </mat-form-field>
 
       <div class="row" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="25px">
@@ -113,16 +113,16 @@
         </mat-form-field-->
         <mat-form-field fxFlex="50%" class="auto-width">
           <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="国内邮费 *" formControlName="domesticShippingPrice" type="text">
-          <span matSuffix>VPC</span>
+          <span matSuffix>VP</span>
         </mat-form-field>
         <mat-form-field fxFlex="50%" class="auto-width">
           <input matInput min="0" (paste)="numericValidator($event)" (keypress)="numericValidator($event)" placeholder="国际邮费 *" formControlName="internationalShippingPrice"
                  type="text">
-          <span matSuffix>VPC</span>
+          <span matSuffix>VP</span>
         </mat-form-field>
       </div>
       <p class="widget-help">
-	请注意：附上数量单位(例如1件、1对、1公斤或100毫升)。
+	注意：请附上商品的数量单位(例如1件、1对、1公斤或100毫升)。
       </p>
     </mat-card>
   </div>
@@ -139,9 +139,9 @@
       </button>
     </div>
     <div class="right">
-      <button [disabled]="!itemFormGroup?.valid" mat-button matTooltip="Save template changes" (click)="saveTemplate()">
+      <button [disabled]="!itemFormGroup?.valid" mat-button matTooltip="保存您的更改" (click)="saveTemplate()">
         <mat-icon fontSet="partIcon" fontIcon="part-date"></mat-icon>
-        {{ isExistingTemplate() ? 'Update' : 'Save'}}
+        {{ isExistingTemplate() ? '更新' : '保存'}}
       </button>
 
       <button [disabled]="!itemFormGroup?.valid"
@@ -149,7 +149,7 @@
               (click)="saveAndPublish()"
               *ngIf="!['awaiting', 'published'].includes(preloadedTemplate?.status)">
         <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-        {{ isExistingTemplate() ? 'Update & Publish' : 'Save & Publish'}}
+        {{ isExistingTemplate() ? '更新 & 公布' : '保存 & 公布'}}
       </button>
     </div>
   </div>
