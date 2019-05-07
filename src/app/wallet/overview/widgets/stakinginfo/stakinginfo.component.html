@@ -1,20 +1,20 @@
 <div class="staking-info section">
   <header>
-    <div class="subtitle">Staking stats</div>
+    <div class="subtitle">收益状态</div>
   </header>
 
   <mat-card>
     <table class="staking-overview" cellspacing="0">
       <tr>
-        <th>Next reward</th>
+        <th>下一次收益</th>
         <td>~{{ expectedtime.getShortReadableDuration() }}</td>
       </tr>
       <tr>
-        <th>Your Stake weight</th>
+        <th>您的收益权重</th>
         <td>{{ ownPercentageOfActiveStakingSupply.getIntegerPart() }}.<small>{{ ownPercentageOfActiveStakingSupply.getFractionalPart() }}</small>&nbsp;%</td>
       </tr>
       <tr>
-        <th>Stake percentage</th>
+        <th>离线收益比例</th>
         <td>{{ curStakeReward.getIntegerPart() }}&nbsp;%</td>
       </tr>
     </table>

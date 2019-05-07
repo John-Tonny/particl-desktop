@@ -141,7 +141,7 @@ export class ZapColdstakingComponent {
 
       this.dialogRef.close();
       this.flashNotification.open(
-        `Succesfully zapped ${this.utxos.amount} PART to cold staking`, 'warn');
+        `成功快速激活 ${this.utxos.amount} VP 到离线收益`, 'warn');
     });
 
   }

@@ -27,13 +27,13 @@
     <div class="subtitle">筛选</div>
     <mat-card class="filter-card">
       <div class="checkbox highlight">
-        <mat-checkbox [(ngModel)]="additionalFilter.requiredAttention" (change)="loadOrders()" color="primary">订单</mat-checkbox>
+        <mat-checkbox [(ngModel)]="additionalFilter.requiredAttention" (change)="loadOrders()" color="primary">待处理订单</mat-checkbox>
       </div>
       <div class="checkbox">
-        <mat-checkbox [(ngModel)]="additionalFilter.hideCompleted" (change)="loadOrders()" color="primary">隐藏已完成订单</mat-checkbox>
+        <mat-checkbox [(ngModel)]="additionalFilter.hideCompleted" (change)="loadOrders()" color="primary">已完成订单</mat-checkbox>
       </div>
       <!-- <div class="checkbox">
-        <mat-checkbox matTooltip="隐藏最近30天没有更新的订单">隐藏过去订单</mat-checkbox>
+        <mat-checkbox matTooltip="最近30天没有更新的订单">隐藏过去订单</mat-checkbox>
       </div> -->
     </mat-card>
   </div><!-- .filter-by-type -->
@@ -63,7 +63,7 @@
 <div class="orders section with-filter">
 
   <div class="no-results" *ngIf="orders?.length === 0">
-    您还没有任何订单
+    您尚无任何订单
   </div>
 
   <app-order-item *ngFor="let order of orders" [order]="order"></app-order-item>

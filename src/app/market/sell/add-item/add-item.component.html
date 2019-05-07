@@ -65,7 +65,7 @@
     <mat-card class="details" fxFlex="50" [formGroup]="itemFormGroup">
       <div class="title">商品祥情 *</div>
       <mat-form-field class="full-width">
-        <input matInput placeholder="商品标题 (产品名称) *" #title formControlName="title">
+        <input matInput placeholder="商品名称 *" #title formControlName="title">
         <mat-hint align="end">{{ title.value?.length || 0 }}/50</mat-hint>
       </mat-form-field>
 

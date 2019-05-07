@@ -101,8 +101,8 @@ export class ColdstakeComponent {
   setColdStakingAddress(): void {
     if (this.prevColdStakeAddress === this.coldStakeAddress) {
       if (this.step === 2) {
-        this.finalMessage = 'Cold staking address is the same - no changes required';
-        this._flashNotificationService.open('Cold staking key has not changed', 'warn');
+        this.finalMessage = '离线收益的公钥是同样的 - 没有改变';
+        this._flashNotificationService.open('离线收益的公钥没有改变', 'warn');
       }
       return;
     }
@@ -111,14 +111,14 @@ export class ColdstakeComponent {
       .subscribe(
         success => {
           this.log.d(`setColdStakingAddress: set changeaddress: ${success.changeaddress.coldstakingaddress}`);
-          this._flashNotificationService.open('Cold staking successfully activated', 'info');
+          this._flashNotificationService.open('离线收益成功激活', 'info');
           this._rpcState.set('ui:coldstaking', true);
           this.failed = false;
           this.close();
         },
         error => {
           this.log.er('setColdStakingAddress: ', error);
-          this.finalMessage = 'Failed to activate cold staking: ' + error.message;
+          this.finalMessage = '离线收益激活失败: ' + error.message;
           this.failed = true;
         });
   }
@@ -128,13 +128,13 @@ export class ColdstakeComponent {
       .subscribe(
         success => {
           this.log.d(`resetColdStakeAddress: set changeaddress: ${success.changeaddress.coldstakingaddress}`);
-          this._flashNotificationService.open('Cold staking successfully deactivated', 'info');
+          this._flashNotificationService.open('离线收益成功注销', 'info');
           this.failed = false;
           this.close();
         },
         error => {
           this.log.er('resetColdStakeAddress: ', error);
-          this.finalMessage = 'Failed to deactivate cold staking.. ' + error.message;
+          this.finalMessage = '离线收益注销失败.. ' + error.message;
           this.failed = true;
         });
   }

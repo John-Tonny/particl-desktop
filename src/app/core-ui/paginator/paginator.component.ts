@@ -25,11 +25,11 @@ export class PaginatorComponent implements OnInit {
   @HostBinding('class.mat-paginator')
 
   public _intl: Object = {
-    itemsPerPageLabel: 'Items per page:',
-    nextPageLabel: 'Next page',
-    previousPageLabel: 'Previous page',
-    firstPageLable: 'Fist Page',
-    lastPageLable: 'Last Page'
+    itemsPerPageLabel: '每页数:',
+    nextPageLabel: '下一页',
+    previousPageLabel: '上一页',
+    firstPageLable: '第一页',
+    lastPageLable: '最后一页'
   };
 
   constructor() { }

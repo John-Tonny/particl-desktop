@@ -175,7 +175,7 @@ export class AddItemComponent implements OnInit, OnDestroy {
       }
     });
     if (failedImgs) {
-      this.snackbar.open('1 or more images failed: max image size is 2MB');
+      this.snackbar.open('图片异常: 最大图片大小是2MB');
     }
     this.fileInput.value = '';
   }
@@ -192,10 +192,10 @@ export class AddItemComponent implements OnInit, OnDestroy {
           this.images.splice(indexToRemove, 1);
         }
         this.canPublish = await this.templateHasValidSize().catch(err => {
-          this.snackbar.open('Failed to recalculate template size');
+          this.snackbar.open('无法重新计算信息大小');
           return this.canPublish;
         });
-        this.snackbar.open('Removed image successfully!');
+        this.snackbar.open('成功删除图片!');
       },
       error => this.snackbar.open(error)
     );
@@ -276,7 +276,7 @@ export class AddItemComponent implements OnInit, OnDestroy {
         this.images = template.imageCollection.images;
         this.preloadedTemplate = template;
         this.canPublish = await this.templateHasValidSize().catch(err => {
-          this.snackbar.open('Failed to recalculate template size');
+          this.snackbar.open('无法重新计算信息大小');
           return this.canPublish;
         });
       }
@@ -381,7 +381,7 @@ export class AddItemComponent implements OnInit, OnDestroy {
   }
 
   validate() {
-    return this.itemFormGroup.valid || this.snackbar.open('Invalid Listing');
+    return this.itemFormGroup.valid || this.snackbar.open('无效列表');
   }
 
   numericValidator(event: any) {
@@ -440,7 +440,7 @@ export class AddItemComponent implements OnInit, OnDestroy {
 
   public saveTemplate() {
     if (this.preloadedTemplate && this.preloadedTemplate.status === 'published') {
-      this.snackbar.open('You can not modify templates once they have been published!');
+      this.snackbar.open('一旦商品已公布，您将不能够再修改!');
       return;
     }
     this.openProcessingModal();
@@ -448,11 +448,11 @@ export class AddItemComponent implements OnInit, OnDestroy {
     this.upsert()
     .then(() => {
       this.dialog.closeAll();
-      this.snackbar.open('Succesfully updated template!')
+      this.snackbar.open('成功更新!')
     })
     .catch(err => {
       this.dialog.closeAll();
-      this.snackbar.open('Failed to save template!')
+      this.snackbar.open('更新失败!')
     });
   }
 
@@ -469,7 +469,7 @@ export class AddItemComponent implements OnInit, OnDestroy {
     await this.upsert().then(
       () => {
         if (!this.canPublish) {
-          throw new Error('Message upload size exceeded');
+          throw new Error('信息超出范围！');
         }
       }
     ).then(
@@ -561,7 +561,7 @@ export class AddItemComponent implements OnInit, OnDestroy {
           .subscribe(
             (listing) => {
               this.dialog.closeAll();
-              this.snackbar.open('Succesfully added Listing!');
+              this.snackbar.open('成功添加商品!');
               this.log.d('Sucecssfully added listing: ', listing);
               this.backToSell();
             },
@@ -582,7 +582,7 @@ export class AddItemComponent implements OnInit, OnDestroy {
     const dialog = this.dialog.open(ProcessingModalComponent, {
       disableClose: true,
       data: {
-        message: '请稍候，正在处理...'
+        message: '请稍候，我们正在处理...'
       }
     });
   }

@@ -92,7 +92,7 @@
             "download": {
               "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-win32.zip",
               "type": "zip",
-              "sha256": "641551cb02fe8c708552e140ec6962958a24c689bac36e784383e19c417ce224",
+              "sha256": "a6fe8ccc0a2a83b9cf5a355daeb47702826d179aa92be1d82cf9494e24c3abf6",
               "bin": "particl-0.18.0.4/bin/particld.exe"
             },
             "bin": "particld.exe",
@@ -112,7 +112,7 @@
             "download": {
               "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-win64.zip",
               "type": "zip",
-              "sha256": "4f43d10d45a64570420851c10cfe553a4da90f0e545ea628589e0960058dbc0e",
+              "sha256": "2f57e5d7124d8dec08f9f301e57e50fd5978128eae39df654dca6208ae286f96",
               "bin": "particl-0.18.0.4/bin/particld.exe"
             },
             "bin": "particld.exe",

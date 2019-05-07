@@ -15,18 +15,18 @@
 
   <!-- Step 1 -->
   <ng-template [ngIf]="step === 1">
-    <div mat-dialog-title class="title">Cold staking setup</div>
+    <div mat-dialog-title class="title">离线收益设置</div>
 
     <mat-dialog-content class="modal-content">
       <p>
-        To activate, generate cold staking public key on your staking node and enter it below
+        若要激活，请在您的离线收益节点上生成公钥，并在下面输入它
       </p>
       <p class="info">
-        Read more about <a href="https://particl.wiki/faq_part_coin_staking" target="_blank" matTooltip="Particl.wiki > Staking" tabindex="-1">(Cold) Staking</a> and check <a href="https://particl.wiki/tutorials#staking" target="_blank" matTooltip="Particl.wiki > Staking Tutorials" tabindex="-1">Cold staking tutorials</a> on Particl Wiki
+        阅读更多关于 <a href="https://particl.wiki/faq_part_coin_staking" target="_blank" matTooltip="Particl.wiki > Staking" tabindex="-1">(离线)收益</a> ，请在维公链的wiki上阅读 <a href="https://particl.wiki/tutorials#staking" target="_blank" matTooltip="Particl.wiki > Staking Tutorials" tabindex="-1">离线收益教程</a> 。
       </p>
 
       <mat-form-field class="cold-stake-address">
-        <input matInput [(ngModel)]="coldStakeAddress" placeholder="Enter the public key" #validation="ngModel" required />
+        <input matInput [(ngModel)]="coldStakeAddress" placeholder="输入公钥" #validation="ngModel" required />
       </mat-form-field>
 
     </mat-dialog-content>
@@ -34,7 +34,7 @@
     <mat-dialog-actions fxLayoutAlign="space-between center">
       <button type="button" mat-button mat-dialog-close>
         <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-        Cancel
+        取消
       </button>
       <!--button mat-raised-button color="warn" (click)="resetColdStakingAddress()"
               [disabled]="validation.errors && validation.errors.required">
@@ -44,7 +44,7 @@
       <button mat-raised-button color="primary" (click)="nextStep();"
               [disabled]="validation.errors && validation.errors.required">
         <mat-icon fontSet="partIcon" fontIcon="part-snowflake"></mat-icon>
-        Enable cold staking
+        激活离线收益
       </button>
     </mat-dialog-actions>
 

@@ -210,7 +210,7 @@
 
     <div class="tab-content comments" *ngIf="tabLabels[selectedTab] == 'comments'">
       <div class="no-results">
-        Comments coming soon™
+        评论（不久的将来）
       </div>
     </div>
   </div><!-- .product-details -->
@@ -227,7 +227,7 @@
     <div class="reporting" *ngIf="data?.listing?.isFlagged">
       <!-- Reported, not voted yet by user -->
       <div *ngIf="!data?.listing?.VoteDetails">
-        <span class="title"><strong>Item reported</strong> as inappropriate, please vote:</span>
+        <span class="title"><strong>商品被标记</strong>为差, 请投票：</span>
         <button mat-button class="small" color="primary" (click)="voteForListing(data?.listing?.keepItem)" matTooltip="Item is fine and should stay on Market">
           <mat-icon fontSet="partIcon" fontIcon="part-thumb-up"></mat-icon>
         </button>
@@ -239,11 +239,11 @@
       <div *ngIf="data?.listing?.VoteDetails" class="voted">
         <p *ngIf="data?.listing?.VoteDetails?.isReported">
           <mat-icon fontSet="partIcon" fontIcon="part-flag" class="voted-icon"></mat-icon>
-          感谢您将此商品标记为不合适。
+          感谢您将此商品标记为差。
         </p>
         <p *ngIf="!data?.listing?.VoteDetails?.isReported">
           <mat-icon fontSet="partIcon" fontIcon="part-check-in-a-box" class="voted-icon"></mat-icon>
-          谢谢您将此商品标记为合适。
+          感谢您将此商品标记为好。
         </p>
       </div>
     </div><!-- .reporting -->
@@ -257,7 +257,7 @@
     <!-- if mine, show message instead of "add to cart" button -->
     <button mat-button disabled *ngIf="data?.listing?.isMine">
       <mat-icon fontSet="partIcon" fontIcon="part-circle-info"></mat-icon>
-      这是您自己的商品
+      这是您自己销售的商品
     </button>
   </div>
 

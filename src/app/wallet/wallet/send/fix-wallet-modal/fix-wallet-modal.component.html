@@ -1,19 +1,19 @@
-<div mat-dialog-title>Fix wallet</div>
+<div mat-dialog-title>钱包修复</div>
 <button class="small-close-button pull-right" (click)="dialogClose()">
   <mat-icon fontSet="partIcon" fontIcon="part-circle-remove"></mat-icon>
 </button>
 <div mat-dialog-content class="dialog-content">
-  We've detected a potential issue with your wallet.dat <br />
-  Make a manual backup of your wallet.dat and then click "Fix".
+  我们发现您的钱包有潜在问题。<br>
+  请手工备份钱包数据，然后点击“修复”。
 </div>
 
 <mat-dialog-actions fxLayoutAlign="end center">
   <button mat-button mat-dialog-close (click)="dialogClose()">
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
   <button mat-raised-button color="primary" mat-dialog-close (click)="fix()">
     <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-    Fix
+    修复
   </button>
 </mat-dialog-actions>

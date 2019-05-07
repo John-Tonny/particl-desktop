@@ -19,13 +19,13 @@ export class OrdersComponent implements OnInit, OnDestroy {
   @Input() type: string;
 
   order_sortings: Array<any> = [
-    { title: 'By creation date', value: 'date-created'  },
-    { title: 'By update date',   value: 'date-update'   },
-    { title: 'By status',        value: 'status'        },
-    { title: 'By item name',     value: 'item-name'     },
-    { title: 'By category',      value: 'category'      },
-    { title: 'By quantity',      value: 'quantity'      },
-    { title: 'By price',         value: 'price'         }
+    { title: '按创建时间',    value: 'date-created'  },
+    { title: '按更新时间',    value: 'date-update'   },
+    { title: '按状态',       value: 'status'        },
+    { title: '按名称',       value: 'item-name'     },
+    { title: '按类别',       value: 'category'      },
+    { title: '按数量',       value: 'quantity'      },
+    { title: '按价格',       value: 'price'         }
   ];
 
   public orders: Bid[];

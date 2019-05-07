@@ -163,7 +163,7 @@
                                               class="amount">{{ availableBalance('blind') }}</span>
                 <mat-icon *ngIf="checkBalance('blind')" fontSet="partIcon" fontIcon="part-circle-question"
                           class="help-icon"
-                          matTooltip="即使所有余额转入混肴模式，混肴可用余额显示仍然很小，这是基于维公链的私密保护。"></mat-icon>
+                          matTooltip="即使所有资产转入混肴模式，混肴可用资产显示仍然很小，这是基于维公链的私密保护。"></mat-icon>
               </div>
             </mat-radio-button>
             <mat-radio-button *ngIf="testnet" class="balance" value="anon" color="primary" (change)="setInputOutput('anon', 'input')" [disabled]="send.input === 'anon'" fxFlex>
@@ -172,7 +172,7 @@
             </mat-radio-button>
           </mat-radio-group><!-- .from-balance-type -->
           <p class="widget-help">
-	    通过转换交易类型，可以使您的余额在公开和私有之间进行转换。
+	    通过转换交易类型，可以使您的资产在公开和私有之间进行转换。
           </p>
         </mat-card>
 
@@ -237,12 +237,12 @@
           </mat-form-field>
           <mat-checkbox name="send_all" [(ngModel)]="send.subtractFeeFromAmount" (click)="sendAllBalance()"
                         class="send-all" color="warn">
-            所有余额
+            可用资产
           </mat-checkbox>
           <!-- Choose currency -->
           <mat-select class="underlining-select" fxFlex="0 0 70px" name="currency" [(ngModel)]="send.currency"
                       placeholder="单位">
-            <mat-option value="part">VPC</mat-option>
+            <mat-option value="part">VP</mat-option>
           </mat-select>
           <!-- Send buttons -->
           <div class="actions" fxFlex="1 1 100%">

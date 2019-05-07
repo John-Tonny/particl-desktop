@@ -20,12 +20,12 @@
     <p>{{ order?.messages.status_info }}</p>
     <div *ngIf="order?.type === 'buy' && order?.status === 'shipping'" class="additional-shipping-info">
       <p *ngIf="order?.listing?.memo">
-        <span class="title">Shipping info from Seller</span>
+        <span class="title">卖家发货信息</span>
         <code class="more-info">{{ order?.listing?.memo}}</code>
       </p>
       <p *ngIf="!order?.listing?.memo">
-        <span class="title">Shipping info from Seller</span>
-        <em>No information provided</em>
+        <span class="title">卖家发货信息</span>
+        <em>无信息</em>
       </p>
     </div>
   </div>

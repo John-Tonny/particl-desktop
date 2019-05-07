@@ -1,4 +1,4 @@
-<div mat-dialog-title>Confirm transaction</div>
+<div mat-dialog-title>交易确认</div>
 <button class="small-close-button pull-right" (click)="dialogClose()">
   <mat-icon fontSet="partIcon" fontIcon="part-circle-remove"></mat-icon>
 </button>
@@ -11,24 +11,24 @@
       <!-- if public -->
       <div class="public" *ngIf="transactionType === 'part'">
         <mat-icon class="icon public" fontSet="partIcon" fontIcon="part-public"></mat-icon>
-        <div class="title">Public transaction</div>
+        <div class="title">公开交易</div>
         <p class="widget-help">
-          Sender, Receiver & transaction amount will be publicly visible on the blockchain
+	  接收方、发送方和交易金额将在区块链上可见。
         </p>
       </div>
       <!-- if blind / anon-->
       <div class="blind" *ngIf="transactionType === 'blind'">
         <mat-icon class="icon public" fontSet="partIcon" fontIcon="part-blind"></mat-icon>
-        <div class="title">Blind transaction</div>
+        <div class="title">混肴交易</div>
         <p class="widget-help">
-          Sender & Receiver will be publicly visible on the blockchain, but the transaction amount will be hidden
+          接收方和发送方将在区块链上可见，但是交易金额将被隐藏。
         </p>
       </div>
       <div class="anon" *ngIf="transactionType === 'anon'">
         <mat-icon class="icon public" fontSet="partIcon" fontIcon="part-anon"></mat-icon>
-        <div class="title">Anon transaction</div>
+        <div class="title">匿名交易</div>
         <p class="widget-help">
-          Sender, Receiver & transaction amount will be hidden on the blockchain for highest privacy
+          接收方、发送方和交易金额在区块链上被隐藏，为隐私保护的最高级别。
         </p>
       </div>
     </div>
@@ -38,7 +38,7 @@
       <span *ngIf="sendAmount.ifDotExist()">
       <span class="point">.</span>
       <span class="small">{{ sendAmount.getFractionalPart() }}</span>&ensp;</span>
-      <span class="currency">PART</span>
+      <span class="currency">VP</span>
       <!-- TODO: until fiat estimations are implemented, hide them -->
       <div class="fiat">&asymp; 3.42 USD</div>
     </div>
@@ -54,7 +54,7 @@
 
     <p class="fee-info">
       Transaction fee:<span class="amount">{{ transactionAmount.getFee() }} PART</span><span class="fiat">&asymp; 0.05 USD</span><br>
-      Total amount:<span
+      总金额:<span
       class="amount">{{ transactionAmount.getAmountWithFee(sendAmount.getAmount()) }} PART</span><span class="fiat">&asymp; 3.47 USD</span>
     </p>
   </div><!-- TX confirmation -->
@@ -64,10 +64,10 @@
 <mat-dialog-actions fxLayoutAlign="space-between center">
   <button mat-button mat-dialog-close (click)="dialogClose()">
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
   <button mat-raised-button color="primary" mat-dialog-close (click)="confirm()">
     <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-    Confirm &amp; Send
+    确认 & 发送
   </button>
 </mat-dialog-actions>

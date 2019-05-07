@@ -26,7 +26,7 @@ export class AddToCartComponent implements OnInit {
 
   addToCart() {
     this.cartService.add(this.listing).subscribe(res => {
-      this.snackbar.open('Item successfully added to cart');
+      this.snackbar.open('商品已成功添加到购物车');
       this.onAdded.emit();
     }, error => this.snackbar.open(error));
   }

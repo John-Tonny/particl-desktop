@@ -67,7 +67,7 @@ export class SellerListingComponent {
       .then(
         res => {
           if (!res.fits) {
-            throw new Error('Upload Size Exceeded - Please reduce listing template size');
+            throw new Error('上传大小超出范围,请减少大小');
           }
           return true;
         }
@@ -121,7 +121,7 @@ export class SellerListingComponent {
     const dialog = this.dialog.open(ProcessingModalComponent, {
       disableClose: true,
       data: {
-        message: 'Hang on, we are busy processing your listing'
+        message: '请稍候，我们正在处理...'
       }
     });
   }

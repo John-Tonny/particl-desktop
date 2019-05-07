@@ -4,16 +4,17 @@
 <mat-dialog-content>
 
   <p class="lead">
-    Zapping will fast-forward the cold staking progress instantly to 100%
+    快速激活可以将离线收益的进程快速推进到100%
   </p>
   <p class="warning">
-    Zapping transaction(s) will consume <strong>{{ fee }} PART</strong> fee in the process.
+    快速激活将在处理过程中花费<strong>{{fee}} VP</strong>的手续费 。
   </p>
   <p>
-    Be warned, that this decreases your financial privacy, as it bundles all your remaining coins into one big transaction. It is advised to zap only the small remaining part of your coins (last ~10 %) &ndash; those that take ages to get processed.
+    需要注意的是，快速激活会降低您的财务隐私，因为它会把您所有资金捆绑在一起做成一笔大交易。
+    建议快速激活您资金的剩余部分(最后10%)，那些需要很长的处理时间。
   </p>
   <p class="widget-help">
-    Staked coins won't be affected. If the outputs you want to move are in your staked balance, you must wait for them to mature.
+    如果您想要您的资产获取离线收益，您必须等待它们成熟（225块后）。
   </p>
 
 </mat-dialog-content>
@@ -23,12 +24,12 @@
 
   <button mat-button mat-dialog-close>
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
 
   <button mat-raised-button color="warn" (click)="zap()" [disabled]="!fee">
     <mat-icon fontSet="partIcon" fontIcon="part-lightning"></mat-icon>
-    Zap to 100%
+    快速激活
   </button>
 
 </mat-dialog-actions>

@@ -45,7 +45,7 @@ export class RevertColdstakingComponent implements OnInit {
           this.address = '';
           this.dialogRef.close();
           this.flashNotification.open(
-            'No stealth address found, please add a stealthaddress.', 'error');
+            '没有找到私有地址，请添加一个私有地址。', 'error');
           return;
         };
 
@@ -107,7 +107,7 @@ export class RevertColdstakingComponent implements OnInit {
       this._rpcState.set('ui:coldstaking', false);
       this.dialogRef.close();
       this.flashNotification.open(
-        `Succesfully disabled coldstaking, no transactions needed.`, 'warn');
+        `成功注销离线收益。`, 'warn');
       return ;
     }
 
@@ -132,7 +132,7 @@ export class RevertColdstakingComponent implements OnInit {
           this._rpcState.set('ui:coldstaking', false);
           this.dialogRef.close();
           this.flashNotification.open(
-            `Succesfully brought ${amount} PART into hot wallet`, 'warn');
+            `成功返回 ${amount} VP 到您的热钱包`, 'warn');
         }
       });
     });

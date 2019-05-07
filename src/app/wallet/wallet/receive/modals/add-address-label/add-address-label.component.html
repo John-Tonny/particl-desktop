@@ -8,17 +8,17 @@
 
   <mat-form-field>
     <input matInput type="text" formControlName="label" class="form-control" [(ngModel)]="label"
-           placeholder="Enter label..." required>
+           placeholder="输入标签..." required>
   </mat-form-field>
 
   <mat-dialog-actions fxLayoutAlign="end center">
     <button type="button" mat-button mat-dialog-close (click)="dialogClose()">
       <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-      Cancel
+      取消
     </button>
     <button mat-button [disabled]="!addLableForm.valid" mat-raised-button color="primary">
       <mat-icon fontSet="partIcon" fontIcon="part-circle-check"></mat-icon>
-      {{address ? 'Update Label' : 'Add Label'}}
+      {{address ? '更新标签' : '增加标签'}}
     </button>
   </mat-dialog-actions>
 

@@ -43,7 +43,7 @@ export class SellComponent implements OnInit, OnDestroy {
   // ];
 
   listing_sortings: Array<any> = [
-    { title: '按商品标题', value: 'TITLE' },
+    { title: '按商品名称', value: 'TITLE' },
     { title: '按公布状态', value: 'STATE' }
   ];
 

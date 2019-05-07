@@ -162,14 +162,14 @@ export class CheckoutProcessComponent implements OnInit, OnDestroy {
 
   removeFromCart(shoppingCartId: number): void {
     this.cartService.removeItem(shoppingCartId).take(1).subscribe(res => {
-      this.snackbarService.open('Item successfully removed from cart');
+      this.snackbarService.open('从购物车中成功移除');
     }, error => this.snackbarService.open(error));
   }
 
   clearCart(isSnack: boolean = true): void {
     this.cartService.clear().subscribe(res => {
       if (isSnack) {
-        this.snackbarService.open('All Items Cleared From Cart');
+        this.snackbarService.open('清空购物车');
       }
     });
   }
@@ -178,7 +178,7 @@ export class CheckoutProcessComponent implements OnInit, OnDestroy {
 
   moveToConfirmation(): void {
     if (!this.profile) {
-      this.snackbarService.open('Profile was not fetched!');
+      this.snackbarService.open('未找到配置文件!');
       return;
     }
     this.country = this.shippingFormGroup.value.country || '';
@@ -310,7 +310,7 @@ export class CheckoutProcessComponent implements OnInit, OnDestroy {
     this.bid.order(this.cart, this.profile, shippingInfo).then((res) => {
       this.updateShippingAddress();
       this.clear();
-      this.snackbarService.open('Order has been successfully placed');
+      this.snackbarService.open('订单已成功下单');
       this.dialog.closeAll();
       this.onOrderPlaced.emit(1);
     }, (error) => {
@@ -404,7 +404,7 @@ export class CheckoutProcessComponent implements OnInit, OnDestroy {
   checkExpired(listing: any) {
     if (new Date().getTime() > listing.listing.expiredAt) {
       if (!listing.errorMessage) {
-        listing.errorMessage = 'Listing expired – remove item from cart';
+        listing.errorMessage = '商品已过期，从购物车中移除';
       }
       return true;
     }
@@ -415,7 +415,7 @@ export class CheckoutProcessComponent implements OnInit, OnDestroy {
       const dialog = this.dialog.open(ProcessingModalComponent, {
         disableClose: true,
         data: {
-          message: 'Hang on, we are busy processing your cart'
+          message: '请稍候，我们正在处理...'
         }
       });
   }
