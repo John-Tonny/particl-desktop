@@ -82,6 +82,6 @@ export class MarketService {
     } else if (errorObj && Object.prototype.toString.call(errorObj.error) === '[object Object]') {
       return this.extractMPErrorMessage(errorObj.error);
     }
-    return 'Invalid marketplace request';
+    return '无效的市场请求';
   }
 }

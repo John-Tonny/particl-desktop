@@ -1,22 +1,22 @@
 <div>
-  <div mat-dialog-title class="title">Terms &amp; Conditions</div>
+  <div mat-dialog-title class="title">条款 & 条件</div>
   <mat-dialog-content class="modal-content" fxLayout>
     <div [innerHTML]="text"></div>
   </mat-dialog-content>
   <mat-dialog-actions fxLayoutAlign="space-between center">
     <div class="left">
-      <button mat-button color="warn" matTooltip="Particl Desktop will be closed" (click)="decline()">
+      <button mat-button color="warn" matTooltip="维公链桌面将会关闭" (click)="decline()">
         <mat-icon class="icon" fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-        Decline &amp; Close
+        拒绝 & 关闭
       </button>
     </div>
     <div class="right">
       <mat-checkbox name="accept" [(ngModel)]="isAccepted" class="confirmation-checkbox">
-        <strong>I have read and accept</strong> these Terms &amp; Conditions
+        <strong>我已经阅读并接受</strong>这些条款与条件
       </mat-checkbox>
       <button mat-raised-button color="primary" [disabled]="!isAccepted" (click)="acceptTerms()">
         <mat-icon class="icon" fontSet="partIcon" fontIcon="part-check"></mat-icon>
-        Continue
+        继续
       </button>
     </div>
   </mat-dialog-actions>

@@ -1,4 +1,4 @@
-<div mat-dialog-title>Confirm vote</div>
+<div mat-dialog-title>投票--确认</div>
 <button class="small-close-button pull-right" (click)="dialogClose()">
   <mat-icon fontSet="partIcon" fontIcon="part-circle-remove"></mat-icon>
 </button>
@@ -8,9 +8,9 @@
 
     <div class="tx-info">
       <mat-icon class="icon" fontSet="partIcon" fontIcon="part-person-check"></mat-icon>
-      <div class="title">You're voting</div>
+      <div class="title">您正在投票</div>
       <p class="widget-help">
-        You’re voting on a proposal
+        您在对一项提案投票
       </p>
     </div>
 
@@ -32,12 +32,12 @@
 
   <button mat-button mat-dialog-close (click)="dialogClose()">
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
 
   <button mat-raised-button color="primary" mat-dialog-close (click)="confirm()">
     <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-    Confirm &amp; Vote
+    确认 &amp; 投票
   </button>
 
 </mat-dialog-actions>

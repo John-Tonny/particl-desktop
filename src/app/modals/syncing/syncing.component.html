@@ -1,34 +1,34 @@
-<div mat-dialog-title class="title">Syncing with network</div>
+<div mat-dialog-title class="title">同步网络</div>
 
 
 <mat-dialog-content class="modal-content">
   <mat-spinner *ngIf="!syncPercentage" class="sync-spinner"></mat-spinner>
 
   <p>
-    Your wallet automatically synchronizes with the Particl network after a connection is established, but this process has not completed yet. This means that recent transactions will not be visible, and the balance may not be up-to-date until this process has completed.
+    您的钱包与维公链网络建立连接，并正在同步过程中，在此期间，您的交易和资金都是过期的，不是最新的。
   </p>
   <p class="info">
-    Spending Particl may not be possible during this phase
+    同步网络期间，支付不可用
   </p>
   <p class="widget-help">
-    You can safely close this window and continue syncing in background or wait till syncing is complete &ndash; this window will automatically close when finished.
+    您可以安全地关闭此窗口，并继续在后台同步或等待同步完成后，此窗口将自动关闭。
   </p>
   <p *ngIf="nPeers < 1" class="warning">
-    Warning: No peers connected &ndash; please check your internet connection
+    警告：没有节点连接，请检查您的互联网连接
   </p>
 
-  <div class="subtitle">Sync progress</div>
+  <div class="subtitle">最新区块时间</div>
   <table class="sync-progress">
     <tr>
-      <th>Blocks to sync</th>
+      <th>已同步区块数</th>
       <td>{{ remainder }}</td>
     </tr>
     <tr>
-      <th>Estimated time left</th>
+      <th>预计剩余时间</th>
       <td>{{ estimatedTimeLeft }}</td>
     </tr>
     <tr>
-      <th>Last block time</th>
+      <th>最新区块时间</th>
       <td>{{ lastBlockTime }}</td>
     </tr>
   </table>
@@ -39,6 +39,6 @@
 <mat-dialog-actions fxLayoutAlign="end center">
   <button type="button" mat-button mat-dialog-close>
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Close & sync in background
+    关闭 & 在后台同步
   </button>
 </mat-dialog-actions>

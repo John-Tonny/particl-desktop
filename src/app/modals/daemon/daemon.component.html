@@ -1,13 +1,13 @@
 <div class="center">
   <div *ngIf="message && !message.electron">
-    Warning: You are using Particl through a browser.
+    警告:您正在通过浏览器查看维公链。
   </div>
   <div *ngIf="message && message.error">
     <div *ngIf="message.error.status === 0">
-      Couldn't connect to Particl Daemon: connection refused
+      法连接到维公链:连接被拒绝
     </div>
     <div *ngIf="message.error.status !== 0">
-      Error {{ message.error.status }}: {{ message.error.message }}
+      错误 {{ message.error.status }}: {{ message.error.message }}
     </div>
   </div>
 </div>
