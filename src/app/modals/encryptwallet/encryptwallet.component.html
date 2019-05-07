@@ -1,5 +1,5 @@
-<div mat-dialog-title *ngIf="!password" class="title">Encrypt your wallet</div>
-<div mat-dialog-title *ngIf="password" class="title">Confirm your password</div>
+<div mat-dialog-title *ngIf="!password" class="title">加密您的钱包</div>
+<div mat-dialog-title *ngIf="password" class="title">确认您的密码</div>
 
 <button class="small-close-button" mat-dialog-close>
   <mat-icon fontSet="partIcon" fontIcon="part-circle-remove"></mat-icon>
@@ -10,30 +10,30 @@
 
   <div *ngIf="!password">
     <p>
-      Please choose a password to encrypt your wallet
+      请选择密码保护您的钱包
     </p>
     <p class="widget-help">
-      Wallet encryption protects you from unauthorized access to your coins (e.g. if someone steals your computer).<br>
-      It affects Particl wallet only on your current device.
+      钱包加密保护您的数字资产(例如，如果有人偷了您的电脑)。<br>
+      它只能够保护当前设备上的钱包。
     </p>
     <p class="warning">
-      Do NOT forget this password or you will be unable to access your coins!
+      千万不要忘记这个密码，否则将会失去您的数字资产！
     </p>
   </div><!-- !password -->
 
   <!-- @TODO: Do we really need a confirmation for the password with "show password" option? -->
   <div *ngIf="password">
     <p>
-      Please enter your chosen password again to confirm it
+      请再次输入密码
     </p>
     <p class="warning">
-      Do NOT forget this password or you will be unable to access your coins!
+      千万不要忘记这个密码，否则将会失去您的数字资产！
     </p>
   </div><!-- !password -->
 
   <app-password
     #passwordElement
-    buttonText="Encrypt wallet"
+    buttonText="加密钱包"
     (passwordEmitter)="encryptwallet($event)"
     [unlockTimeout]="0"
     [showStakeOnly]="false"

@@ -13,7 +13,7 @@ export class MarketStateService extends StateService implements OnDestroy {
   constructor(private market: MarketService) {
     super();
     this.log.d('MarketState: initialized');
-    // this.register('currencyprice', 30 * 1000, ['PART', 'USD']);
+    // this.register('currencyprice', 30 * 1000, ['VP', 'USD']);
 
     /*
      * @TODO change 'category' timmer '(3 * 1000)' as '(60 * 1000)' once category loading got fixed.

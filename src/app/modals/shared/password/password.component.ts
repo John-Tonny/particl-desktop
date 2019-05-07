@@ -21,7 +21,7 @@ export class PasswordComponent implements OnDestroy {
   public isProcessing: boolean = false;
 
   @Input() showPass: boolean = false;
-  @Input() label: string = 'Your Wallet password';
+  @Input() label: string = '您的钱包密码';
   @Input() buttonText: string;
   @Input() stakeOnly: boolean = false;
   @Input() unlockTimeout: number = 60;

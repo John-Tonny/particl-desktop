@@ -37,8 +37,7 @@
 	在本页面的“地址类型”列表中选择您的地址类型，将能够调整您交易的隐私级别。
       </p>
       <p *ngIf="type === 'balanceTransfer'">
-        Convert your coins between public and private balances.<br>
-      	为了保护您的隐私，建议您总是把您的余额放在私有地址里（例如：混肴或匿名）。
+      	为了保护您的隐私，建议您总是把您的资金放在私有地址里（例如：混肴或匿名）。
       </p>
       <p class="widget-help">
 	混肴和匿名交易有何区别，它们是保护您的隐私，想了解更多内容可以在维公链的Wiki：
@@ -172,7 +171,7 @@
             </mat-radio-button>
           </mat-radio-group><!-- .from-balance-type -->
           <p class="widget-help">
-	    通过转换交易类型，可以使您的资产在公开和私有之间进行转换。
+	    通过转换交易类型，可以使您的资金在公开和私有地址之间进行转换。
           </p>
         </mat-card>
 
@@ -216,12 +215,12 @@
           <!-- Narrations -->
           <div class="section narration advanced" *ngIf="advanced">
             <mat-form-field class="full-width larger" floatPlaceholder="never">
-              <input #narration type="text" matInput name="sendNote" placeholder="Narration (optional)" maxlength="24"
+              <input #narration type="text" matInput name="sendNote" placeholder="留言（可选）" maxlength="24"
                     [(ngModel)]="send.narration">
               <mat-hint align="end">{{narration.value.length}} / 24</mat-hint>
             </mat-form-field>
             <p class="widget-help">
-	      请注意：付款时的简短说明，如果是发送到公开地址时，这些说明将将在区块链上公开可见；如果是发送到混肴或匿名地址时，则仅仅发送方和接收方可见。
+	      注意：付款时的留言，如果是发送到公开地址时，这些留言将将在区块链上公开可见；如果是发送到混肴或匿名地址时，则仅仅发送方和接收方可见。
             </p>
           </div><!-- .narration.section -->
         </mat-card><!-- .pay-to -->

@@ -6,7 +6,7 @@
 
 We provide a decentralized privacy platform with a suite of tools to enhance your online privacy:
 
-* **An anonymous cryptocurrency** – send and receive the PART cryptocurrency without revealing the transaction history
+* **An anonymous cryptocurrency** – send and receive the VP cryptocurrency without revealing the transaction history
 * **End-to-end encrypted messaging** – communicate in a secure and decentralized manner without revealing your IP address
 * **A private marketplace** – buy and sell goods without leaving a trace
 

@@ -1,16 +1,16 @@
 <mat-progress-bar mode="indeterminate" *ngIf="!txService.txs.length && txService.loading"></mat-progress-bar>
 <div class="no-results" *ngIf="txService.txs.length === 0 && !txService.loading">
-  No transactions yet
+  尚无交易
 </div>
 
 <div class="grid-row grid-header" *ngIf="display.header">
-  <div class="cell-date" *ngIf="display.date">date</div>
-  <div class="cell-category" *ngIf="display.category">category</div>
-  <div class="cell-senderAddress" *ngIf="display.senderAddress">address</div>
-  <div class="cell-txid" *ngIf="display.txid">txid</div>
+  <div class="cell-date" *ngIf="display.date">时间</div>
+  <div class="cell-category" *ngIf="display.category">类别</div>
+  <div class="cell-senderAddress" *ngIf="display.senderAddress">地址</div>
+  <div class="cell-txid" *ngIf="display.txid">交易哈希</div>
   <div class="cell-blockIndex" *ngIf="display.blockIndex">blockindex</div>
-  <div class="cell-confirmations" *ngIf="display.confirmations">confirmations</div>
-  <div class="cell-amount" *ngIf="display.amount">amount</div>
+  <div class="cell-confirmations" *ngIf="display.confirmations">确认数</div>
+  <div class="cell-amount" *ngIf="display.amount">金额</div>
 </div>
 
 <ng-container *ngFor="let tx of txService.txs">
@@ -26,7 +26,7 @@
 
         <!-- Confirmations -->
         <div fxFlex="0 0 70px" *ngIf="display.confirmations && tx.getConfirmationCount() <= 12" class="confirmations" [ngClass]="styleConfimations(tx.getConfirmationCount())">
-          <div class="confirmation-tag" matTooltip="Unconfirmed transaction" matTooltipPosition="before">
+          <div class="confirmation-tag" matTooltip="未确认交易" matTooltipPosition="before">
             <mat-icon fontSet="partIcon" fontIcon="part-date" class="confirmations"></mat-icon>
             {{ tx.getConfirmationCount() }}/12
           </div>
@@ -37,37 +37,37 @@
                           [ngSwitch]="tx.getCategory()">
           <span *ngSwitchCase="'stake'" class="tx-type staked">
             <mat-icon fontSet="partIcon" fontIcon="part-stake"></mat-icon>
-            <span class="name">Staked</span>
+            <span class="name">收益</span>
           </span>
           <span *ngSwitchCase="'orphaned_stake'" class="tx-type orphan">
             <mat-icon fontSet="partIcon" fontIcon="part-alert" color="warn"></mat-icon>
-            <span class="name">Orphaned Stake</span>
+            <span class="name">Orphaned 收益</span>
           </span>
           <span *ngSwitchCase="'send'" class="tx-type sent">
             <mat-icon fontSet="partIcon" fontIcon="part-send" color="warn"></mat-icon>
-            <span class="name">Sent</span>
+            <span class="name">发送</span>
             <mat-icon class="narration" *ngIf="tx.getNarration()" fontSet="partIcon" fontIcon="part-pen-1"
                       matTooltip="{{tx.getNarration()}}" matTooltipPosition="after"></mat-icon>
           </span>
           <span *ngSwitchCase="'multisig'" class="tx-type sent">
             <mat-icon fontSet="partIcon" fontIcon="part-lock-open" color="warn"></mat-icon>
-            <span class="name">Multisig / escrow</span>
+            <span class="name">多签/托管</span>
             <mat-icon class="narration" *ngIf="tx.getNarration()" fontSet="partIcon" fontIcon="part-pen-1"
                       matTooltip="{{tx.getNarration()}}" matTooltipPosition="after"></mat-icon>
           </span>
           <span *ngSwitchCase="'receive'" class="tx-type received">
             <mat-icon fontSet="partIcon" fontIcon="part-receive" color="primary"></mat-icon>
-            <span class="name">Received</span>
+            <span class="name">接收</span>
             <mat-icon class="narration" *ngIf="tx.getNarration()" fontSet="partIcon" fontIcon="part-pen-1"
                       matTooltip="{{tx.getNarration()}}" matTooltipPosition="after"></mat-icon>
           </span>
           <span *ngSwitchCase="'internal_transfer'" class="tx-type received">
             <mat-icon fontSet="partIcon" fontIcon="part-transfer" color="primary"></mat-icon>
-            <span class="name">Balance transfer</span>
+            <span class="name">资产转移</span>
           </span>
           <span *ngSwitchCase="'listing_fee'" class="tx-type sent">
             <mat-icon fontSet="partIcon" fontIcon="part-bag-buy" color="primary"></mat-icon>
-            <span class="name">Posted Listing</span>
+            <span class="name">公布清单</span>
           </span>
         </div>
 
@@ -89,10 +89,10 @@
             <span class="big number">{{ tx.getAmountObject().getIntegerPartAsString() }}</span><!-- inline element comment hack
             --><span class="point">{{ tx.getAmountObject().dot() }}</span><!--
             --><small class="small number">{{ tx.getAmountObject().getFractionalPart() || '' }}</small>
-            <span class="currency">PART</span>
+            <span class="currency">VP</span>
           </span>
           <span class="amount" *ngIf="tx.requires_unlock">
-            <mat-icon fontSet="partIcon" fontIcon="part-anon" matTooltip="Unlock wallet to see private transaction details" matTooltipPosition="before"></mat-icon>
+            <mat-icon fontSet="partIcon" fontIcon="part-anon" matTooltip="解锁钱包，查看私有交易详情" matTooltipPosition="before"></mat-icon>
           </span>
         </div><!-- .tx-value -->
 
@@ -133,7 +133,7 @@
 
       <!-- Narration -->
       <div class="tx-detail-item" fxFlex="1 1 100%" *ngIf="tx.getNarration()">
-        <span fxFlex="0 0 80px">Narration:</span>
+        <span fxFlex="0 0 80px">说明:</span>
         <input disabled fxFlex="1 1 calc(100% - 80px)" value="{{tx.getNarration()}}" class="narration input">
       </div>
 
