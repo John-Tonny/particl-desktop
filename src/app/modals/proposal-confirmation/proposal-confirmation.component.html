@@ -1,4 +1,4 @@
-<div mat-dialog-title>Confirm Proposal submission</div>
+<div mat-dialog-title>确认提案提交</div>
 <button class="small-close-button pull-right" (click)="dialogClose()">
   <mat-icon fontSet="partIcon" fontIcon="part-circle-remove"></mat-icon>
 </button>
@@ -10,9 +10,9 @@
 
     <div class="tx-info">
       <mat-icon class="icon" fontSet="partIcon" fontIcon="part-notification-speaker"></mat-icon>
-      <div class="title">You're proposing</div>
+      <div class="title">您正在提交提案</div>
       <p class="help-text">
-        Your proposal will be broadcasted to the Particl network for other users to vote on
+        您的提案将会被广播到维公链网络供其他用户投票
       </p>
     </div>
 
@@ -23,10 +23,10 @@
     </div>
 
     <p class="fee-info">
-      Transaction fee:
+      手续费:
       <span class="amount">{{data?.proposalTransactionFee?.getAmount()}} VP</span>
       <span class="fiat">&asymp; 0.05 USD</span><br>
-      Total amount:
+      总费用:
       <span class="amount">{{data?.proposalTransactionFee?.getAmount()}} VP</span>
       <span class="fiat">&asymp; 3.47 USD</span>
     </p>
@@ -38,10 +38,10 @@
 <mat-dialog-actions fxLayoutAlign="space-between center">
   <button mat-button mat-dialog-close (click)="dialogClose()">
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
   <button mat-raised-button color="primary" mat-dialog-close (click)="confirm()">
     <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-    Confirm &amp; Submit
+    确认 &amp; 提交
   </button>
 </mat-dialog-actions>

@@ -225,7 +225,7 @@
             <mat-select-search
               [options]= "countryList.getList()"
               [showValueOf]="'name'"
-              [placeHolder]="'Select Country'"
+              [placeHolder]="'选择国家'"
               [isRequired]="'true'"
               [defaultSelectedValue]="selectedCountry"
               [isLexigraphicalOrder]="true"
@@ -293,14 +293,14 @@
           </td>
           <td class="price cell">
             {{listing.basePrice?.getIntegerPart()}}{{listing.basePrice?.dot()}}<small>{{listing.basePrice?.getFractionalPart()}}</small>
-            VPC
+            VP
           </td>
           <td class="shipping cell">{{listing?.shippingAmount(country)?.getIntegerPart()}}{{listing?.shippingAmount(country)?.dot()}}<small>{{listing?.shippingAmount(country)?.getFractionalPart()}}</small>
-            VPC
+            VP
           </td>
           <!--<td class="quantity cell">1 &times;</td>-->
           <td class="total cell">{{listing?.total(country)?.getIntegerPart()}}{{listing?.total(country)?.dot()}}<small>{{listing?.total(country)?.getFractionalPart()}}</small>
-            VPC
+            VP
           </td>
         </tr>
         </tbody>
@@ -314,19 +314,19 @@
         <table class="subtotals" fxFlex="0 0 250px">
           <tr>
             <td class="desc">小计</td>
-            <td class="value">{{cart?.subTotal.getAmountAsString()}} VPC</td>
+            <td class="value">{{cart?.subTotal.getAmountAsString()}} VP</td>
           </tr>
           <tr>
             <td class="desc">邮费总计</td>
-            <td class="value">{{cart?.getShippingTotal(country).getAmountAsString()}} VPC</td>
+            <td class="value">{{cart?.getShippingTotal(country).getAmountAsString()}} VP</td>
           </tr>
           <tr>
             <td class="desc">托管费用</td>
-            <td class="value">{{cart?.getEscrowTotal(country).getAmountAsString()}} VPC</td>
+            <td class="value">{{cart?.getEscrowTotal(country).getAmountAsString()}} VP</td>
           </tr>
           <tr>
             <td class="desc total">总价</td>
-            <td class="value total">{{cart?.getTotal(country).getAmountAsString()}} VPC</td>
+            <td class="value total">{{cart?.getTotal(country).getAmountAsString()}} VP</td>
           </tr>
         </table>
 

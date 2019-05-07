@@ -1,9 +1,9 @@
 <div *ngIf="type === 'place'">
-  <div mat-dialog-title class="title">Place order</div>
+  <div mat-dialog-title class="title">下订单</div>
 
   <mat-dialog-content class="modal-content">
     <p class="alpha warning" *ngIf="isPrerelease">
-      <strong>Warning:</strong> you are about to <strong>bid on a real listing</strong> on development version of Particl Marketplace. You will need to <strong>spend real VP coins</strong> when Seller accepts your bid afterwards! Bugs may occur &amp; your payment might get lost &ndash; continue on your own risk!
+      <strong>警告：</strong> you are about to <strong>bid on a real listing</strong> on development version of Particl Marketplace. You will need to <strong>spend real VP coins</strong> when Seller accepts your bid afterwards! Bugs may occur &amp; your payment might get lost &ndash; continue on your own risk!
     </p>
     <div class="row" fxLayout>
       <div class="image" fxFlex="0 0 120px">
@@ -11,11 +11,11 @@
       </div>
       <div class="text" fxFlex="1 1 350px">
         <p class="lead">
-          Are you sure you want to place this bid?
+          您确定要下订单吗？
         </p>
         <p class="widget-help">
-          Before paying for this order, your bid needs to be accepted by the Seller.
-          After it is accepted, you can pay for the order in Buy &gt; Orders.
+          在支付此订单之前，您的订单需要被卖方接受。
+          当它被接受后，您可以在"购物">"我的订单"中付款。
         </p>
       </div>
     </div>
@@ -24,11 +24,11 @@
   <mat-dialog-actions fxLayoutAlign="end center">
     <button type="button" mat-button mat-dialog-close>
       <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-      No, cancel
+      不，取消
     </button>
     <button mat-raised-button color="primary" (click)="placeOrder()">
       <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-      Yes, place order
+      是的，下订单
     </button>
   </mat-dialog-actions>
 </div>
@@ -36,11 +36,11 @@
 
 
 <div *ngIf="type === 'accept'">
-  <div mat-dialog-title class="title">Accept Bid</div>
+  <div mat-dialog-title class="title">接受订单</div>
 
   <mat-dialog-content class="modal-content">
     <p class="alpha warning" *ngIf="isPrerelease">
-      <strong>Warning:</strong> you are about to accept a bid <strong>and lock real VP coins in escrow</strong> on development version of Particl Marketplace. Bugs may occur &amp; your payment might get lost &ndash; continue on your own risk! You also <strong>must ship the item</strong> you're selling when Buyer pays for it!
+      <strong>警告：</strong> you are about to accept a bid <strong>and lock real VP coins in escrow</strong> on development version of Particl Marketplace. Bugs may occur &amp; your payment might get lost &ndash; continue on your own risk! You also <strong>must ship the item</strong> you're selling when Buyer pays for it!
     </p>
     <div class="row" fxLayout>
       <div class="image" fxFlex="0 0 120px">
@@ -48,10 +48,10 @@
       </div>
       <div class="text" fxFlex="1 1 350px">
         <p class="lead">
-          Are you sure you want to accept this bid?
+          您确定要接受此订单吗？
         </p>
         <p class="widget-help">
-          Before the payment can be made, you need to accept the bid made by the Buyer.
+          在买方付款之前，您需要接受买方的订单。
         </p>
       </div>
     </div>
@@ -60,11 +60,11 @@
   <mat-dialog-actions fxLayoutAlign="end center">
     <button type="button" mat-button mat-dialog-close>
       <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-      No, cancel
+      不，取消
     </button>
     <button mat-raised-button color="primary" (click)="placeOrder()">
       <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-      Yes, accept bid
+      是的，接受订单
     </button>
   </mat-dialog-actions>
 </div>
@@ -72,7 +72,7 @@
 
 
 <div *ngIf="type === 'reject'">
-  <div mat-dialog-title class="title">Reject Bid</div>
+  <div mat-dialog-title class="title">拒绝订单</div>
 
   <mat-dialog-content class="modal-content">
     <div class="row" fxLayout>
@@ -81,11 +81,11 @@
       </div>
       <div class="text" fxFlex="1 1 350px">
         <p class="lead">
-          Are you sure you want to reject this bid?
+          您确定要拒绝此订单吗？
         </p>
         <p class="widget-help">
-          Before the payment can be made, you need to accept the bid made by the Buyer.<br>
-          By rejecting this bid, the Buyer will not be able to purchase your item.
+          在买方付款之前，您需要接受买方的订单。<br>
+          拒绝这个订单，买方将无法购买您的商品。
         </p>
       </div>
     </div>
@@ -94,11 +94,11 @@
   <mat-dialog-actions fxLayoutAlign="end center">
     <button type="button" mat-button mat-dialog-close>
       <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-      No, cancel
+      不，取消
     </button>
     <button mat-raised-button color="warn" (click)="placeOrder()">
       <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-      Yes, reject bid
+      是的，拒绝订单
     </button>
   </mat-dialog-actions>
 </div>
@@ -106,11 +106,11 @@
 
 
 <div *ngIf="type === 'escrow'">
-  <div mat-dialog-title class="title">Confirm order delivery</div>
+  <div mat-dialog-title class="title">确认订单交付</div>
 
   <mat-dialog-content class="modal-content">
     <p class="alpha warning" *ngIf="isPrerelease">
-      <strong>Warning:</strong> only confirm the delivery if you really received the item in real life. Real VP coins will be unlocked from escrow after this confirmation. If you confirm delivery and didn't receive the item, you will lose money!
+      <strong>警告：</strong>只有当您确实收到物品时，才能确认。一旦确认，托管资金将退还到各自的钱包。如果您确认收货，但没有收到物品，您就会受到损失!
     </p>
     <div class="row" fxLayout>
       <div class="image" fxFlex="0 0 135px">
@@ -118,10 +118,10 @@
       </div>
       <div class="text" fxFlex="1 1 350px">
         <p class="lead">
-          Are you sure your received your order?
+          您确定收到了您的订单吗？
         </p>
         <p class="widget-help">
-          Confirming successful delivery will finalize the order and release your funds locked in escrow.
+          确认成功交货将完成订单，并退还您的托管资金。
         </p>
       </div>
     </div>
@@ -130,11 +130,11 @@
   <mat-dialog-actions fxLayoutAlign="end center">
     <button type="button" mat-button mat-dialog-close>
       <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-      No, cancel
+      不，取消
     </button>
     <button mat-raised-button color="primary" (click)="placeOrder()">
       <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-      Yes, I received the order
+      是的，我收到了订单
     </button>
   </mat-dialog-actions>
 </div>

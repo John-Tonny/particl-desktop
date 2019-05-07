@@ -1,4 +1,4 @@
-<div mat-dialog-title>Confirm transaction</div>
+<div mat-dialog-title>确认交易</div>
 <button class="small-close-button pull-right" (click)="dialogClose()">
   <mat-icon fontSet="partIcon" fontIcon="part-circle-remove"></mat-icon>
 </button>
@@ -16,9 +16,9 @@
       <!-- if public -->
       <div class="public">
         <mat-icon class="icon public" fontSet="partIcon" fontIcon="part-cart"></mat-icon>
-        <div class="title">You're buying</div>
+        <div class="title">您正在购物</div>
         <p class="help-text">
-          Seller accepted your bid &ndash; pay for your order
+          卖家接受了您的订单 &ndash; 支付您的订单
         </p>
       </div>
     </div>
@@ -38,17 +38,17 @@
 
     <p class="fee-info">
       <!-- Transaction fee:<span class="amount">11 VP</span><span class="fiat">&asymp; 0.05 USD</span><br> -->
-      Listing price:<span class="amount">{{ bidItem?.listing?.basePrice?.getIntegerPart() }}{{ bidItem?.listing?.basePrice?.dot() }}{{ bidItem?.listing?.basePrice?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
+      商品价格:<span class="amount">{{ bidItem?.listing?.basePrice?.getIntegerPart() }}{{ bidItem?.listing?.basePrice?.dot() }}{{ bidItem?.listing?.basePrice?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
 
-      Shipping:<span class="amount">{{ bidItem?.listing?.shippingAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.shippingAmount(country)?.dot() }}{{ bidItem?.listing?.shippingAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
+      邮费:<span class="amount">{{ bidItem?.listing?.shippingAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.shippingAmount(country)?.dot() }}{{ bidItem?.listing?.shippingAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
 
-      Escrow:<span class="amount">{{ bidItem?.listing?.escrowAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.escrowAmount(country)?.dot() }}{{ bidItem?.listing?.escrowAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
+      托管费:<span class="amount">{{ bidItem?.listing?.escrowAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.escrowAmount(country)?.dot() }}{{ bidItem?.listing?.escrowAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
 
-      Total amount:<span class="amount">{{ bidItem?.listing?.totalAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.totalAmount(country)?.dot() }}{{ bidItem?.listing?.totalAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 3.47 USD</span>
+      总费用:<span class="amount">{{ bidItem?.listing?.totalAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.totalAmount(country)?.dot() }}{{ bidItem?.listing?.totalAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 3.47 USD</span>
     </p>
 
     <p class="escrow-info">
-      Note: Escrow funds will be returned to you after the order is successfully completed and delivered.
+      注:订单成功完成并交付后，托管资金将退还给您。
     </p>
 
   </div>
@@ -59,10 +59,10 @@
 <mat-dialog-actions fxLayoutAlign="space-between center">
   <button mat-button mat-dialog-close (click)="dialogClose()">
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
   <button mat-raised-button color="primary" mat-dialog-close (click)="confirm()">
     <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-    Confirm &amp; Buy
+    确认 &amp; 购买
   </button>
 </mat-dialog-actions>

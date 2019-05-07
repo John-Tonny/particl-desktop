@@ -1,12 +1,12 @@
-<div mat-dialog-title class="title">Unlock your wallet</div>
+<div mat-dialog-title class="title">解锁您的钱包</div>
 
 <mat-dialog-content class="modal-content">
   <p>
-    Please enter your password to unlock your wallet
+    请输入您的密码，解锁您的钱包
   </p>
   <app-password
-    label="Enter your password"
-    buttonText="Unlock wallet"
+    label="输入您的密码"
+    buttonText="解锁钱包"
     (unlockEmitter)="unlock($event)"
     [unlockTimeout]="timeout"
     [showStakeOnly]="showStakeOnly"
@@ -18,7 +18,7 @@
 <mat-dialog-actions fxLayoutAlign="end center">
   <button type="button" mat-button mat-dialog-close>
     <mat-icon fontSet="partIcon" fontIcon="part-cross"></mat-icon>
-    Cancel
+    取消
   </button>
   <!-- TODO: can we move the main action button here? (in this case "unlock wallet" button) -->
   <!--button mat-raised-button color="primary">

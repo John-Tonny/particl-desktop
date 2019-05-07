@@ -1,20 +1,20 @@
 <!-- STEP 0: Choose action -->
 <ng-template [ngIf]="step === 0">
 
-  <div mat-dialog-title class="title">Welcome to Particl Desktop</div>
+  <div mat-dialog-title class="title">欢迎使用维公链桌面</div>
   <mat-dialog-content class="modal-content">
     <p>
-      Particl Desktop is a feature-rich client for interacting with Particl network.<br>
+      维公链桌面是一个功能丰富的客户端，与维公链网络进行交互。<br>
     </p>
     <p class="info">
       Visit <a href="https://particl.io" target="_blank" tabindex="-1">particl.io</a> official site for more info, <a href="https://particl.news" target="_blank" tabindex="-1">particl.news</a> for latest news and <a href="https://particl.wiki" target="_blank" tabindex="-1">particl.wiki</a> if you need any help
     </p>
-    <div class="subtitle">Create or restore wallet</div>
+    <div class="subtitle">创建/恢复钱包</div>
     <p>
-      In order to connect to Particl network, you need to have a wallet. If you're using Particl for the first time, create a new wallet or restore existing wallet (using your Recovery Passphrase) if you have one already.
+      为了连接到维公链，您需要一个钱包。如果您是第一次使用，创建一个新的钱包；如果您已经有一个钱包，恢复这个钱包(使用您的恢复密码)。
     </p>
     <p class="widget-help" *ngIf="!isCrypted">
-      It is recommended to encrypt your wallet before creating or restoring a wallet, in order to not leave any possible key fragments lying around.
+      建议在创建或恢复钱包之前对钱包进行加密。
     </p>
   </mat-dialog-content>
 
@@ -22,17 +22,17 @@
     <div class="left">
       <button *ngIf="!isCrypted" mat-button color="basic" (click)="initialize(0);">
         <mat-icon fontSet="partIcon" fontIcon="part-lock"></mat-icon>
-        Encrypt wallet
+        加密钱包
       </button>
     </div>
     <div class="right" fxLayoutAlign="end center">
-      <button mat-button color="primary" (click)="initialize(2);" matTooltip="You have existing wallet you would like to restore">
+      <button mat-button color="primary" (click)="initialize(2);" matTooltip="您已经有一个钱包，想恢复这个钱包">
         <mat-icon fontSet="partIcon" fontIcon="part-lock-open"></mat-icon>
-        Restore wallet
+        恢复钱包
       </button>
-      <button mat-raised-button color="primary" (click)="initialize(1);" matTooltip="If you haven't used Particl before or want to create a new, separate wallet">
+      <button mat-raised-button color="primary" (click)="initialize(1);" matTooltip="如果您是第一次使用，创建一个新的钱包">
         <mat-icon fontSet="partIcon" fontIcon="part-add-account"></mat-icon>
-        Create new wallet
+        创建新钱包
       </button>
     </div>
   </mat-dialog-actions>
@@ -44,30 +44,30 @@
 <ng-template [ngIf]="step === 1">
   <form #nameForm="ngForm" (ngSubmit)="nextStep()">
 
-    <div mat-dialog-title class="title">Name your wallet</div>
+    <div mat-dialog-title class="title">钱包名称</div>
     <mat-dialog-content class="modal-content">
       <p>
-        Choose a name for your wallet (e.g. Personal wallet, Shop income, Savings, &hellip;)
+        为您的钱包选择一个名称(例如:个人钱包、商店收入、储蓄等等)
       </p>
       <p class="warning" *ngIf="validation.errors && validation.dirty"
       [@slideDown]>
         <span [hidden]="!validation.errors.required">
-          Wallet name is required
+          钱包名称是必须的
         </span>
       </p><!-- validation errors -->
       <mat-form-field>
-        <input matInput #nameField #validation="ngModel" [(ngModel)]="name" name="name" placeholder="Wallet name" required maxlength="32" [class.verify-error]="validation.errors && (validation.dirty || validation.touched)"/>
+        <input matInput #nameField #validation="ngModel" [(ngModel)]="name" name="name" placeholder="钱包名称" required maxlength="32" [class.verify-error]="validation.errors && (validation.dirty || validation.touched)"/>
       </mat-form-field>      
     </mat-dialog-content>
     
     <mat-dialog-actions fxLayoutAlign="space-between center">
       <button mat-button (click)="prevStep()">
         <mat-icon fontSet="partIcon" fontIcon="part-previous-single"></mat-icon>
-        Back
+        回退
       </button>
       <button mat-raised-button color="primary" type="submit" [disabled]="!nameForm.form.valid">
         <mat-icon fontSet="partIcon" fontIcon="part-next-single"></mat-icon>
-        Continue
+        继续
       </button>
     </mat-dialog-actions>
     
@@ -80,18 +80,18 @@
 
   <!-- STEP 2: Recovery Password -->
   <div *ngIf="step === 2">
-    <div mat-dialog-title class="title">Choose a Recovery Password <small>(optional)</small></div>
+    <div mat-dialog-title class="title">选择恢复密码 <small>（可选）</small></div>
     <mat-dialog-content class="modal-content">
       <p>
-        You can further increase your wallet protection by setting a Recovery Password. It will be needed together with Recovery Passphrase to access your coins.
+        您可以通过设置恢复密码进一步增强钱包保护。
       </p>
       <p class="warning">
-        If you set up a Recovery Password and forget it, you won't be able to access your coins in the future!
+        如果您设置了一个恢复密码并忘记了它，您将丢失您的数字资产!
       </p>
       <!-- Password -->
       <app-password
         #passwordElement
-        label="Recovery Password (optional)"
+        label="恢复密码 （可选）"
         [emitPassword]="true"
         [showPass]="toggleShowPass"
         (passwordEmitter)="passwordFromEmitter($event)"
@@ -101,7 +101,7 @@
       <!-- Password comfirmation -->
       <app-password
         #passwordElementVerify
-        label="Verify Password"
+        label="验证密码"
         [emitPassword]="true"
         [showPass]="toggleShowPass"
         [showPassword]="true"
@@ -109,7 +109,7 @@
         [showStakeOnly]="false">
       </app-password>
       <p class="widget-help">
-        Note that you can safely skip this step, but it is recommended to choose a Recovery Password as it keeps your coins safer.
+        注意，您可以安全地跳过这一步，但建议您选择一个恢复密码，因为它可以使您的数字资产更安全。
       </p>
     </mat-dialog-content>
   </div><!-- step == 2 -->
@@ -120,10 +120,10 @@
     <div mat-dialog-title class="title">Recovery Phrase backup</div>
     <mat-dialog-content class="modal-content">
       <p>
-        Recovery Phrase is a backup key to your coins. With it you can easily recover your wallet on another PC.
+        恢复短语是您数字资产的备用钥匙。有了它，你可以很容易地恢复您的钱包在另一台电脑上。
       </p>
       <p class="warning">
-        You must write this Recovery Phrase down and keep it safe or you'll lose access to your coins!
+        通过填入遗漏的单词来确认您已经备份了恢复短语！
       </p>
     </mat-dialog-content>
   </div><!-- step == 3 -->
@@ -134,7 +134,7 @@
     <div mat-dialog-title class="title">Enter your Recovery Phrase</div>
     <mat-dialog-content class="modal-content">
       <p>
-        Confirm that you backed up your Recovery Phrase by filling in the missing words:
+        :
       </p>
     </mat-dialog-content>
   </div><!-- step == 4 -->
@@ -157,11 +157,11 @@
   <mat-dialog-actions fxLayoutAlign="space-between center">
     <button mat-button (click)="prevStep()">
       <mat-icon fontSet="partIcon" fontIcon="part-previous-single"></mat-icon>
-      Back
+      回退
     </button>
     <button mat-raised-button color="primary" (click)="nextStep()"> <!-- TODO: Move sendPassword to .ts   -->
       <mat-icon fontSet="partIcon" fontIcon="part-next-single"></mat-icon>
-      Continue
+      继续
     </button>
   </mat-dialog-actions>
 
@@ -170,7 +170,7 @@
 
 <!-- STEP 2-4 (Restore) -->
 <ng-template [ngIf]="step === 4 && isRestore">
-  <div mat-dialog-title class="title">Restore existing wallet</div>
+  <div mat-dialog-title class="title">恢复存在的钱包</div>
   <mat-dialog-content class="modal-content">
 
     <div class="recovery-phrase">
@@ -186,9 +186,9 @@
     </div><!-- .recovery-phrase -->
 
     <div class="recovery-password">
-      <div class="subtitle">Recovery Password</div>
+      <div class="subtitle">恢复密码</div>
       <p>
-        If you set up a Recovery Password during wallet creation as well, enter it below:
+        如果您在创建钱包时也设置了恢复密码，请在下面输入：
       </p>
       <app-password
         #passwordRestoreElement
@@ -203,11 +203,11 @@
   <mat-dialog-actions fxLayoutAlign="space-between center">
     <button mat-button (click)="prevStep();initialize(2)">
       <mat-icon fontSet="partIcon" fontIcon="part-previous-single"></mat-icon>
-      Back
+      回退
     </button>
     <button mat-raised-button color="primary" (click)="restoreWallet()" [disabled]="countWords(getCountOfWordsEntered())">
       <mat-icon fontSet="partIcon" fontIcon="part-next-single"></mat-icon>
-      Continue
+      继续
     </button>
   </mat-dialog-actions>
 
@@ -216,22 +216,22 @@
 
 <!-- STEP 5: Gratz -->
 <ng-template [ngIf]="step === 5">
-  <div mat-dialog-title class="title">Your wallet is ready</div>
+  <div mat-dialog-title class="title">您的钱包准备好了</div>
   <mat-dialog-content class="modal-content">
     <p>
-      Congratulations &ndash; your new wallet was created successfully and set as the default wallet!
+      您的新钱包创建成功，并设置为默认钱包!
     </p>
     <p class="info">
-      Please ensure that your Recovery Phrase (and Passphrase if you set it up) is written down and stored in a secure location!
+      请确保您的恢复短语(如果您设置了它，请确保您的密码)被记录下来并存储在一个安全的位置!
     </p>
     <p>
-      You can now safely close this window and start experiencing Particl!
+      您现在可以安全地关闭此窗口并开始体验!
     </p>
   </mat-dialog-content>
   <mat-dialog-actions fxLayoutAlign="end center">
     <button mat-raised-button color="primary" mat-dialog-close>
       <mat-icon fontSet="partIcon" fontIcon="part-check"></mat-icon>
-      Close
+      关闭
     </button>
   </mat-dialog-actions>
 </ng-template>

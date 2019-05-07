@@ -113,7 +113,7 @@ export class ProposalDetailsComponent implements OnInit, OnDestroy {
     const previousVote = this.voteDetails ? this.voteDetails.ProposalOption : null;
     if (previousVote && previousVote.optionId === this.selectedOption.optionId) {
       this.snackbarService.open(
-        `You already voted with option "${this.selectedOption.description}" for this proposal: ${this.proposal.title}.`,
+        `您已经为该提案投票，并选择了 "${this.selectedOption.description}" : ${this.proposal.title}.`,
         'info'
       );
       return;
@@ -121,7 +121,7 @@ export class ProposalDetailsComponent implements OnInit, OnDestroy {
 
     if (!this._balance) {
       this.snackbarService.open(
-        `You don't have sufficient balance in your wallet.`,
+        `您的钱包中没有足够的资金。`,
         'info'
       );
       return;
@@ -151,7 +151,7 @@ export class ProposalDetailsComponent implements OnInit, OnDestroy {
       this.dialog.closeAll();
       // Update graph data as votes are now saving locally
       this.getProposalResult();
-      this.snackbarService.open(`Successfully Vote for ${this.proposal.title}`, 'info');
+      this.snackbarService.open(`成功投票对 ${this.proposal.title}`, 'info');
     }, (error) => {
       this.btnValidate = false;
       this.dialog.closeAll();
@@ -163,7 +163,7 @@ export class ProposalDetailsComponent implements OnInit, OnDestroy {
       const dialog = this.dialog.open(ProcessingModalComponent, {
         disableClose: true,
         data: {
-          message: 'Hang on, we are busy processing your vote'
+          message: '请稍候，我们正在处理...'
         }
       });
   }

@@ -14,18 +14,18 @@
     <div class="blocks-left" *ngIf="selectedTab == 'active'">
       <mat-progress-bar mode="determinate" value="{{proposal?.votingProgressPercentage()}}" matTooltip="Time left for voting" matTooltipPosition="before"></mat-progress-bar>
       <div *ngIf="proposal?.isExpiredAtValid" class="text">{{proposal?.expiryTimeStamp}} left</div>
-      <div *ngIf="!proposal?.isExpiredAtValid" class="text">Processing...</div>
+      <div *ngIf="!proposal?.isExpiredAtValid" class="text">处理中...</div>
     </div>
     <!-- TODO: only show "blocks-left" on PLANNED/future proposals -->
     <div class="blocks-left" *ngIf="selectedTab == 'planned'">
       <mat-progress-bar mode="determinate" value="0" matTooltip="Blocks left until voting starts" matTooltipPosition="before"></mat-progress-bar>
       <div *ngIf="proposal?.isExpiredAtValid" class="text">{{proposal?.expiryTimeStamp}} left until voting starts</div>
-      <div *ngIf="!proposal?.isExpiredAtValid" class="text">Processing...</div>
+      <div *ngIf="!proposal?.isExpiredAtValid" class="text">处理中...</div>
     </div>
     <!-- TODO: only show "blocks-left.results" on PAST proposals -->
     <div class="blocks-left results" *ngIf="selectedTab == 'past'">
       <mat-progress-bar mode="determinate" value="100"></mat-progress-bar>
-      <div class="text">voting finished {{proposal?.expiryTimeStamp}} ago</div>
+      <div class="text">v投票完成 {{proposal?.expiryTimeStamp}} 前</div>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
 
     <div class="content">
       <div class="description">
-        <div class="subtitle">Proposal description</div>
+        <div class="subtitle">提案描述</div>
           <p [innerHtml]="proposal?.description">
         </p>
       </div>
@@ -107,7 +107,7 @@
 
   <!-- TODO: only show "action bar" on ACTIVE proposals -->
   <div class="action-bar" *ngIf="selectedTab == 'active' && !aleradyVoted">
-    <div class="text item">Select your vote for this Proposal:</div>
+    <div class="text item">选择您对这项提案的投票:</div>
 
     <div class="options item">
       <mat-form-field class="voting-options" floatPlaceholder="never">
@@ -126,7 +126,7 @@
   </div>
 
   <div class="action-bar" *ngIf="selectedTab == 'active' && aleradyVoted">
-    <div class="text item">Your vote for this Proposal:</div>
+    <div class="text item">您对这项提案的投票:</div>
 
     <div class="options item">
       {{voteDetails?.ProposalOption?.description}}
@@ -134,7 +134,7 @@
 
     <button mat-raised-button color="primary" class="vote-button item" (click)="aleradyVoted = !aleradyVoted">
       <mat-icon class="icon" fontSet="partIcon" fontIcon="part-refresh"></mat-icon>
-      Change vote
+      改变投票
     </button>
   </div>
 </mat-card>

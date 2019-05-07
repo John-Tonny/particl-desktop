@@ -137,7 +137,7 @@ export class AddProposalComponent implements OnInit {
         ... proposalOptions
       ]).subscribe((response) => {
         this.snackbarService.open(
-          'Proposal posted successfully!',
+          '提案提交成功!',
           'info'
         );
 
