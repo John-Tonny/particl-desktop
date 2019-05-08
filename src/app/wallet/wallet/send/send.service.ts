@@ -114,11 +114,11 @@ export class SendService {
     const trimAddress = address.substring(0, 16) + '...';
     const txsId = json.substring(0, 45) + '...';
     this.listUnSpent();
-    this.flashNotification.open(`Succesfully sent ${amount} VP to ${trimAddress}!\nTransaction id: ${txsId}`, 'warn');
+    this.flashNotification.open(`成功发送 ${amount} VP 到 ${trimAddress}!\n交易哈希： ${txsId}`, 'warn');
   }
 
   private rpc_send_failed(message: string, address?: string, amount?: number) {
-    this.flashNotification.open(`Transaction Failed ${message}`, 'err');
+    this.flashNotification.open(`交易失败 ${message}`, 'err');
     this.log.er('rpc_send_failed, failed to execute transaction!');
     this.log.er(message);
 

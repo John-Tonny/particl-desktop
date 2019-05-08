@@ -245,7 +245,7 @@ export class SendComponent implements OnInit {
   /** Payment function */
   pay(): void {
     if (!this.send.input) {
-      this.flashNotification.open('You need to select an input type (public, blind or anon)!');
+      this.flashNotification.open('您需要选择类型（公开、混肴或匿名）！');
       return;
     }
 
@@ -257,7 +257,7 @@ export class SendComponent implements OnInit {
 
       // Check if stealth address if output is private
       if (this.send.output === TxType.ANON && !this.addressHelper.testAddress(this.send.toAddress, 'private')) {
-        this.flashNotification.open('Stealth address required for private transactions!');
+        this.flashNotification.open('私有交易需要私有地址！');
         return;
       }
     }

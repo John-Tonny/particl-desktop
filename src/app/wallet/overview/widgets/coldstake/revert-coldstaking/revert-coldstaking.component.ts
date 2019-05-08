@@ -132,7 +132,7 @@ export class RevertColdstakingComponent implements OnInit {
           this._rpcState.set('ui:coldstaking', false);
           this.dialogRef.close();
           this.flashNotification.open(
-            `成功返回 ${amount} VP 到您的热钱包`, 'warn');
+            `成功退还 ${amount} VP 到您的热钱包`, 'warn');
         }
       });
     });

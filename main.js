@@ -9,7 +9,7 @@ const platform      = require('os').platform();
 
 /* correct appName and userData to respect Linux standards */
 if (process.platform === 'linux') {
-  app.setName('vpubchain-desktop');
+  app.setName('particl-desktop');
   app.setPath('userData', `${app.getPath('appData')}/${app.getName()}`);
 }
 

@@ -138,7 +138,7 @@ export class PasswordComponent implements OnDestroy {
         error => {
           this.isProcessing = false;
           this.log.i('rpc_unlock_failed: unlock failed - wrong password?', error);
-          this.flashNotification.open('Unlock failed - password was incorrect', 'err');
+          this.flashNotification.open('解锁失败 - 密码错误', 'err');
         },
         () => {
           this.isProcessing = false;

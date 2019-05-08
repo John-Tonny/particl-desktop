@@ -143,7 +143,7 @@ export class CreateWalletComponent implements OnDestroy {
           this.mnemonicCallback.bind(this), this.password
         );
         this.flashNotification.open(
-          'Please remember to write down your Recovery Passphrase',
+          '请记住并写下您的恢复密码',
           'warning');
         break;
       case 4:
@@ -152,7 +152,7 @@ export class CreateWalletComponent implements OnDestroy {
           this.words[k] = '';
         }
         this.flashNotification.open(
-          'Did you write your password at the previous step?',
+          '您是否在前面的步骤中写下了密码？',
           'warning');
         break;
       case 5:
@@ -265,7 +265,7 @@ export class CreateWalletComponent implements OnDestroy {
     }
 
     if (this.password !== this.passwordVerify) {
-      this.flashNotification.open('Passwords do not match!', 'warning');
+      this.flashNotification.open('密码不匹配！', 'warning');
     } else {
       // We should probably make this a function because it isn't reusing code??
       this.validating = false;

@@ -110,7 +110,7 @@ export class SignatureAddressModalComponent implements OnInit {
       this._rpc.call('signmessage', [address, message])
         .subscribe(response => {
             this.formData.signature = response;
-            this.flashNotification.open('Message Sign Successfully');
+            this.flashNotification.open('消息签名成功');
           },
           error => {
           // @TODO add generic message
@@ -121,10 +121,10 @@ export class SignatureAddressModalComponent implements OnInit {
       this._rpc.call('verifymessage', [address, signature, message])
         .subscribe(response => {
             if (response) {
-              this.flashNotification.open('Message verified.');
+              this.flashNotification.open('消息验证通过.');
             } else {
               this.flashNotification.open(
-                `Message verification failed:\n
+                `消息验证失败:\n
                 the supplied signature and/or message were invalid for this address!`);
             }
           },
@@ -146,7 +146,7 @@ export class SignatureAddressModalComponent implements OnInit {
   }
 
   copyToClipBoard(): void {
-    this.flashNotification.open('Signature copied to clipboard.');
+    this.flashNotification.open('签名复制到剪贴板。');
   }
 
   pasteSignature(): void {

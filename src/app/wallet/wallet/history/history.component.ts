@@ -15,7 +15,7 @@ export class HistoryComponent implements OnInit {
     { title: '付款',               value: 'send',              icon: 'send'},
     { title: '收款',           value: 'receive',           icon: 'receive'},
     { title: '收益',             value: 'stake',             icon: 'stake'},
-    { title: '地址转换',  value: 'internal_transfer', icon: 'transfer'},
+    { title: '资金转移',  value: 'internal_transfer', icon: 'transfer'},
     // { title: 'Immature',         value: 'immature'          },
     // { title: 'Coinbase',         value: 'coinbase'          },
     // { title: 'Orphan',           value: 'orphan'            },

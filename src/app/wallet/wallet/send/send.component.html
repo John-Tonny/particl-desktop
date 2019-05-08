@@ -11,7 +11,7 @@
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon fontSet="partIcon" fontIcon="part-transfer"></mat-icon>
-          地址转换（公开地址-私有地址）
+          资金转移（公开地址-私有地址）
         </ng-template>
       </mat-tab>
     </mat-tab-group>
@@ -31,7 +31,7 @@
 
   <div class="page-intro">
     <h1 *ngIf="type === 'sendPayment'">付款</h1>
-    <h1 *ngIf="type === 'balanceTransfer'">转换(交易类型)</h1>
+    <h1 *ngIf="type === 'balanceTransfer'">资金转移</h1>
     <div class="content">
       <p *ngIf="type === 'sendPayment'">
 	在本页面的“地址类型”列表中选择您的地址类型，将能够调整您交易的隐私级别。

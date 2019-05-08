@@ -64,7 +64,7 @@
                 <!-- expires soon warning -->
                 <div class="warning message" *ngIf="listing.isAboutToExpire">
                   <mat-icon fontSet="partIcon" fontIcon="part-circle-alert"></mat-icon>
-                  过期列表在 {{listing.expireIn}}
+                  过期在 {{listing.expireIn}}
                 </div>
                 <div class="category" *ngIf="!listing.errorMessage && !listing?.isAboutToExpire">
                   {{listing.category.name}}

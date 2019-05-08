@@ -267,7 +267,7 @@ export const Messages = {
     },
     'sell': {
       'action_button': '接受订单',
-      'tooltip': '接收此订单并将商品销售给该买家',
+      'tooltip': '接受此订单并将商品销售给该买家',
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': true,

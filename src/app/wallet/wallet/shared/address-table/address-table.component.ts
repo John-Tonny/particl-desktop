@@ -158,7 +158,7 @@ export class AddressTableComponent implements OnInit, OnChanges {
   }
 
   private rpc_deleteAddress_success(json: Object): void {
-    this.flashNotification.open(`Succesfully deleted ${json['address']}`);
+    this.flashNotification.open(`成功删除 ${json['address']}`);
     // this._rpc.specialPoll();
     this._addressService.updateAddressList();
   }
