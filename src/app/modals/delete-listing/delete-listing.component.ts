@@ -26,7 +26,7 @@ export class DeleteListingComponent implements OnInit {
 
   remove() {
     this.template.remove(this.templateToRemove.id).take(1).subscribe(
-      success => this.snackbar.open('Successfully removed listing!'),
+      success => this.snackbar.open('成功删除!'),
       error => this.snackbar.open(error),
       () => this.dialogRef.close()
     )

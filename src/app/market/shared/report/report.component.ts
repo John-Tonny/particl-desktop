@@ -54,7 +54,7 @@ export class ReportComponent {
       this.dialog.closeAll()
       this.listing.isFlagged = !this.listing.isFlagged;
       this.listing.VoteDetails = this.defaultVoteDetails;
-      this.snackbar.open(`${this.listing.title} has been reported successfully`);
+      this.snackbar.open(`${this.listing.title} 已经成功上报`);
     }, err => {
       this.dialog.closeAll()
       this.snackbar.open(err);

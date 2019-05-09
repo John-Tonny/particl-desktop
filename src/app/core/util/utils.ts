@@ -339,7 +339,7 @@ export const Messages = {
       'action_icon': 'part-check',
       'action_disabled': false,
       'allow_reject_order': false,
-      'status_info': '卖家已发货，当收到时，请您将标记为已交付，托管资金将返回到您的账号中'
+      'status_info': '卖家已发货，当收到订单后，等您确认后，托管资金将退还到各自钱包'
     },
     'sell': {
       'action_button': '等待买家收货',
