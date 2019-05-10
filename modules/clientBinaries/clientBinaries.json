@@ -110,7 +110,7 @@
           },
           "x64": {
             "download": {
-              "url": "ttps://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-win64.zip",
+              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-win64.zip",
               "type": "zip",
               "sha256": "2f57e5d7124d8dec08f9f301e57e50fd5978128eae39df654dca6208ae286f96",
               "bin": "particl-0.18.0.4/bin/particld.exe"
