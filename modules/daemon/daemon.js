@@ -95,6 +95,7 @@ exports.start = function (wallets, doReindex = false) {
         addedArgs.push('-reindex');
       }
       wallets = wallets.map(wallet => `-wallet=${wallet}`);
+      debugger;
       const deamonArgs = [...process.argv, "-rpccorsdomain=http://localhost:4200", ...wallets, ...addedArgs];
       log.info(`starting daemon: ${deamonArgs.join(' ')}`);
 

@@ -130,12 +130,12 @@ export class MainViewComponent implements OnInit, OnDestroy {
     // TODO - find better location to perform this check...
     if (isMainnetRelease() && isPrerelease()) {
       const alphaMessage = {
-        text: 'The Particl Marketplace alpha is still in development and not 100% private yet - use it at your own risk!',
+        text: '维公链商城还在持续开发中，可能存在一些Bug，使用它会存在潜在的风险！',
         dismissable: false,
         timeout: 0,
         messageType: UserMessageType.ALERT,
         action: () => { this.dialog.open(AlphaMainnetWarningComponent); },
-        actionLabel: 'Click here to read all the details first!'
+        actionLabel: '点击这里先阅读所有细节！'
       } as UserMessage;
       this.messagesService.addMessage(alphaMessage);
     }

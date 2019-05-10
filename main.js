@@ -26,6 +26,8 @@ const log     = require('./modules/logger').init();
 const init    = require('./modules/init');
 const _auth = require('./modules/webrequest/http-auth');
 
+log.info(app.getVersion());
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -103,7 +105,7 @@ function initMainWindow() {
     },
   });
 
-  //mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   // Hide the menu bar, press ALT
   // to show it again.
   mainWindow.setMenuBarVisibility(false);
