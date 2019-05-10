@@ -11,11 +11,11 @@ export class HistoryComponent implements OnInit {
   @ViewChild('transactions') transactions: any;
 
   categories: Array<any> = [
-    { title: '所有交易',   value: 'all',               icon: ''},
-    { title: '付款',               value: 'send',              icon: 'send'},
-    { title: '收款',           value: 'receive',           icon: 'receive'},
-    { title: '收益',             value: 'stake',             icon: 'stake'},
-    { title: '资金转移',  value: 'internal_transfer', icon: 'transfer'},
+    { title: '所有交易',   value: 'all',                icon: ''},
+    { title: '付款',       value: 'send',              icon: 'send'},
+    { title: '收款',       value: 'receive',           icon: 'receive'},
+    { title: '资产收益',   value: 'stake',              icon: 'stake'},
+    { title: '资金转移',   value: 'internal_transfer',  icon: 'transfer'},
     // { title: 'Immature',         value: 'immature'          },
     // { title: 'Coinbase',         value: 'coinbase'          },
     // { title: 'Orphan',           value: 'orphan'            },

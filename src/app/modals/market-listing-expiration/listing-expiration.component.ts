@@ -46,7 +46,7 @@ export class ListingExpirationComponent {
     if (this.callback) {
       this.callback(this.expiration);
     }
-
+    debugger;
     this.onConfirm.emit();
     this.dialogClose();
   }
