@@ -13,7 +13,7 @@ if (isEmptyObject(_options)) {
   _options = _processOpts.parse();
 }
 
-const conFilePath = path.join( cookie.getParticlPath(_options), 'particl.conf');
+const conFilePath = path.join( cookie.getParticlPath(_options), 'vpubchain.conf');
 const IPC_CHANNEL = 'rpc-configuration';
 const SAFE_KEYS = ['addressindex'];
 

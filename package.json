@@ -1,10 +1,10 @@
 {
-  "name": "particl-desktop",
+  "name": "vpubchain-desktop",
   "version": "2.0.0-alpha-testnet",
   "branch": "market",
   "license": "GPL-2.0",
-  "description": "Particl Desktop - decentralized marketplace, private currency, messaging & self-governance",
-  "homepage": "https://particl.io",
+  "description": "VPubChain Desktop - decentralized marketplace, private currency, messaging & self-governance",
+  "homepage": "https://www.vpubchain.info",
   "keywords": [
     "particl",
     "angular2",
@@ -14,7 +14,7 @@
     "webpack",
     "typescript"
   ],
-  "author": "Particl contributors",
+  "author": "VPubChain contributors",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -46,10 +46,10 @@
     "travis:test": "ng test --single-run --code-coverage",
     "start": "yarn run start:electron:fast"
   },
-  "productName": "Particl Desktop Testnet",
+  "productName": "VPubChain Desktop Testnet",
   "build": {
     "electronVersion": "4.0.3",
-    "appId": "io.particl.desktop",
+    "appId": "info.vpubchain.desktop",
     "npmRebuild": true,
     "directories": {
       "buildResources": "resources",
@@ -114,11 +114,11 @@
       "uninstallerIcon": "resources/icon.ico",
       "createDesktopShortcut": "always",
       "createStartMenuShortcut": true,
-      "menuCategory": "Particl Desktop Testnet",
+      "menuCategory": "VPubChain Desktop Testnet",
       "runAfterFinish": true
     },
     "linux": {
-      "maintainer": "particl contributors <hello@particl.io>",
+      "maintainer": "vpubchain contributors <vp@vpubchain.org>",
       "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
       "target": [
         {
@@ -142,9 +142,9 @@
       ],
       "executableName": "VPubChain Desktop",
       "desktop": {
-        "Comment": "Particl, P2P Privacy ecosystem",
+        "Comment": "VPubChain, P2P Privacy ecosystem",
         "Icon": "particl-desktop",
-        "Name": "Particl Desktop Testnet",
+        "Name": "VPubChain Desktop Testnet",
         "StartupNotify": "true",
         "Terminal": "false",
         "Type": "Application",
