@@ -56,7 +56,7 @@
         <tr class="expires-soon" *ngIf="data?.listing?.isAboutToExpire">
           <th class="title">
             <mat-icon fontSet="partIcon" fontIcon="part-circle-alert"></mat-icon>
-            很快过期
+            公布时间还剩
           </th>
           <td class="value">
             {{ data?.listing?.expireIn }}
@@ -93,7 +93,7 @@
         <tr>
           <th class="title">
             <mat-icon fontSet="partIcon" fontIcon="part-date"></mat-icon>
-            上架 / 过期时间
+            上架/过期时间
           </th>
           <td class="value">
             {{ data?.listing?.createdAt }} / {{ data?.listing?.expiredTime }}
@@ -106,9 +106,9 @@
 
   <div class="product-details">
     <mat-tab-group class="listing-tabs" (selectChange)="changeTab($event.index)">
-      <mat-tab label="details"></mat-tab>
-      <mat-tab label="Shipping &amp; Escrow"></mat-tab>
-      <mat-tab label="Comments" *ngIf="!data.buyPage"></mat-tab>
+      <mat-tab label="祥情"></mat-tab>
+      <mat-tab label="发货/托管"></mat-tab>
+      <mat-tab label="评论" *ngIf="!data.buyPage"></mat-tab>
     </mat-tab-group><!-- .listing-tabs -->
 
     <div class="tab-content details" *ngIf="tabLabels[selectedTab] == 'details'">

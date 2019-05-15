@@ -9,7 +9,7 @@
         <div class="date">
           <!-- TODO: 3-letter "hash" as semi-unique order ID (generated randomly or e.g. by first letters of TXID) + randomized background color based on the hash -->
           <span class="hash {{ order?.hash_bg }}" matTooltip="Order hash">{{ order?.hash }}</span>
-          Added {{order?.added}} &bull; Updated {{order?.updated}}
+          创建时间 {{order?.added}} &bull; 公布时间 {{order?.updated}}
         </div>
       </div>
       <div class="status {{ order?.status }} {{ order?.type }}" fxFlex="0 0 120px"><span class="dot"></span>{{ order?.status }}</div>
@@ -38,7 +38,7 @@
     </div><!-- .buyer-info -->
 
     <div class="info" fxFlex="35%">
-      <div class="title">Price<!-- & Qty--></div>
+      <div class="title">费用<!-- & Qty--></div>
       <table class="prices">
         <!--tr>
           <th>Quantity</th>

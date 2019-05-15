@@ -1,7 +1,7 @@
 {
   "clients": {
     "particld": {
-      "version": "0.18.0.4",
+      "version": "0.18.0.9",
       "platforms": {
         "linux": {
           "arm": {
@@ -46,10 +46,10 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-linux.tar.gz",
+              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.9/particl-0.18.0.9-x86_64-linux-gnu.tar.gz",
               "type": "tar",
-              "sha256": "f1e89b46c33d11787cf8b464a8b0aa13b6241bf4c4b901b8cdca87d5c7467912",
-              "bin": "particl-core-0.18.0.8/bin/particld"
+              "sha256": "49db6878d3dea5fcedde7d812ab67a4038c9d0f79505288bc96b885128ae6615",
+              "bin": "particl-0.18.0.9/bin/particld"
             },
             "bin": "particld",
             "commands": {
@@ -59,7 +59,7 @@
                 ],
                 "output": [
                   "Particl Core Daemon",
-                  "0.18.0.4"
+                  "0.18.0.9"
                 ]
               }
             }
