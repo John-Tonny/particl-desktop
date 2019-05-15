@@ -8,10 +8,10 @@ import { AddItemComponent } from './sell/add-item/add-item.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'overview', pathMatch: 'full' },
-  { path: 'overview', component: ListingsComponent, data: { title: 'Listings' } },
-  { path: 'buy', component: BuyComponent, data: { title: 'Buy' } },
-  { path: 'sell', component: SellComponent, data: { title: 'Sell' } },
-  { path: 'template', component: AddItemComponent, data: { title: 'Sell › Add/Edit item' } }
+  { path: 'overview', component: ListingsComponent, data: { title: '\'' } },
+  { path: 'buy', component: BuyComponent, data: { title: '购物' } },
+  { path: 'sell', component: SellComponent, data: { title: '销售' } },
+  { path: 'template', component: AddItemComponent, data: { title: '销售 › 增添/修改商品' } }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

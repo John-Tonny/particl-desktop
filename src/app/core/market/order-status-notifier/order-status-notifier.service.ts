@@ -94,19 +94,19 @@ export class OrderStatusNotifierService implements OnDestroy {
   private getMessage(title: string, msg: string) {
     switch (msg) {
       case 'Accept bid' :
-        return 'New bid on \"' + title + '\" - accept or reject it';
+        return '新的订单 \"' + title + '\" - 接收或拒绝';
 
       case 'Make payment' :
-        return 'Seller accepted your bid, order \"' + title + '\" ready for payment';
+        return '卖家接受了您的订单, 准备支付(订单 \"' + title + '\")';
 
       case 'Mark as shipped' :
-        return 'Buyer locked funds, order \"' + title + '\" ready for shipping';
+        return 'Buyer locked funds, 准备发货(订单 \"' + title + '\")';
 
       case 'Mark as delivered' :
-        return 'Seller just shipped \"' + title + '\"';
+        return '卖家已发货 \"' + title + '\"';
 
       case 'Order rejected' :
-        return 'Your bid on \"' + title + '\" was rejected by Seller';
+        return '您的订单 \"' + title + '\" 被卖家拒绝';
 
       default:
         break;
