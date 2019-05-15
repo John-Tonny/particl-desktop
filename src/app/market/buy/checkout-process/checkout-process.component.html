@@ -64,7 +64,7 @@
                 <!-- expires soon warning -->
                 <div class="warning message" *ngIf="listing.isAboutToExpire">
                   <mat-icon fontSet="partIcon" fontIcon="part-circle-alert"></mat-icon>
-                  过期在 {{listing.expireIn}}
+                  公布时间还剩 {{listing.expireIn}}
                 </div>
                 <div class="category" *ngIf="!listing.errorMessage && !listing?.isAboutToExpire">
                   {{listing.category.name}}
@@ -162,7 +162,7 @@
             <mat-form-field class="full-width">
               <mat-select matNativeControl [(value)]="selectedAddress" [(ngModel)]="selectedAddress" name="selectedAddress"  [ngModelOptions]="{standalone: true}"
                           (change)="select(selectedAddress)"
-                          placeholder="Select saved shipping address profile"
+                          placeholder="选择收货地址"
                           [disabled]="!profile?.shippingAddresses || profile?.shippingAddresses.length === 0">
                 <mat-option *ngFor="let address of profile?.shippingAddresses"
                             [value]="address" >

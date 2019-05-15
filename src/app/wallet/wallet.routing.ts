@@ -11,15 +11,15 @@ import { ReceiveComponent, SendComponent, HistoryComponent, AddressBookComponent
 //   { path: '', redirectTo: '/wallet/overview', pathMatch: 'full' },
 const routes: Routes = [
   { path: '', redirectTo: 'overview', pathMatch: 'full' },
-  { path: 'overview', component: OverviewComponent, data: { title: 'Overview' } },
-  { path: 'receive', component: ReceiveComponent, data: { title: 'Receive' } },
-  { path: 'send', component: SendComponent, data: { title: 'Send' } },
-  { path: 'history', component: HistoryComponent, data: { title: 'History' } },
-  { path: 'address-book', component: AddressBookComponent, data: { title: 'Address Book' } },
+  { path: 'overview', component: OverviewComponent, data: { title: '概览' } },
+  { path: 'receive', component: ReceiveComponent, data: { title: '收款' } },
+  { path: 'send', component: SendComponent, data: { title: '付款' } },
+  { path: 'history', component: HistoryComponent, data: { title: '历史交易' } },
+  { path: 'address-book', component: AddressBookComponent, data: { title: '地址簿' } },
   // { path: 'settings', component: SettingsComponent, data: { title: 'Settings' } },
-  { path: 'help', component: HelpComponent, data: { title: 'Help & Support' } },
-  { path: 'proposals', component: ProposalsComponent, data: { title: 'Proposals' } },
-  { path: 'proposal', component: AddProposalComponent, data: { title: 'Proposals › Submit new' } }
+  //{ path: 'help', component: HelpComponent, data: { title: '帮助/支持' } },
+  { path: 'proposals', component: ProposalsComponent, data: { title: '提案' } },
+  { path: 'proposal', component: AddProposalComponent, data: { title: '提案 › 提交新的' } }
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

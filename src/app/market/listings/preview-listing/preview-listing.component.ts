@@ -117,7 +117,7 @@ export class PreviewListingComponent implements OnInit, OnDestroy {
     this.processModal = this.dialog.open(ProcessingModalComponent, {
       disableClose: true,
       data: {
-        message: 'Hang on, we are busy processing your vote'
+        message: '请稍候，我们正在处理....'
       }
     });
   }

@@ -111,7 +111,7 @@
 
     <div class="options item">
       <mat-form-field class="voting-options" floatPlaceholder="never">
-        <mat-select placeholder="Select to vote" [(ngModel)]="selectedOption">
+        <mat-select placeholder="投票选择" [(ngModel)]="selectedOption">
           <mat-option *ngFor="let option of proposal?.options" [value]="option">
             {{ option.description }}
           </mat-option>
