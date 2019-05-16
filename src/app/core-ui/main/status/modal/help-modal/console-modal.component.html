@@ -16,17 +16,17 @@
   <div #debug class="console-modal-form" (scroll)="onScroll()">
     <div class="intro-text">
       <p class="console-info" *ngIf="activeTab !== 'market'">
-        欢迎来到<strong>维公链的主RPC的</strong>控制台(用于与钱包的交互).<br>
+        欢迎来到<strong> RPC </strong>主控制台<br>
         <!--Use up and down arrows to navigate history, and Ctrl-L to clear screen.-->
-        输入 <code>‘help' ，</code>查看可用命令。
+        使用<code> help </code>命令，查看帮助信息
       </p>
       <p class="console-info" *ngIf="activeTab === 'market'">
-        欢迎来到 <strong>维公链的市场RPC的</strong>控制台.<br>
+        欢迎来到<strong> RPC </strong>市场控制台<br>
         <!--Use up and down arrows to navigate history, and Ctrl-L to clear screen.-->
-        输入 <code>’help‘ ，</code>查看可用命令。
+        使用<code> help </code>命令，查看帮助信息
       </p>
       <p class="warn-text">
-        <strong>警告:</strong>在完全理解命令之前，请不要使用此控制台。骗子总是要求您在这里输入命令，来窃取您钱包的东西。
+        <strong>警告:</strong>在未完全理解命令之前，请不要使用此控制台。
       </p>
     </div>
 
@@ -43,7 +43,7 @@
 
   <div class="command-actions" fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="center center">
     <mat-form-field fxFlex="1 1 100%" floatPlaceholder="never">
-      <input matInput [(ngModel)]="command" placeholder="输入 'help' ，查看可用命令" [appFocusTimeout]="true">
+      <input matInput [(ngModel)]="command" placeholder="使用 help 命令，查看帮助信息" [appFocusTimeout]="true">
     </mat-form-field>
     <button mat-raised-button color="primary" [disabled]="!command || !waitingForRPC" (click)="rpcCall()" fxFlex>
       <mat-icon fontSet="partIcon" fontIcon="part-next-single"></mat-icon>
