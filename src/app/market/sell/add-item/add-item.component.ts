@@ -482,7 +482,6 @@ export class AddItemComponent implements OnInit, OnDestroy {
         this.modals.unlock({timeout: 30},
           (status) => {
             this.modals.openListingExpiryModal({template: this.preloadedTemplate}, (expiration: number) => {
-              debugger;
               this.postTemplate(expiration);
             });
           },
