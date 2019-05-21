@@ -12,15 +12,15 @@
     </div>
     <!-- TODO: only show "blocks-left" on ACTIVE proposals -->
     <div class="blocks-left" *ngIf="selectedTab == 'active'">
-      <mat-progress-bar mode="determinate" value="{{proposal?.votingProgressPercentage()}}" matTooltip="Time left for voting" matTooltipPosition="before"></mat-progress-bar>
-      <div *ngIf="proposal?.isExpiredAtValid" class="text">{{proposal?.expiryTimeStamp}} left</div>
-      <div *ngIf="!proposal?.isExpiredAtValid" class="text">处理中...</div>
+      <mat-progress-bar mode="determinate" value="{{proposal?.votingProgressPercentage()}}" matTooltip="投票时间还剩" matTooltipPosition="before"></mat-progress-bar>
+      <div *ngIf="proposal?.isExpiredAtValid" class="text">{{proposal?.expiryTimeStamp}} 还剩</div>
+      <div *ngIf="!proposal?.isExpiredAtValid" class="text">投票中...</div>
     </div>
     <!-- TODO: only show "blocks-left" on PLANNED/future proposals -->
     <div class="blocks-left" *ngIf="selectedTab == 'planned'">
-      <mat-progress-bar mode="determinate" value="0" matTooltip="Blocks left until voting starts" matTooltipPosition="before"></mat-progress-bar>
-      <div *ngIf="proposal?.isExpiredAtValid" class="text">{{proposal?.expiryTimeStamp}} left until voting starts</div>
-      <div *ngIf="!proposal?.isExpiredAtValid" class="text">处理中...</div>
+      <mat-progress-bar mode="determinate" value="0" matTooltip="投票还剩区块数" matTooltipPosition="before"></mat-progress-bar>
+      <div *ngIf="proposal?.isExpiredAtValid" class="text">{{proposal?.expiryTimeStamp}} 还剩</div>
+      <div *ngIf="!proposal?.isExpiredAtValid" class="text">投票中...</div>
     </div>
     <!-- TODO: only show "blocks-left.results" on PAST proposals -->
     <div class="blocks-left results" *ngIf="selectedTab == 'past'">

@@ -53,7 +53,7 @@
         <mat-form-field class="icon-input filter-input" floatPlaceholder="never">
           <input matInput type="text" class="header-input" placeholder="查询商品" [(ngModel)]="filters.search"
                  (keyup)="clearAndLoadPage()" (keyup.enter)="clearAndLoadPage()" (keyup.escape)="filters.search = ''; clearAndLoadPage()">
-          <mat-icon *ngIf="filters.search" matTooltip="Clear" fontSet="partIcon" fontIcon="part-clear-all"
+          <mat-icon *ngIf="filters.search" matTooltip="清除" fontSet="partIcon" fontIcon="part-clear-all"
                     (click)="filters.search=''; clearAndLoadPage()"></mat-icon>
           <mat-icon *ngIf="!filters.search" matTooltip="查找" fontSet="partIcon" fontIcon="part-search"
                     (click)="clearAndLoadPage()"></mat-icon>

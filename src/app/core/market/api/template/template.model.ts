@@ -180,7 +180,7 @@ export class Template {
 
   get expiredAt(): any {
     return Object.prototype.toString.call(this.object.ListingItems) === '[object Array]' && this.object.ListingItems.length ?
-    'Expires ' + new DateFormatter(new Date(this.object.ListingItems[0].expiredAt)).dateFormatter(false).substr(0, 16) : '';
+    '到期时间 ' + new DateFormatter(new Date(this.object.ListingItems[0].expiredAt)).dateFormatter(false).substr(0, 16) : '';
   }
 
   get isAboutToExpire(): Boolean {

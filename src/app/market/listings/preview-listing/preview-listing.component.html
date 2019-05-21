@@ -228,10 +228,10 @@
       <!-- Reported, not voted yet by user -->
       <div *ngIf="!data?.listing?.VoteDetails">
         <span class="title"><strong>商品被标记</strong>为差, 请投票：</span>
-        <button mat-button class="small" color="primary" (click)="voteForListing(data?.listing?.keepItem)" matTooltip="Item is fine and should stay on Market">
+        <button mat-button class="small" color="primary" (click)="voteForListing(data?.listing?.keepItem)" matTooltip="该产品应该留在市场上">
           <mat-icon fontSet="partIcon" fontIcon="part-thumb-up"></mat-icon>
         </button>
-        <button mat-button class="small" color="warn" (click)="voteForListing(data?.listing?.removeItem)" matTooltip="Item is inappropriate/illegal and should be removed from Market">
+        <button mat-button class="small" color="warn" (click)="voteForListing(data?.listing?.removeItem)" matTooltip="该产品应从市场上撤下">
           <mat-icon fontSet="partIcon" fontIcon="part-thumb-down"></mat-icon>
         </button>
       </div>
