@@ -227,6 +227,7 @@ export class DateFormatter {
   constructor(private date: Date) {
   }
 
+  /*
   public dateFormatter(onlyShowDate?: boolean) {
     return (
       (this.date.getDate() < 10 ? '0' + this.date.getDate() : this.date.getDate()) + '-' +
@@ -235,6 +236,17 @@ export class DateFormatter {
       + (onlyShowDate === false ?  ' ' + this.hourSecFormatter() : '')
     )
   }
+  */
+
+  public dateFormatter(onlyShowDate?: boolean) {
+    return (
+        (this.date.getFullYear() < 10 ? '0' + this.date.getFullYear() : this.date.getFullYear()) + '-' +
+        ((this.date.getMonth() + 1) < 10 ? '0' + (this.date.getMonth() + 1) : (this.date.getMonth() + 1)) + '-' +
+        (this.date.getDate() < 10 ? '0' + this.date.getDate() : this.date.getDate())
+        + (onlyShowDate === false ?  ' ' + this.hourSecFormatter() : '')
+    )
+  }
+
 
   public hourSecFormatter() {
       return (
