@@ -7,11 +7,11 @@ exports.init = function () {
   log.transports.file.level    = 'debug';
 
   log.transports.file.appName = process.platform == 'linux'
-    ? 'vpubchain-desktop'
-    : 'VPubChain Desktop';
+    ? 'vpub-desktop'
+    : 'Vpub Desktop';
   let logPath = options.testnet
-    ? 'vpubchain-desktop-testnet.log'
-    : 'vpubchain-desktop.log';
+    ? 'vpub-desktop-testnet.log'
+    : 'vpub-desktop.log';
   log.transports.file.file = log.transports.file
     .findLogPath(log.transports.file.appName)
     .replace('log.log', logPath);

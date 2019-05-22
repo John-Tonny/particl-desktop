@@ -13,12 +13,12 @@ const ClientBinariesManager = require('../clientBinaries/clientBinariesManager')
 const rpc = require('../rpc/rpc');
 
 // master
-// const BINARY_URL = 'https://raw.githubusercontent.com/particl/particl-desktop/master/modules/clientBinaries/clientBinaries.json';
+// const BINARY_URL = 'https://raw.githubusercontent.com/vpub/vpub-desktop/master/modules/clientBinaries/clientBinaries.json';
 
 // dev
-// const BINARY_URL = 'https://raw.githubusercontent.com/particl/particl-desktop/develop/modules/clientBinaries/clientBinaries.json';
+// const BINARY_URL = 'https://raw.githubusercontent.com/vpub/vpub-desktop/develop/modules/clientBinaries/clientBinaries.json';
 const branchName = (branch || 'develop').replace('-', '/');
-const BINARY_URL = `https://raw.githubusercontent.com/particl/particl-desktop/${branchName}/modules/clientBinaries/clientBinaries1.json`;
+const BINARY_URL = `https://raw.githubusercontent.com/vpub/vpub-desktop/${branchName}/modules/clientBinaries/clientBinaries1.json`;
 
 //const ALLOWED_DOWNLOAD_URLS_REGEX = new RegExp('*', 'i');
 
@@ -31,7 +31,7 @@ class DaemonManager extends EventEmitter {
   }
 
   getPath() {
-    return this._availableClients['particld'].binPath;
+    return this._availableClients['vpubd'].binPath;
   }
 
   init(options) {
@@ -65,7 +65,7 @@ class DaemonManager extends EventEmitter {
   }
 
   _checkForNewConfig() {
-    const nodeType = 'particld';
+    const nodeType = 'vpubd';
     let binariesDownloaded = false;
     let nodeInfo;
 
@@ -221,7 +221,7 @@ class DaemonManager extends EventEmitter {
       this._emit('scanning', 'Scanning for binaries');
 
       return mgr.init({
-        folders: [ path.join(this.localPath, 'particld', 'unpacked') ]
+        folders: [ path.join(this.localPath, 'vpubd', 'unpacked') ]
       })
       .then(() => {
         const clients = mgr.clients;
@@ -323,7 +323,7 @@ class DaemonManager extends EventEmitter {
 
     log.debug(`Platform: ${platform}`);
 
-    let binPath = path.join(this.localPath, 'particld', 'unpacked', 'particld');
+    let binPath = path.join(this.localPath, 'vpubd', 'unpacked', 'vpubd');
 
     if (platform === 'win') {
       binPath += '.exe';
@@ -331,7 +331,7 @@ class DaemonManager extends EventEmitter {
 
     log.debug(`Client binary path: ${binPath}`);
 
-    this._availableClients.particld = {
+    this._availableClients.vpubd = {
       binPath
     };
   }

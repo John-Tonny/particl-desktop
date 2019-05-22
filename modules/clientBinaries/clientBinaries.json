@@ -1,24 +1,24 @@
 {
   "clients": {
-    "particld": {
-      "version": "0.18.0.9",
+    "vpubd": {
+      "version": "0.18.0.4",
       "platforms": {
         "linux": {
           "arm": {
             "download": {
-              "url": "https://github.com/particl/particl-core/releases/download/v0.18.0.4alpha/particl-0.18.0.4-arm-linux-gnueabihf.tar.gz",
+              "url": "https://github.com/vpub/vpub-core/releases/download/v0.18.0.4alpha/vpub-0.18.0.4-arm-linux-gnueabihf.tar.gz",
               "type": "tar",
               "sha256": "42aa0ae64e9e3f36d40d1833d75128e2f9b85581335693e2ab2fc1539278a3af",
-              "bin": "particl-0.18.0.4/bin/particld"
+              "bin": "vpub-0.18.0.4/bin/vpubd"
             },
-            "bin": "particld",
+            "bin": "vpubd",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Particl Core Daemon",
+                  "Vpub Core Daemon",
                   "0.18.0.4"
                 ]
               }
@@ -26,19 +26,19 @@
           },
           "ia32": {
             "download": {
-              "url": "https://github.com/particl/particl-core/releases/download/v0.18.0.4alpha/particl-0.18.0.4-i686-pc-linux-gnu_nousb.tar.gz",
+              "url": "https://github.com/vpub/vpub-core/releases/download/v0.18.0.4alpha/vpub-0.18.0.4-i686-pc-linux-gnu_nousb.tar.gz",
               "type": "tar",
               "sha256": "90b0844d095921e044be2a03650684bcab4c024c5ab6f1ff595eb9a2cb31c538",
-              "bin": "particl-0.18.0.4/bin/particld"
+              "bin": "vpub-0.18.0.4/bin/vpubd"
             },
-            "bin": "particld",
+            "bin": "vpubd",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Particl Core Daemon",
+                  "Vpub Core Daemon",
                   "0.18.0.4"
                 ]
               }
@@ -46,20 +46,20 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.9/particl-0.18.0.9-x86_64-linux-gnu.tar.gz",
+              "url": "https://github.com/John-Tonny/vpub-core/releases/download/v0.18.0.4/vpub-0.18.0.4tar.gz",
               "type": "tar",
-              "sha256": "49db6878d3dea5fcedde7d812ab67a4038c9d0f79505288bc96b885128ae6615",
-              "bin": "particl-0.18.0.9/bin/particld"
+              "sha256": "473d3cf0f5606155a82655d73b10a1c66dc9293e87ed3643be336a2d36e2aaec",
+              "bin": "vpub-0.18.0.4/bin/vpubd"
             },
-            "bin": "particld",
+            "bin": "vpubd",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Particl Core Daemon",
-                  "0.18.0.9"
+                  "Vpub Core Daemon",
+                  "0.18.0.4"
                 ]
               }
             }
@@ -68,19 +68,19 @@
         "mac": {
           "x64": {
             "download": {
-              "url": "https://github.com/particl/particl-core/releases/download/v0.18.0.4alpha/particl-0.18.0.4-osx64.tar.gz",
+              "url": "https://github.com/vpub/vpub-core/releases/download/v0.18.0.4alpha/vpub-0.18.0.4-osx64.tar.gz",
               "type": "tar",
               "sha256": "a47ae748ad28f8e022ecc6d9f8e8eed897ac44832c9e518f4e4c1660d58cb541",
-              "bin": "particl-0.18.0.4/bin/particld"
+              "bin": "vpub-0.18.0.4/bin/vpubd"
             },
-            "bin": "particld",
+            "bin": "vpubd",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Particl Core Daemon",
+                  "Vpub Core Daemon",
                   "0.18.0.4"
                 ]
               }
@@ -90,19 +90,19 @@
         "win": {
           "ia32": {
             "download": {
-              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-win32.zip",
+              "url": "https://github.com/John-Tonny/vpub-core/releases/download/v0.18.0.4/vpub-0.18.0.4-win32.zip",
               "type": "zip",
               "sha256": "a6fe8ccc0a2a83b9cf5a355daeb47702826d179aa92be1d82cf9494e24c3abf6",
-              "bin": "particl-0.18.0.4/bin/particld.exe"
+              "bin": "vpub-0.18.0.4/bin/vpubd.exe"
             },
-            "bin": "particld.exe",
+            "bin": "vpubd.exe",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Particl Core Daemon",
+                  "Vpub Core Daemon",
                   "0.18.0.4"
                 ]
               }
@@ -110,19 +110,19 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/particl-0.18.0.4-win64.zip",
+              "url": "https://github.com/John-Tonny/vpub-core/releases/download/v0.18.0.4/vpub-0.18.0.4-win64.zip",
               "type": "zip",
               "sha256": "2f57e5d7124d8dec08f9f301e57e50fd5978128eae39df654dca6208ae286f96",
-              "bin": "particl-0.18.0.4/bin/particld.exe"
+              "bin": "vpub-0.18.0.4/bin/vpubd.exe"
             },
-            "bin": "particld.exe",
+            "bin": "vpubd.exe",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Particl Core Daemon",
+                  "Vpub Core Daemon",
                   "0.18.0.4"
                 ]
               }

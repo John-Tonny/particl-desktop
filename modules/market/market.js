@@ -1,6 +1,6 @@
 const log         = require('electron-log');
 const config    = require('../daemon/daemonConfig');
-const market      = require('particl-marketplace');
+const market      = require('vpub-marketplace');
 
 // Stores the child process
 let child = undefined;

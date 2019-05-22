@@ -1,12 +1,12 @@
 {
-  "name": "vpubchain-desktop",
+  "name": "vpub-desktop",
   "version": "2.0.0-alpha-testnet",
   "branch": "market",
   "license": "GPL-2.0",
-  "description": "VPubChain Desktop - decentralized marketplace, private currency, messaging & self-governance",
-  "homepage": "https://www.vpubchain.info",
+  "description": "Vpub Desktop - decentralized marketplace, private currency, messaging & self-governance",
+  "homepage": "https://www.vpub.info",
   "keywords": [
-    "particl",
+    "vpub",
     "angular2",
     "angular4",
     "angular-cli",
@@ -14,7 +14,7 @@
     "webpack",
     "typescript"
   ],
-  "author": "VPubChain contributors",
+  "author": "Vpub contributors",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -46,10 +46,10 @@
     "travis:test": "ng test --single-run --code-coverage",
     "start": "yarn run start:electron:fast"
   },
-  "productName": "VPubChain Desktop Testnet",
+  "productName": "Vpub Desktop Testnet",
   "build": {
     "electronVersion": "4.0.3",
-    "appId": "info.vpubchain.desktop",
+    "appId": "info.vpub.desktop",
     "npmRebuild": true,
     "directories": {
       "buildResources": "resources",
@@ -114,11 +114,11 @@
       "uninstallerIcon": "resources/icon.ico",
       "createDesktopShortcut": "always",
       "createStartMenuShortcut": true,
-      "menuCategory": "VPubChain Desktop Testnet",
+      "menuCategory": "Vpub Desktop Testnet",
       "runAfterFinish": true
     },
     "linux": {
-      "maintainer": "vpubchain contributors <vp@vpubchain.org>",
+      "maintainer": "vpub contributors <vp@vpub.org>",
       "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
       "target": [
         {
@@ -140,11 +140,11 @@
           ]
         }
       ],
-      "executableName": "VPubChain Desktop",
+      "executableName": "Vpub Desktop",
       "desktop": {
-        "Comment": "VPubChain, P2P Privacy ecosystem",
-        "Icon": "particl-desktop",
-        "Name": "VPubChain Desktop Testnet",
+        "Comment": "Vpub, P2P Privacy ecosystem",
+        "Icon": "vpub-desktop",
+        "Name": "Vpub Desktop Testnet",
         "StartupNotify": "true",
         "Terminal": "false",
         "Type": "Application",
@@ -157,7 +157,7 @@
     "asar": true,
     "asarUnpack": [
       "node_modules/sqlite3/**/*",
-      "node_modules/particl-marketplace/**/*"
+      "node_modules/vpub-marketplace/**/*"
     ]
   },
   "dependencies": {
@@ -175,7 +175,7 @@
     "lodash": "^4.17.5",
     "ng2-nvd3": "^2.0.0",
     "node-unzip-2": "^0.2.1",
-    "particl-marketplace": "^0.0.51",
+    "vpub-marketplace": "^0.0.51",
     "rx-ipc-electron": "^0.1.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.20"

@@ -4,14 +4,14 @@ const path = require('path');
 const log  = require('electron-log');
 
 /*
-** returns Particl config folder
+** returns Vpub config folder
 */
 function findCookiePath() {
 
   var homeDir = os.homedir ? os.homedir() : process.env['HOME'];
 
   var dir,
-      appName = 'VPubChain';
+      appName = 'Vpub';
   switch (process.platform) {
     case 'linux': {
       dir = prepareDir(homeDir, '.' + appName.toLowerCase()).result;
@@ -88,7 +88,7 @@ function mkDir(dirPath, root) {
 
 /*
 ** returns the current RPC cookie
-** RPC cookie is regenerated at every particld startup
+** RPC cookie is regenerated at every vpubd startup
 */
 function getAuth(options) {
 
@@ -97,7 +97,7 @@ function getAuth(options) {
   }
 
   let auth;
-  var dataDir = getParticlPath(options);
+  var dataDir = getVpubPath(options);
   const COOKIE_FILE = dataDir
                     + (options.testnet ? '/testnet' : '')
                     + '/.cookie';
@@ -112,9 +112,9 @@ function getAuth(options) {
   return (auth)
 }
 
-function getParticlPath(options) {
+function getVpubPath(options) {
   return options.datadir ? options.datadir : findCookiePath();
 }
 
 exports.getAuth = getAuth;
-exports.getParticlPath = getParticlPath;
+exports.getVpubPath = getVpubPath;

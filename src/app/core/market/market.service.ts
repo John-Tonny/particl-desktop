@@ -11,7 +11,7 @@ export class MarketService {
 
   private log: any = Log.create('rpc-state.class');
 
-  // hostname: string = 'dev1.particl.xyz';
+  // hostname: string = 'dev1.vpub.xyz';
   // hostname: string = 'localhost';
   // port: number = 3000;
   hostname: string = environment.marketHost;

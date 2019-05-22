@@ -9,7 +9,7 @@ const platform      = require('os').platform();
 
 /* correct appName and userData to respect Linux standards */
 if (process.platform === 'linux') {
-  app.setName('vpubchain-desktop');
+  app.setName('vpub-desktop');
   app.setPath('userData', `${app.getPath('appData')}/${app.getName()}`);
 }
 
@@ -201,11 +201,11 @@ function makeTray() {
       submenu: [
         {
           label: 'About ' + app.getName(),
-          click() { electron.shell.openExternal('https://particl.io/#about'); }
+          click() { electron.shell.openExternal('https://vpub.io/#about'); }
         },
         {
-          label: 'Visit Particl.io',
-          click() { electron.shell.openExternal('https://particl.io'); }
+          label: 'Visit Vpub.io',
+          click() { electron.shell.openExternal('https://vpub.io'); }
         },
         {
           label: 'Visit Electron',
@@ -224,7 +224,7 @@ function makeTray() {
   // }
 
   // Set the tray icon
-  tray.setToolTip('Particl ' + app.getVersion());
+  tray.setToolTip('Vpub ' + app.getVersion());
   tray.setContextMenu(contextMenu)
 
   // Always show window when tray icon clicked
