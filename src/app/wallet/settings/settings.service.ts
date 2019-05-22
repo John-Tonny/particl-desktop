@@ -10,10 +10,10 @@ export class SettingsService {
       autostart: false,
       detachDatabases: true,
       feeAmount: 0.01,
-      feeCurrency: 'part',
+      feeCurrency: 'vp',
       stake: true,
       reserveAmount: 0,
-      reservceCurrency: 'part',
+      reservceCurrency: 'vp',
       stakeInterval: 30,
       minRing: 3,
       maxRing: 100,
@@ -36,7 +36,7 @@ export class SettingsService {
     },
     display: {
       language: 'default',
-      units: 'part',
+      units: 'vp',
       rows: 20,
       addresses: true,
       notify: {

@@ -74,7 +74,7 @@ export class RevertColdstakingComponent implements OnInit {
 
             this.log.d('revert fee for address', tx);
 
-            this._rpc.call('sendtypeto', ['part', 'part', [{
+            this._rpc.call('sendtypeto', ['vp', 'vp', [{
               subfee: true,
               address: this.address,
               amount: tx.amount
@@ -117,7 +117,7 @@ export class RevertColdstakingComponent implements OnInit {
 
       this.log.d('revert for address', tx);
 
-      this._rpc.call('sendtypeto', ['part', 'part', [{
+      this._rpc.call('sendtypeto', ['vp', 'vp', [{
         subfee: true,
         address: this.address,
         amount: tx.amount

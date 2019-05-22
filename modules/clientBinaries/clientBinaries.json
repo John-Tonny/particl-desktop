@@ -46,7 +46,7 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/John-Tonny/vpub-core/releases/download/v0.18.0.4/vpub-0.18.0.4tar.gz",
+              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/vpub-0.18.0.4.tar.gz",
               "type": "tar",
               "sha256": "473d3cf0f5606155a82655d73b10a1c66dc9293e87ed3643be336a2d36e2aaec",
               "bin": "vpub-0.18.0.4/bin/vpubd"
