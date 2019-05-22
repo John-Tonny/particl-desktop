@@ -2,13 +2,13 @@ import { Bid } from 'app/core/market/api/bid/bid.model';
 
 export class OrderFilter {
   order_filtering: Array<any> = [
-    { title: '所有订单', value: '*',               amount: 0 },
-    { title: '投标',    value: 'MPA_BID',         amount: 0 },
-    { title: '等待',   value: 'AWAITING_ESCROW', amount: 0 },
-    { title: '托管',  value: 'ESCROW_LOCKED',   amount: 0 },
-    { title: '交付',    value: 'SHIPPING',        amount: 0 },
-    { title: '完成',  value: 'COMPLETE',        amount: 0 },
-    { title: '拒绝',   value: 'MPA_REJECT',      amount: 0 }
+    { title: '所有订单',    value: '*',               amount: 0 },
+    { title: '已下订单',     value: 'MPA_BID',         amount: 0 },
+    { title: '待确认订单',   value: 'AWAITING_ESCROW', amount: 0 },
+    { title: '待支付/托管',  value: 'ESCROW_LOCKED',   amount: 0 },
+    { title: '交付订单',     value: 'SHIPPING',        amount: 0 },
+    { title: '完成的订单',   value: 'COMPLETE',        amount: 0 },
+    { title: '拒绝的订单',   value: 'MPA_REJECT',      amount: 0 }
   ];
   constructor() {
   }

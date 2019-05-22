@@ -1,5 +1,6 @@
 interface UiStatus {
     status: string;
+    title: string;
     class: string;
     status_info: string;
     action_icon: string;
@@ -13,6 +14,7 @@ export class Status {
     private states: Array<UiStatus> = [
         {
             status: 'unpublished',
+            title: '未公布',
             class: 'unpublished',
             status_info: 'Inactive, unpublished listing template – used to tweak your listing before publishing'
                 + '(or after you take down your active listings later)',
@@ -23,6 +25,7 @@ export class Status {
             action_disabled: false
         }, {
             status: 'awaiting',
+            title: '等待公布',
             class: 'pending',
             status_info: 'Awaiting publication!',
             action_icon: 'part-check',
@@ -33,6 +36,7 @@ export class Status {
         },
         {
             status: 'published',
+            title: '已公布',
             class: 'published',
             status_info: 'Active, published listing template',
             action_icon: 'part-check',
@@ -43,5 +47,8 @@ export class Status {
         }];
     get(status: string): UiStatus {
         return this.states.find((state: UiStatus) => state.status === status);
+    }
+    getTitle(title: string): UiStatus {
+        return this.states.find((state: UiStatus) => state.title === title);
     }
 }
