@@ -382,7 +382,7 @@ export const Messages = {
       'tooltip': '',
       'action_icon': 'part-check',
       'action_disabled': true,
-      'allow_reject_order': false,   
+      'allow_reject_order': false,
       'status_info': '买家确认已收到，订单完成！'
     },
     'title':   '订单完成',
