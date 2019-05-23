@@ -11,7 +11,7 @@ export class HistoryComponent implements OnInit {
   @ViewChild('transactions') transactions: any;
 
   categories: Array<any> = [
-    { title: '所有交易',   value: 'all',                icon: ''},
+    { title: '所有交易',   value:  'all',                icon: ''},
     { title: '付款',       value: 'send',              icon: 'send'},
     { title: '收款',       value: 'receive',           icon: 'receive'},
     { title: '资产收益',   value: 'stake',              icon: 'stake'},
