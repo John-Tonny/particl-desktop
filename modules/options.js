@@ -68,7 +68,6 @@ exports.parse = function() {
     options[arg] = true;
   });
 
-  //options.testnet = 1;
   options.port = options.rpcport
     ? options.rpcport // custom rpc port
     : options.testnet

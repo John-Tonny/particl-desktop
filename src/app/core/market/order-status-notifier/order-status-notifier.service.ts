@@ -100,7 +100,7 @@ export class OrderStatusNotifierService implements OnDestroy {
         return '卖家接受了您的订单, 准备支付(订单 \"' + title + '\")';
 
       case 'Mark as shipped' :
-        return 'Buyer locked funds, 准备发货(订单 \"' + title + '\")';
+        return '买家资金已托管, 准备发货(订单 \"' + title + '\")';
 
       case 'Mark as delivered' :
         return '卖家已发货 \"' + title + '\"';

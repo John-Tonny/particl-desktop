@@ -179,6 +179,41 @@ export class OrderItemComponent implements OnInit {
     });
   }
 
+  getStatusTitle() {
+    switch (this.order.status) {
+      case 'bidding':
+          // run accept command for seller
+        if (this.order.type === 'buy') {
+          return "等待卖家";
+        }
+        return "接受/拒绝订单";
+
+      case 'awaiting':
+        if (this.order.type === 'buy') {
+          return "待支付订单";
+        }
+        return "等待买家支付";
+
+      case 'escrow':
+        if (this.order.type === 'buy') {
+          return "等待交付";
+        }
+        return "待发货给买家";
+
+      case 'shipping':
+        if (this.order.type === 'buy') {
+          return "等待收货";
+        }
+        return "等待买家收货";
+
+      case 'complete':
+        if (this.order.type === 'buy') {
+          return "购物完成";
+        }
+        return "订单完成";
+    }
+  }
+
   openProcessingModal() {
       const dialog = this.dialog.open(ProcessingModalComponent, {
         disableClose: true,

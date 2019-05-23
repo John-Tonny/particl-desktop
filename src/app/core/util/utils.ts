@@ -285,7 +285,6 @@ export const Messages = {
       'allow_reject_order': true,
       'status_info': '买家想购买此商品，等待卖家同意或拒绝'
     },
-    'title':   '下订单/接受订单',
     'status' : 'bidding'
   },
   'REJECTED': {
@@ -305,7 +304,6 @@ export const Messages = {
       'allow_reject_order': false,
       'status_info': '您已经拒绝，此订单已取消'
     },
-    'title':   '拒绝订单',
     'status' : 'rejected'
   },
   'AWAITING_ESCROW': {
@@ -325,7 +323,6 @@ export const Messages = {
       'allow_reject_order': false,
       'status_info': '等待买家付款和资金托管'
     },
-    'title':   '支付/等待支付',
     'status' : 'awaiting'
   },
   'ESCROW_LOCKED': {
@@ -345,7 +342,6 @@ export const Messages = {
       'allow_reject_order': false,
       'status_info': `买方的资金已托管，请您准备发货，发货后，将订单标记为已交付，并等待买家确认`
     },
-    'title':   '交付/等待交付',
     'status' : 'escrow'
   },
   'SHIPPING': {
@@ -365,7 +361,6 @@ export const Messages = {
       'allow_reject_order': false,
       'status_info': '卖家已交付，等待买方确认'
     },
-    'title':   '收货/等待收货',
     'status' : 'shipping'
   },
   'COMPLETE': {
@@ -385,7 +380,6 @@ export const Messages = {
       'allow_reject_order': false,
       'status_info': '买家确认已收到，订单完成！'
     },
-    'title':   '订单完成',
     'status' : 'complete'
   }
 }
