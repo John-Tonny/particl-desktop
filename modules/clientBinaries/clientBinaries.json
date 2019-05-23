@@ -110,10 +110,10 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/John-Tonny/vpub-core/releases/download/v0.18.0.4/vpub-0.18.0.4-win64.zip",
+              "url": "https://github.com/vpubchain/vpub-core/releases/download/1.0/vpub-dev1.0-win64.zip",
               "type": "zip",
-              "sha256": "2f57e5d7124d8dec08f9f301e57e50fd5978128eae39df654dca6208ae286f96",
-              "bin": "vpub-0.18.0.4/bin/vpubd.exe"
+              "sha256": "d7e1d99fe3704fdd6d75118feb6b67bf0ab3f0459ccb98e2c0410b2411f66ec5",
+              "bin": "vpub-dev1.0-win64/bin/vpubd.exe"
             },
             "bin": "vpubd.exe",
             "commands": {
