@@ -105,7 +105,7 @@ function initMainWindow() {
     },
   });
 
-  mainWindow.webContents.openDevTools();
+  //mainWindow.webContents.openDevTools();
   // Hide the menu bar, press ALT
   // to show it again.
   mainWindow.setMenuBarVisibility(false);

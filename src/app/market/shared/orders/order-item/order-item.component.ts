@@ -186,25 +186,25 @@ export class OrderItemComponent implements OnInit {
         if (this.order.type === 'buy') {
           return "等待卖家";
         }
-        return "接受/拒绝订单";
+        return "接受/拒绝";
 
       case 'awaiting':
         if (this.order.type === 'buy') {
           return "待支付订单";
         }
-        return "等待买家支付";
+        return "等待支付";
 
       case 'escrow':
         if (this.order.type === 'buy') {
           return "等待交付";
         }
-        return "待发货给买家";
+        return "待发货";
 
       case 'shipping':
         if (this.order.type === 'buy') {
           return "等待收货";
         }
-        return "等待买家收货";
+        return "待买家收货";
 
       case 'complete':
         if (this.order.type === 'buy') {
