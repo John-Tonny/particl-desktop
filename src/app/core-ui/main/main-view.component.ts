@@ -14,6 +14,14 @@ import { AlphaMainnetWarningComponent } from 'app/modals/alpha-mainnet-warning/a
 import { UserMessage, UserMessageType } from 'app/core/market/user-messages/user-message.model'
 import { isPrerelease, isMainnetRelease } from 'app/core/util/utils';
 
+import { SnackbarService } from '../../core/snackbar/snackbar.service';
+import {Bid} from "../../core/market/api/bid/bid.model";
+import { ProfileService } from 'app/core/market/api/profile/profile.service';
+import {BidService} from "../../core/market/api/bid/bid.service";
+import { OrderFilter } from '../../market/shared/orders/order-filter.model';
+
+//import { ElectronService } from 'ngx-electron';
+
 /*
  * The MainView is basically:
  * sidebar + router-outlet.
@@ -45,6 +53,13 @@ export class MainViewComponent implements OnInit, OnDestroy {
   showAnnouncements: boolean = false;
   public unlocked_until: number = 0;
 
+  public orders: Bid[];
+  public profile: any = {};
+  filters: any;
+  timer: Observable<number>;
+
+  autotrade:boolean = true;
+
   constructor(
     private _router: Router,
     private _route: ActivatedRoute,
@@ -54,6 +69,11 @@ export class MainViewComponent implements OnInit, OnDestroy {
     private _modalsService: ModalsHelperService,
     private dialog: MatDialog,
     private messagesService: UserMessageService,
+
+    private bid: BidService,
+    private profileService: ProfileService,
+    private snackbarService: SnackbarService,
+
     // the following imports are just 'hooks' to
     // get the singleton up and running
     private _newtxnotifier: NewTxNotifierService,
@@ -139,7 +159,14 @@ export class MainViewComponent implements OnInit, OnDestroy {
       } as UserMessage;
       this.messagesService.addMessage(alphaMessage);
     }
+    //ipc.sendSync('getAutoMode',"");
+    //ipc.on('gatAutoMode-replay',function(event,arg){
+    //  this.autotrade= <boolean> arg;
+    //});
 
+    if(this.autotrade ) {
+      this.loadProfile();
+    }
   }
 
   ngOnDestroy() {
@@ -197,4 +224,63 @@ export class MainViewComponent implements OnInit, OnDestroy {
     const dialogRef = this.dialog.open(DaemonConnectionComponent);
     dialogRef.componentInstance.text = "Test";
   }*/
+
+  loadProfile(): void {
+    this.profileService.default().take(1).subscribe(
+        profile => {
+          this.profile = profile;
+          this.initLoopLoadOrders();
+        });
+  }
+
+  initLoopLoadOrders() {
+    this.timer = Observable.interval(1000 * 10);
+
+    // call loadOrders in every 10 sec.
+    this.timer.takeWhile(() => !this.destroyed).subscribe((t) => {
+      this.loadOrders()
+    });
+  }
+
+  loadOrders(): void {
+    this.bid.search(this.profile.address, "sell", 'MPA_BID', "", false)
+        .take(1)
+        .subscribe(bids => {
+          this.orders = bids.filterOrders;
+          for (let order of this.orders) {
+            this.acceptBid(order);
+          }
+        });
+    this.bid.search(this.profile.address, "buy", 'AWAITING_ESCROW', "", false)
+        .take(1)
+        .subscribe(bids => {
+          this.orders = bids.filterOrders;
+          for (let order of this.orders) {
+            this.escrowLock(order);
+          }
+        });
+
+  }
+
+  acceptBid(order: Bid) {
+    this.bid.acceptBidCommand(order.id).take(1).subscribe(() => {
+      this.snackbarService.open(`接受订单 ${order.listing.title}`);
+      // Reload same order without calling api
+      order.OrderItem.status = 'AWAITING_ESCROW';
+      order = new Bid(order, order.type);
+    }, (error) => {
+      this.snackbarService.open(`${error}`);
+    });
+  }
+
+  escrowLock(order: Bid) {
+    // <orderItemId> <nonce> <memo> , @TODO send nonce ?
+    this.bid.escrowLockCommand(order.OrderItem.id, null, 'Release the funds').take(1).subscribe(res => {
+      this.snackbarService.open(`订单 ${order.listing.title} 已经付款`);
+      order.OrderItem.status = 'ESCROW_LOCKED';
+      order = new Bid(order, order.type);
+    }, (error) => {
+      this.snackbarService.open(`${error}`);
+    });
+  }
 }

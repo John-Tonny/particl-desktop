@@ -6,6 +6,7 @@ const fs            = require('fs');
 const url           = require('url');
 const platform      = require('os').platform();
 
+//const ipc           = require('electron').ipcMain;
 
 /* correct appName and userData to respect Linux standards */
 if (process.platform === 'linux') {
@@ -32,6 +33,14 @@ log.info(app.getVersion());
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 let tray;
+global.autoTrade=process.env.VPUB_AUTO_TRADE ? process.env.VPUB_AUTO_TRADE : false;
+
+/*
+ipc.on('getAutoMode', function(event, arg) {
+  event.returnValue=autoTrade;
+  //event.sender.send('getAutoMode-reply',autoTrade);
+});
+*/
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -41,6 +50,8 @@ app.on('ready', () => {
   log.info('app ready')
   log.debug('argv', process.argv);
   log.debug('options', options);
+
+  app.autoTrade=process.env.VPUB_AUTO_TRADE ? process.env.VPUB_AUTO_TRADE : false;;
 
   // initialize the authentication filter
   _auth.init();
@@ -234,3 +245,4 @@ function makeTray() {
 
   return trayImage;
 }
+

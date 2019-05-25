@@ -30,7 +30,7 @@
         <mat-checkbox [(ngModel)]="additionalFilter.requiredAttention" (change)="loadOrders()" color="primary">待处理订单</mat-checkbox>
       </div>
       <div class="checkbox">
-        <mat-checkbox [(ngModel)]="additionalFilter.hideCompleted" (change)="loadOrders()" color="primary">已完成订单</mat-checkbox>
+        <mat-checkbox [(ngModel)]="additionalFilter.hideCompleted" (change)="loadOrders()" color="primary">隐藏完成订单</mat-checkbox>
       </div>
       <!-- <div class="checkbox">
         <mat-checkbox matTooltip="最近30天没有更新的订单">隐藏过去订单</mat-checkbox>
