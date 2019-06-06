@@ -11,7 +11,6 @@ import { FavoritesService } from '../../core/market/api/favorites/favorites.serv
 import { Country } from 'app/core/market/api/countrylist/country.model';
 import { throttle } from 'lodash';
 
-
 interface ISorting {
   value: string;
   viewValue: string;

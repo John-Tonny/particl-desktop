@@ -17,5 +17,4 @@ export class CloseGuiService {
       this._ipc.runCommand('close-gui', null, null);
     }
   }
-
 }

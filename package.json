@@ -1,6 +1,6 @@
 {
   "name": "vpub-desktop",
-  "version": "2.0.0-alpha-testnet",
+  "version": "2.0.0-alpha",
   "branch": "market",
   "license": "GPL-2.0",
   "description": "Vpub Desktop - decentralized marketplace, private currency, messaging & self-governance",

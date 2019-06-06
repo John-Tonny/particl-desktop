@@ -36,8 +36,8 @@ export class VersionComponent implements OnInit, OnDestroy {
     // Initially need to call to verify the client version
     this.getCurrentClientVersion()
     // check new update in every 30 minute
-    const versionInterval = interval(1800000);
-    versionInterval.takeWhile(() => !this.destroyed).subscribe(val => this.getCurrentClientVersion());
+    // const versionInterval = interval(1800000);
+    // versionInterval.takeWhile(() => !this.destroyed).subscribe(val => this.getCurrentClientVersion());
   }
 
   // no need to destroy.
@@ -46,7 +46,7 @@ export class VersionComponent implements OnInit, OnDestroy {
   }
 
   private getCurrentClientVersion() {
-    this.clientUpdateText = VersionText.updateCheck;
+    // this.clientUpdateText = VersionText.updateCheck;
     this.isUpdateProcessing = true;
     this.log.i('Checking for new client version...');
     this.clientVersionService.getCurrentVersion()
@@ -58,7 +58,7 @@ export class VersionComponent implements OnInit, OnDestroy {
         }
         this.isUpdateProcessing = false;
       }, (error) => {
-        this.clientUpdateText = VersionText.unknown;
+        // this.clientUpdateText = VersionText.unknown;
         this.log.er('client version checking error: ', error);
     })
   }

@@ -57,6 +57,7 @@ window.ipc = new SafeIpcRenderer([
   'notification',
   'daemon',
   'close-gui',
+  'autotrade',
 
   'zmq',
   'rpc-channel',

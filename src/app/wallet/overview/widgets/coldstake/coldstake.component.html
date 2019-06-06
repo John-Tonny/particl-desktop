@@ -65,8 +65,8 @@
     </p>
   </mat-card>
   <p class="widget-help" *ngIf="_coldstake.coldStakingEnabled">
-    您的资金的 {{_coldstake.coldstakeProgress}}% 是离线收益。
-    只有当您的钱包处于在线状态，并且没有锁定锁定时，激活过程才会继续。
+    您的{{_coldstake.coldstakeProgress}}% 资金离线收益。
+    只有当您的钱包是在线状态，且未锁定锁定时，激活过程才会继续。
   </p>
 
   <!-- if wallet is locked, & under < 100% progress -->

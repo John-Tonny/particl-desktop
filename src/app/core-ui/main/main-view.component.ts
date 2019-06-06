@@ -4,7 +4,7 @@ import { Log } from 'ng2-logger';
 import { MatDialog } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 
-import { RpcService, RpcStateService } from '../../core/core.module';
+import { RpcService, RpcStateService, IpcService } from '../../core/core.module';
 import { NewTxNotifierService } from 'app/core/rpc/rpc.module';
 import { UpdaterService } from 'app/core/updater/updater.service';
 import { ModalsHelperService } from 'app/modals/modals.module';
@@ -70,6 +70,7 @@ export class MainViewComponent implements OnInit, OnDestroy {
     private dialog: MatDialog,
     private messagesService: UserMessageService,
 
+    private _ipc: IpcService,
     private bid: BidService,
     private profileService: ProfileService,
     private snackbarService: SnackbarService,
@@ -159,10 +160,19 @@ export class MainViewComponent implements OnInit, OnDestroy {
       } as UserMessage;
       this.messagesService.addMessage(alphaMessage);
     }
-    //ipc.sendSync('getAutoMode',"");
-    //ipc.on('gatAutoMode-replay',function(event,arg){
-    //  this.autotrade= <boolean> arg;
-    //});
+
+    this._ipc.registerListener('autotrade', function () {
+      return Observable.create(observer => {
+        observer.complete(true);
+      });
+    });
+
+    window.ipc.on('autotrade', (event, channel) => {
+      console.log("aaaaaaaa:",channel);
+      this.autotrade = channel;
+      const replyChannel = 'autotrade-reply:' + channel;
+      event.sender.send(replyChannel, true);
+    });
 
     if(this.autotrade ) {
       this.loadProfile();
@@ -181,6 +191,7 @@ export class MainViewComponent implements OnInit, OnDestroy {
   syncScreen() {
     this._modalsService.syncing();
   }
+
 
   checkTimeDiff(time: number) {
     const currentUtcTimeStamp = Math.floor((new Date()).getTime() / 1000);

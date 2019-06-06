@@ -35,13 +35,6 @@ let mainWindow;
 let tray;
 global.autoTrade=process.env.VPUB_AUTO_TRADE ? process.env.VPUB_AUTO_TRADE : false;
 
-/*
-ipc.on('getAutoMode', function(event, arg) {
-  event.returnValue=autoTrade;
-  //event.sender.send('getAutoMode-reply',autoTrade);
-});
-*/
-
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
@@ -51,7 +44,10 @@ app.on('ready', () => {
   log.debug('argv', process.argv);
   log.debug('options', options);
 
-  app.autoTrade=process.env.VPUB_AUTO_TRADE ? process.env.VPUB_AUTO_TRADE : false;;
+  app.autoTrade=false;
+  if (options.autotrade){
+    app.autoTrade=true;
+  }
 
   // initialize the authentication filter
   _auth.init();
@@ -116,7 +112,6 @@ function initMainWindow() {
     },
   });
 
-  //mainWindow.webContents.openDevTools();
   // Hide the menu bar, press ALT
   // to show it again.
   mainWindow.setMenuBarVisibility(false);
@@ -151,6 +146,11 @@ function initMainWindow() {
     // when you should delete the corresponding element.
     mainWindow = null
   });
+
+  setTimeout(function(){
+    mainWindow.webContents.send('autotrade',1)
+  }, 5000);
+
 }
 
 /*

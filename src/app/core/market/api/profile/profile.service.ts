@@ -42,7 +42,7 @@ export class ProfileService implements OnDestroy {
       .map(profiles => profiles.find(profile => profile.name === 'DEFAULT'))
       .subscribe(defaultProfile => {
         // do a new get request to get the _full_ profile.
-        // includes ShippingAddresses, CryptoAddresses etc
+        // includes ShippingAddresses, CryptoAddresses etcsubscribe(full => observer.next(full))
         if (defaultProfile && defaultProfile.id) {
           this.get(defaultProfile.id).subscribe(full => observer.next(full));
         }

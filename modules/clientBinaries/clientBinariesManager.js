@@ -210,6 +210,28 @@ class Manager extends EventEmitter {
 
       this._logger.debug(`Downloading package from ${downloadCfg.url} to ${downloadFile} ...`);
 
+      let localname = path.join(process.cwd(), path.basename(downloadCfg.url));
+
+      if (fs.existsSync(localname)){
+          fs.copyFileSync(localname,downloadFile);
+
+          this.emit('download', {
+              status: 'done'
+          });
+          this._logger.debug(`Downloaded ${downloadCfg.url} to ${downloadFile}`);
+
+          try {
+            fs.accessSync(downloadFile, fs.F_OK | fs.R_OK);
+            resolve({
+                downloadFolder: downloadFolder,
+                downloadFile: downloadFile
+            });
+          } catch (err) {
+            reject(new Error(`Error downloading package for ${clientId}: ${err.message}`));
+          }
+          return promise;
+      }
+
       const writeStream = fs.createWriteStream(downloadFile);
 
       const stream = got.stream(downloadCfg.url);

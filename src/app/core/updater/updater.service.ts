@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import { IpcService } from '../ipc/ipc.service';
 import { UpdaterComponent } from 'app/core/updater/modal/updater.component';
 
-
 @Injectable()
 export class UpdaterService {
 
