@@ -131,7 +131,7 @@
 
   <!-- STEP 4: Recovery Password -->
   <div *ngIf="step === 4">
-    <div mat-dialog-title class="title">Enter your Recovery Phrase</div>
+    <div mat-dialog-title class="title">输入您的恢复短语</div>
     <mat-dialog-content class="modal-content">
       <p>
         :
@@ -192,7 +192,7 @@
       </p>
       <app-password
         #passwordRestoreElement
-        label="Recovery Password (optional)"
+        label="恢复密码 (可选)"
         [showStakeOnly]="false"
         [emitPassword]="true"
         (passwordEmitter)="passwordFromEmitter($event);nextStep()">

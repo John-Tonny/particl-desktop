@@ -58,7 +58,7 @@ export class MainViewComponent implements OnInit, OnDestroy {
   filters: any;
   timer: Observable<number>;
 
-  autotrade:boolean = true;
+  // autotrade:boolean = true;
 
   constructor(
     private _router: Router,
@@ -79,7 +79,13 @@ export class MainViewComponent implements OnInit, OnDestroy {
     // get the singleton up and running
     private _newtxnotifier: NewTxNotifierService,
     public proposalsNotificationsService: ProposalsNotificationsService
-  ) { }
+  ) {
+    this.log.d('Registering ipc listener');
+    if (window.electron) {
+      // Register a listener on the channel "zmq" (ipc)
+      this._ipc.registerListener('autotrade', this.autotradeListener.bind(this));
+    }
+  }
 
   ngOnInit() {
     // Change the header title derived from route data
@@ -160,23 +166,22 @@ export class MainViewComponent implements OnInit, OnDestroy {
       } as UserMessage;
       this.messagesService.addMessage(alphaMessage);
     }
-
-    this._ipc.registerListener('autotrade', function () {
-      return Observable.create(observer => {
-        observer.complete(true);
-      });
-    });
-
-    window.ipc.on('autotrade', (event, channel) => {
-      console.log("aaaaaaaa:",channel);
-      this.autotrade = channel;
-      const replyChannel = 'autotrade-reply:' + channel;
-      event.sender.send(replyChannel, true);
-    });
-
+    /*
     if(this.autotrade ) {
       this.loadProfile();
     }
+    */
+  }
+
+  autotradeListener(mode: boolean): Observable<any> {
+    if(mode){
+      this.loadProfile();
+    }
+    return Observable.create(observer => {
+      this.log.d('auto pushed a new message, yay! data: ' + mode);
+      observer.next('Thanks autotrade, here is some data back you good ol\' friend');
+      observer.complete();
+    });
   }
 
   ngOnDestroy() {
