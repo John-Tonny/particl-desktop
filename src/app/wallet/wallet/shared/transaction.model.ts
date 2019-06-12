@@ -78,7 +78,7 @@ export class Transaction {
 
   private getAddressType(): AddressType {
     if (this.stealth_address === undefined) {
-      if (this.address && this.address.startsWith('r')) {
+      if (this.address && this.address.startsWith('R')) {
         return AddressType.MULTISIG;
       }
       return AddressType.NORMAL;
