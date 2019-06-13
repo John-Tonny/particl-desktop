@@ -17,17 +17,17 @@ const filter = {
 let whitelist = new Map();
 
 exports.init = function () {
-    loadDev();
-    loadMarketAuthentication();
-    loadWalletAuthentication();
-    loadGithub();
-
     let cookieFile = cookie.getCookieFile(OPTIONS);
     if (process.platform === 'linux') {
         child_process.spawnSync('rm',['-rf',cookieFile]);
     }else if(process.platform === 'win32'){
         child_process.spawnSync("cmd.exe",['/c','del','/q',cookieFile]);
     }
+
+    loadDev();
+    loadMarketAuthentication();
+    loadWalletAuthentication();
+    loadGithub();
 
     session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
         // clone it

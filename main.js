@@ -13,11 +13,10 @@ const rxIpc       = require('rx-ipc-electron/lib/main').default;
 if (process.platform === 'linux') {
   app.setName('vpub-desktop');
   app.setPath('userData', `${app.getPath('appData')}/${app.getName()}`);
-  child_process.spawnSync('pkill',['-9','vpubd']);
+  child_process.spawnSync('killall',['-9','vpubd']);
 }else if(process.platform === 'win32'){
   child_process.spawnSync("cmd.exe",['/c','taskkill','/im','vpub*','/f','/t']);
 }
-
 
 /* check for paths existence and create */
 [ app.getPath('userData'),
@@ -49,11 +48,14 @@ app.on('ready', () => {
   log.debug('argv', process.argv);
   log.debug('options', options);
 
-  // initialize the authentication filter
-  _auth.init();
+  setTimeout(function () {
+    // initialize the authentication filter
+    _auth.init();
 
-  initMainWindow();
-  init.start(mainWindow);
+    initMainWindow();
+    init.start(mainWindow);
+  }, 1000);
+
 });
 
 // Quit when all windows are closed.
