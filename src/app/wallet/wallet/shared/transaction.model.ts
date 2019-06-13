@@ -86,7 +86,6 @@ export class Transaction {
       return AddressType.STEALTH;
     }
   }
-
   public isMultiSig(): boolean {
     return this.getAddressType() === AddressType.MULTISIG;
   }

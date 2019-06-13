@@ -2,6 +2,7 @@ const fs   = require('fs');
 const os   = require('os');
 const path = require('path');
 const log  = require('electron-log');
+const child_process = require('child_process');
 
 /*
 ** returns Vpub config folder
@@ -101,7 +102,6 @@ function getAuth(options) {
   const COOKIE_FILE = dataDir
                     + (options.testnet ? '/testnet' : '')
                     + '/.cookie';
-
   if (fs.existsSync(COOKIE_FILE)) {
     auth = fs.readFileSync(COOKIE_FILE, 'utf8').trim();
   } else {
@@ -116,5 +116,18 @@ function getVpubPath(options) {
   return options.datadir ? options.datadir : findCookiePath();
 }
 
+/*
+** returns the current RPC cookie
+** RPC cookie is regenerated at every vpubd startup
+*/
+function getCookieFile(options) {
+  var dataDir = getVpubPath(options);
+  const cookieFile = dataDir
+      + (options.testnet ? '/testnet' : '')
+      + '/.cookie';
+  return cookieFile;
+}
+
 exports.getAuth = getAuth;
 exports.getVpubPath = getVpubPath;
+exports.getCookieFile = getCookieFile;

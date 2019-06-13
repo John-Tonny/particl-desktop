@@ -5,6 +5,8 @@ const { URL } = require('url')
 const config = require('../daemon/daemonConfig');
 const cookie = require('../rpc/cookie');
 
+const child_process = require('child_process');
+
 const OPTIONS = config.getConfiguration();
 
 // Modify the user agent for all requests to the following urls.
@@ -19,6 +21,13 @@ exports.init = function () {
     loadMarketAuthentication();
     loadWalletAuthentication();
     loadGithub();
+
+    let cookieFile = cookie.getCookieFile(OPTIONS);
+    if (process.platform === 'linux') {
+        child_process.spawnSync('rm',['-rf',cookieFile]);
+    }else if(process.platform === 'win32'){
+        child_process.spawnSync("cmd.exe",['/c','del','/q',cookieFile]);
+    }
 
     session.defaultSession.webRequest.onBeforeSendHeaders(filter, (details, callback) => {
         // clone it
