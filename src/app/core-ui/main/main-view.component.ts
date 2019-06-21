@@ -15,12 +15,12 @@ import { UserMessage, UserMessageType } from 'app/core/market/user-messages/user
 import { isPrerelease, isMainnetRelease } from 'app/core/util/utils';
 
 import { SnackbarService } from '../../core/snackbar/snackbar.service';
-import {Bid} from "../../core/market/api/bid/bid.model";
+import {Bid} from '../../core/market/api/bid/bid.model';
 import { ProfileService } from 'app/core/market/api/profile/profile.service';
-import {BidService} from "../../core/market/api/bid/bid.service";
+import {BidService} from '../../core/market/api/bid/bid.service';
 import { OrderFilter } from '../../market/shared/orders/order-filter.model';
 
-//import { ElectronService } from 'ngx-electron';
+// import { ElectronService } from 'ngx-electron';
 
 /*
  * The MainView is basically:
@@ -153,7 +153,6 @@ export class MainViewComponent implements OnInit, OnDestroy {
         this.showAnnouncements = true;
       }
     });
-
     // TODO - find better location to perform this check...
     if (isMainnetRelease() && isPrerelease()) {
       const alphaMessage = {
@@ -174,7 +173,7 @@ export class MainViewComponent implements OnInit, OnDestroy {
   }
 
   autotradeListener(mode: boolean): Observable<any> {
-    if(mode){
+    if (mode) {
       this.loadProfile();
     }
     return Observable.create(observer => {
@@ -259,19 +258,19 @@ export class MainViewComponent implements OnInit, OnDestroy {
   }
 
   loadOrders(): void {
-    this.bid.search(this.profile.address, "sell", 'MPA_BID', "", false)
+    this.bid.search(this.profile.address, 'sell', 'MPA_BID', '', false)
         .take(1)
         .subscribe(bids => {
           this.orders = bids.filterOrders;
-          for (let order of this.orders) {
+          for (const order of this.orders) {
             this.acceptBid(order);
           }
         });
-    this.bid.search(this.profile.address, "buy", 'AWAITING_ESCROW', "", false)
+    this.bid.search(this.profile.address, 'buy', 'AWAITING_ESCROW', '', false)
         .take(1)
         .subscribe(bids => {
           this.orders = bids.filterOrders;
-          for (let order of this.orders) {
+          for (const order of this.orders) {
             this.escrowLock(order);
           }
         });

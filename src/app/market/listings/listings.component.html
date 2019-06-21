@@ -15,7 +15,7 @@
       <mat-icon class="icon" fontSet="partIcon" fontIcon="part-filter" fxFlex="0 0 16px" matTooltip="筛选按国家" matTooltipPosition="below"></mat-icon>
       <mat-select-search
         [options]="countryList?.countries"
-        [defaultOption]="'All seller countries'"
+        [defaultOption]="'所有卖方的国家'"
         [isLexigraphicalOrder]="true"
         [showValueOf]="'name'"
         (onChange)="onCountryChange($event)">
@@ -26,7 +26,7 @@
       <mat-icon class="icon" fontSet="partIcon" fontIcon="part-label" fxFlex="0 0 16px" matTooltip="筛选按类别" matTooltipPosition="below"></mat-icon>
       <mat-otpgroup-select-search
         [options]="_rootCategoryList?.subCategoryList"
-        [defaultOption]="'All categories'"
+        [defaultOption]="'所有分类'"
         (change)="onCategoryChange($event)">
       </mat-otpgroup-select-search>
     </div>
@@ -36,7 +36,7 @@
       <mat-select-search
         fxFlex="1 1 100%"
         [options]="countryList?.countries"
-        [defaultOption]="'Your country'"
+        [defaultOption]="'您的国家'"
         [isLexigraphicalOrder]="true"
         [showValueOf]="'name'"
         [defaultSelectedValue]="this.selectedCountry"
@@ -50,7 +50,7 @@
         <mat-icon class="icon" fontSet="partIcon" fontIcon="part-refresh"></mat-icon>
       </button>
 
-      <mat-button-toggle type="checkbox" value="reported-only" class="reported-only" matTooltip="只显示异常列表" (change)="toggleFlag($event)">
+      <mat-button-toggle type="checkbox" value="reported-only" class="reported-only" matTooltip="只显示上报列表" (change)="toggleFlag($event)">
         <mat-icon fontSet="partIcon" fontIcon="part-flag"></mat-icon>
       </mat-button-toggle>
 

@@ -6,7 +6,7 @@
 
   <span
     class="encryption icon"
-    matTooltip="{{ encryptionStatus }}"
+    matTooltip="{{ getEncryptionStatus() }}"
     container="body"
     (click)="toggle()">
       <img src="assets/icons/SVG/lock/lock{{ getIconEncryption() }}.svg"/>

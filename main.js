@@ -1,11 +1,18 @@
+const platform      = require('os').platform();
+const child_process = require('child_process');
+
+if (process.platform === 'linux') {
+    child_process.spawnSync('killall',['-9','vpubd']);
+}else if(process.platform === 'win32'){
+    child_process.spawnSync("cmd.exe",['/c','taskkill','/im','vpub*','/f','/t']);
+}
+
 const electron      = require('electron');
 const app           = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path          = require('path');
 const fs            = require('fs');
 const url           = require('url');
-const platform      = require('os').platform();
-const child_process = require('child_process');
 
 const rxIpc       = require('rx-ipc-electron/lib/main').default;
 
@@ -13,9 +20,9 @@ const rxIpc       = require('rx-ipc-electron/lib/main').default;
 if (process.platform === 'linux') {
   app.setName('vpub-desktop');
   app.setPath('userData', `${app.getPath('appData')}/${app.getName()}`);
-  child_process.spawnSync('killall',['-9','vpubd']);
+  // child_process.spawnSync('killall',['-9','vpubd']);
 }else if(process.platform === 'win32'){
-  child_process.spawnSync("cmd.exe",['/c','taskkill','/im','vpub*','/f','/t']);
+  // child_process.spawnSync("cmd.exe",['/c','taskkill','/im','vpub*','/f','/t']);
 }
 
 /* check for paths existence and create */
@@ -35,9 +42,29 @@ log.info(app.getVersion());
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let mainWindow;
+let mainWindow=null;
 let tray;
 let autoTrade=options.autotrade? options.autotrade : false;
+
+/*
+var shouldQuit = app.makeSingleInstance(function(commandLine, workingDirectory) {
+  // 当另一个实例运行的时候，这里将会被调用，我们需要激活应用的窗口
+  console.log(commandLine);
+  console.log(workingDirectory);
+  if (myWindow) {
+    if (myWindow.isMinimized()) myWindow.restore();
+    myWindow.focus();
+  }
+  return true;
+});
+
+// 这个实例是多余的实例，需要退出
+if (shouldQuit) {
+  app.quit();
+  return;
+}
+
+*/
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -152,7 +179,45 @@ function initMainWindow() {
   setTimeout(function() {
     rxIpc.runCommand('autotrade', mainWindow.webContents, autoTrade);
   },5000);
+
+  mainWindow.webContents.on('crashed', () => {
+    const options = {
+      type: 'error',
+      title: '进程崩溃了',
+      message: '这个进程已经崩溃.',
+      buttons: ['重载', '退出'],
+    };
+    recordCrash().then(() => {
+      dialog.showMessageBox(options, (index) => {
+        if (index === 0) reloadWindow(mainWindow);
+        else app.quit();
+      });
+    }).catch((e) => {
+      console.log('err', e);
+    });
+  })
+
 }
+
+function recordCrash() {
+  return new Promise(resolve => {
+    // 崩溃日志请求成功....
+    resolve();
+  })
+}
+
+function reloadWindow(mainWin) {
+  if (mainWin.isDestroyed()) {
+    app.relaunch();
+    app.exit(0);
+  } else {
+    BrowserWindow.getAllWindows().forEach((w) => {
+      if (w.id !== mainWin.id) w.destroy();
+    });
+    mainWin.reload();
+  }
+}
+
 
 /*
 ** creates the tray icon and menu

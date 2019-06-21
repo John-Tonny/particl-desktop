@@ -13,7 +13,7 @@ export class CountryListService {
   }
 
   private setCountries() {
-    const obj = reduce(getDataSet(), 'en');
+    const obj = reduce(getDataSet(), 'zh');
     this.countries = Object.keys(obj).map(key => obj[key])
       .sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
   }

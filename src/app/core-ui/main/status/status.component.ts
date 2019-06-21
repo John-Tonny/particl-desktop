@@ -83,8 +83,25 @@ export class StatusComponent implements OnInit, OnDestroy {
     }
   }
 
+  getEncryptionStatus() {
+    switch (this.encryptionStatus) {
+      case 'Unencrypted':  // TODO: icon?
+        return '未加密';
+      case 'Unlocked':
+        return '解锁';
+      case 'Unlocked, staking only':
+        return '仅离线收益解锁';
+      case 'Locked':
+        return '上锁';
+      default:
+        return '-off'; // TODO: icon?
+    }
+  }
+
+
   getColdStakingStatus() {
-    return (this.coldStakingStatus) ? 'enabled' : 'disabled';
+    // return (this.coldStakingStatus) ? 'enabled' : 'disabled';
+    return (this.coldStakingStatus) ? '已激活' : '禁止';
   }
 
   toggle() {
