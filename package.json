@@ -46,7 +46,7 @@
     "travis:test": "ng test --single-run --code-coverage",
     "start": "yarn run start:electron:fast"
   },
-  "productName": "Vpub Desktop Testnet",
+  "productName": "Vpub Desktop",
   "build": {
     "electronVersion": "4.0.3",
     "appId": "info.vpub.desktop",
@@ -114,7 +114,7 @@
       "uninstallerIcon": "resources/icon.ico",
       "createDesktopShortcut": "always",
       "createStartMenuShortcut": true,
-      "menuCategory": "Vpub Desktop Testnet",
+      "menuCategory": "Vpub Desktop",
       "runAfterFinish": true
     },
     "linux": {
@@ -144,7 +144,7 @@
       "desktop": {
         "Comment": "Vpub, P2P Privacy ecosystem",
         "Icon": "vpub-desktop",
-        "Name": "Vpub Desktop Testnet",
+        "Name": "Vpub Desktop",
         "StartupNotify": "true",
         "Terminal": "false",
         "Type": "Application",
@@ -154,7 +154,7 @@
       "packageCategory": "wallet",
       "icon": "resources/linux"
     },
-    "asar": false,
+    "asar": true,
     "asarUnpack": [
       "node_modules/sqlite3/**/*",
       "node_modules/vpub-marketplace/**/*"

@@ -52,11 +52,11 @@ export class FavoritesService implements OnDestroy {
   toggle(listing: Listing): void {
     if (this.cache.isFavorited(listing) === true) {
       this.remove(listing).take(1).subscribe(res => {
-        this.snackbar.open(`${listing.title} 从收藏夹移除`);
+        this.snackbar.open(`${listing.title} 取消收藏`);
       });
     } else {
       this.add(listing).take(1).subscribe(res => {
-        this.snackbar.open(`${listing.title} 添加到收藏夹`);
+        this.snackbar.open(`${listing.title} 加入收藏夹`);
       });
     }
   }

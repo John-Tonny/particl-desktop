@@ -101,7 +101,7 @@ export class StatusComponent implements OnInit, OnDestroy {
 
   getColdStakingStatus() {
     // return (this.coldStakingStatus) ? 'enabled' : 'disabled';
-    return (this.coldStakingStatus) ? '已激活' : '禁止';
+    return (this.coldStakingStatus) ? '已激活' : '取消';
   }
 
   toggle() {

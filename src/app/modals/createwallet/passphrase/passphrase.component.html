@@ -1,5 +1,5 @@
 <div class="passphrase">
-  <div class="subtitle">Your Recovery Phrase</div>
+  <div class="subtitle">您的恢复短语</div>
 
   <div fxLayoutWrap fxLayoutGap="3.66%" class="word-list">
     <div fxFlex="13%" *ngFor="let k of Arr(24).fill(); let i = index">
@@ -23,12 +23,12 @@
 
     <button mat-button *ngIf="generate" (click)="copyToClipBoard()" ngxClipboard [cbContent]="words.join(' ')" class="copy">
       <mat-icon fontSet="partIcon" fontIcon="part-copy"></mat-icon>
-      Copy to Clipboard
+      复制到剪贴板
     </button>
 
     <button mat-button *ngIf="!generate" class="paste" (click)="pasteContent()">
       <mat-icon fontSet="partIcon" fontIcon="part-past"></mat-icon>
-      Paste
+      剪贴
     </button>
 
   </div><!-- .actions -->

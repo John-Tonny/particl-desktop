@@ -1,18 +1,11 @@
-const platform      = require('os').platform();
-const child_process = require('child_process');
-
-if (process.platform === 'linux') {
-    child_process.spawnSync('killall',['-9','vpubd']);
-}else if(process.platform === 'win32'){
-    child_process.spawnSync("cmd.exe",['/c','taskkill','/im','vpub*','/f','/t']);
-}
-
 const electron      = require('electron');
 const app           = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const path          = require('path');
 const fs            = require('fs');
 const url           = require('url');
+const platform      = require('os').platform();
+const child_process = require('child_process');
 
 const rxIpc       = require('rx-ipc-electron/lib/main').default;
 
@@ -20,7 +13,7 @@ const rxIpc       = require('rx-ipc-electron/lib/main').default;
 if (process.platform === 'linux') {
   app.setName('vpub-desktop');
   app.setPath('userData', `${app.getPath('appData')}/${app.getName()}`);
-  // child_process.spawnSync('killall',['-9','vpubd']);
+  child_process.spawnSync('killall',['-9','vpubd']);
 }else if(process.platform === 'win32'){
   // child_process.spawnSync("cmd.exe",['/c','taskkill','/im','vpub*','/f','/t']);
 }
