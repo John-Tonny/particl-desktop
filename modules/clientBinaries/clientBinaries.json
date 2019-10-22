@@ -46,7 +46,7 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/John-Tonny/vircle-desktop/releases/download/v2.0.0c/vircle-0.19.1.tar.gz",
+              "url": "https://github.com/John-Tonny/vpub-desktop/releases/download/v2.0.0c/vircle-0.19.1.tar.gz",
               "type": "tar",
               "sha256": "044aac985efea16cc223249a1d4f4da1dc940a6942838e59a4d4fbe2ed9fa83d",
               "bin": "vircle-0.19.1/bin/vircled"
