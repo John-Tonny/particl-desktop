@@ -104,7 +104,7 @@ export class ZapColdstakingComponent {
           const amount = new Amount(this.utxos.amount, 8);
           this.log.d('amount', amount.getAmount());
 
-          this._rpc.call('sendtypeto', ['vp', 'vp', [{
+          this._rpc.call('sendtypeto', ['vcl', 'vcl', [{
             subfee: true,
             address: 'script',
             amount: amount.getAmount(),
@@ -128,7 +128,7 @@ export class ZapColdstakingComponent {
     this.log.d('zap tx', this.utxos.amount, this.script, this.utxos.txs);
 
     const amount = new Amount(this.utxos.amount, 8);
-    this._rpc.call('sendtypeto', ['vp', 'vp', [{
+    this._rpc.call('sendtypeto', ['vcl', 'vcl', [{
       subfee: true,
       address: 'script',
       amount: amount.getAmount(),
@@ -141,7 +141,7 @@ export class ZapColdstakingComponent {
 
       this.dialogRef.close();
       this.flashNotification.open(
-        `成功快速激活 ${this.utxos.amount} VP 到离线收益`, 'warn');
+        `成功快速激活 ${this.utxos.amount} VCL 到离线收益`, 'warn');
     });
 
   }

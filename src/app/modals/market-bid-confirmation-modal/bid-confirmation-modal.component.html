@@ -7,7 +7,7 @@
 
   <!-- TODO: show on alpha mainnet only: -->
   <p class="alpha warning" *ngIf="isPrerelease">
-    <strong>Warning:</strong> you are about to <strong>spend real VP coins</strong> in this order on development version of Vircle Marketplace. Bugs may occur &amp; your payment might get lost &ndash; continue on your own risk!
+    <strong>Warning:</strong> you are about to <strong>spend real VCL coins</strong> in this order on development version of Vircle Marketplace. Bugs may occur &amp; your payment might get lost &ndash; continue on your own risk!
   </p>
 
   <!-- Bid confirmation-->
@@ -25,7 +25,7 @@
 
     <div class="tx-amount">
       <span  class="big">{{ bidItem?.listing?.totalAmount(country)?.getIntegerPart() }}</span><span class="point">{{ bidItem?.listing?.totalAmount(country)?.dot() }}</span><span class="small">{{ bidItem?.listing?.totalAmount(country)?.getFractionalPart() }}</span>&ensp;
-      <span class="currency">VP</span>
+      <span class="currency">VCL</span>
       <!-- TODO: until fiat estimations are implemented, hide them -->
       <div class="fiat">&asymp; 3.42 USD</div>
     </div>
@@ -37,14 +37,14 @@
     </div>
 
     <p class="fee-info">
-      <!-- Transaction fee:<span class="amount">11 VP</span><span class="fiat">&asymp; 0.05 USD</span><br> -->
-      商品价格:<span class="amount">{{ bidItem?.listing?.basePrice?.getIntegerPart() }}{{ bidItem?.listing?.basePrice?.dot() }}{{ bidItem?.listing?.basePrice?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
+      <!-- Transaction fee:<span class="amount">11 VCL</span><span class="fiat">&asymp; 0.05 USD</span><br> -->
+      商品价格:<span class="amount">{{ bidItem?.listing?.basePrice?.getIntegerPart() }}{{ bidItem?.listing?.basePrice?.dot() }}{{ bidItem?.listing?.basePrice?.getFractionalPart() }} VCL</span><span class="fiat">&asymp; 0.05 USD</span><br>
 
-      邮费:<span class="amount">{{ bidItem?.listing?.shippingAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.shippingAmount(country)?.dot() }}{{ bidItem?.listing?.shippingAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
+      邮费:<span class="amount">{{ bidItem?.listing?.shippingAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.shippingAmount(country)?.dot() }}{{ bidItem?.listing?.shippingAmount(country)?.getFractionalPart() }} VCL</span><span class="fiat">&asymp; 0.05 USD</span><br>
 
-      托管费:<span class="amount">{{ bidItem?.listing?.escrowAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.escrowAmount(country)?.dot() }}{{ bidItem?.listing?.escrowAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 0.05 USD</span><br>
+      托管费:<span class="amount">{{ bidItem?.listing?.escrowAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.escrowAmount(country)?.dot() }}{{ bidItem?.listing?.escrowAmount(country)?.getFractionalPart() }} VCL</span><span class="fiat">&asymp; 0.05 USD</span><br>
 
-      总费用:<span class="amount">{{ bidItem?.listing?.totalAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.totalAmount(country)?.dot() }}{{ bidItem?.listing?.totalAmount(country)?.getFractionalPart() }} VP</span><span class="fiat">&asymp; 3.47 USD</span>
+      总费用:<span class="amount">{{ bidItem?.listing?.totalAmount(country)?.getIntegerPart() }}{{ bidItem?.listing?.totalAmount(country)?.dot() }}{{ bidItem?.listing?.totalAmount(country)?.getFractionalPart() }} VCL</span><span class="fiat">&asymp; 3.47 USD</span>
     </p>
 
     <p class="escrow-info">

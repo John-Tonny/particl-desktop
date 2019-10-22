@@ -74,7 +74,7 @@ export class RevertColdstakingComponent implements OnInit {
 
             this.log.d('revert fee for address', tx);
 
-            this._rpc.call('sendtypeto', ['vp', 'vp', [{
+            this._rpc.call('sendtypeto', ['vcl', 'vcl', [{
               subfee: true,
               address: this.address,
               amount: tx.amount
@@ -117,7 +117,7 @@ export class RevertColdstakingComponent implements OnInit {
 
       this.log.d('revert for address', tx);
 
-      this._rpc.call('sendtypeto', ['vp', 'vp', [{
+      this._rpc.call('sendtypeto', ['vcl', 'vcl', [{
         subfee: true,
         address: this.address,
         amount: tx.amount
@@ -132,7 +132,7 @@ export class RevertColdstakingComponent implements OnInit {
           this._rpcState.set('ui:coldstaking', false);
           this.dialogRef.close();
           this.flashNotification.open(
-            `成功退还 ${amount} VP 到您的热钱包`, 'warn');
+            `成功退还 ${amount} VCL 到您的热钱包`, 'warn');
         }
       });
     });

@@ -89,7 +89,7 @@
             <span class="big number">{{ tx.getAmountObject().getIntegerPartAsString() }}</span><!-- inline element comment hack
             --><span class="point">{{ tx.getAmountObject().dot() }}</span><!--
             --><small class="small number">{{ tx.getAmountObject().getFractionalPart() || '' }}</small>
-            <span class="currency">VP</span>
+            <span class="currency">VCL</span>
           </span>
           <span class="amount" *ngIf="tx.requires_unlock">
             <mat-icon fontSet="partIcon" fontIcon="part-anon" matTooltip="解锁钱包，查看私有交易详情" matTooltipPosition="before"></mat-icon>
@@ -122,12 +122,12 @@
         <!-- TX fee (detail) -->
         <div class="tx-detail-item text-right" fxFlex>
           <span>手续费:</span>
-          <span class="mat-right">{{tx.fee ? tx.fee : 0}} VP</span>
+          <span class="mat-right">{{tx.fee ? tx.fee : 0}} VCL</span>
         </div>
         <!-- Net amount (detail) -->
         <div class="tx-detail-item text-right" fxFlex>
           <span>金额:</span>
-          <span class="mat-right">{{ tx.getNetAmount()}} VP</span>
+          <span class="mat-right">{{ tx.getNetAmount()}} VCL</span>
         </div>
       </div>
 

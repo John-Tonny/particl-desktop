@@ -118,7 +118,7 @@
       "runAfterFinish": true
     },
     "linux": {
-      "maintainer": "vircle contributors <vp@vircle.org>",
+      "maintainer": "vircle contributors <vcl@vircle.org>",
       "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
       "target": [
         {
