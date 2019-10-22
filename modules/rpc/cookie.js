@@ -5,14 +5,14 @@ const log  = require('electron-log');
 const child_process = require('child_process');
 
 /*
-** returns Vpub config folder
+** returns Vircle config folder
 */
 function findCookiePath() {
 
   var homeDir = os.homedir ? os.homedir() : process.env['HOME'];
 
   var dir,
-      appName = 'Vpub';
+      appName = 'Vircle';
   switch (process.platform) {
     case 'linux': {
       dir = prepareDir(homeDir, '.' + appName.toLowerCase()).result;
@@ -89,7 +89,7 @@ function mkDir(dirPath, root) {
 
 /*
 ** returns the current RPC cookie
-** RPC cookie is regenerated at every vpubd startup
+** RPC cookie is regenerated at every vircled startup
 */
 function getAuth(options) {
 
@@ -118,7 +118,7 @@ function getVpubPath(options) {
 
 /*
 ** returns the current RPC cookie
-** RPC cookie is regenerated at every vpubd startup
+** RPC cookie is regenerated at every vircled startup
 */
 function getCookieFile(options) {
   var dataDir = getVpubPath(options);

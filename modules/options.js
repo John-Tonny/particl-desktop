@@ -7,7 +7,7 @@ let _options = {};
 **
 ** exemple:
 ** --dev -testnet -reindex -rpcuser=user -rpcpassword=pass
-** strips --dev out of argv (double dash is not a vpubd argument) and returns
+** strips --dev out of argv (double dash is not a vircled argument) and returns
 ** {
 **   dev: true,
 **   testnet: true,
@@ -30,7 +30,7 @@ exports.parse = function() {
   if (process.argv[0].match(/[Ee]lectron/)) {
     process.argv = process.argv.splice(2); /* striping 'electron .' from argv */
   } else {
-    process.argv = process.argv.splice(1); /* striping /path/to/vpub from argv */
+    process.argv = process.argv.splice(1); /* striping /path/to/vircle from argv */
   }
 
   // make a copy of process.argv, because we'll be changing it
@@ -43,7 +43,7 @@ exports.parse = function() {
     arg = arg.substr(nDashes);
 
     if (nDashes === 2) { /* double-dash: desktop-only argument */
-      // delete param, so it doesn't get passed to vpub-core
+      // delete param, so it doesn't get passed to vircle-core
       process.argv.splice(argIndex, 1);
       let verboseLevel = isVerboseLevel(arg);
       if (verboseLevel) {
@@ -53,7 +53,7 @@ exports.parse = function() {
     } else if (nDashes === 1) { /* single-dash: core argument */
 
       // MacOS / OSX likes to add a Process Serial Numbers
-      // filter it out before being passed to vpub-core.
+      // filter it out before being passed to vircle-core.
       if (arg.startsWith("psn_")) {
         process.argv.splice(argIndex, 1);
       }
@@ -71,8 +71,8 @@ exports.parse = function() {
   options.port = options.rpcport
     ? options.rpcport // custom rpc port
     : options.testnet
-      ? 51955  // default testnet port
-      : 51755; // default mainnet port
+      ? 19092  // default testnet port
+      : 9092; // default mainnet port
   console.log('port=' + options.port);
   _options = options;
   return options;

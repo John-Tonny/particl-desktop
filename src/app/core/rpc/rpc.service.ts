@@ -14,7 +14,7 @@ declare global {
 }
 
 /**
- * The RPC service that maintains a single connection to the vpubd daemon.
+ * The RPC service that maintains a single connection to the vircled daemon.
  *
  * It has two important functions: call and register.
  */
@@ -63,10 +63,10 @@ export class RpcService implements OnDestroy {
   }
 
   /**
-   * The call method will perform a single call to the vpubd daemon and perform a callback to
+   * The call method will perform a single call to the vircled daemon and perform a callback to
    * the instance through the function as defined in the params.
    *
-   * @param {string} method  The JSON-RPC method to call, see ```./vpubd help```
+   * @param {string} method  The JSON-RPC method to call, see ```./vircled help```
    * @param {Array<Any>} params  The parameters to pass along with the JSON-RPC request.
    * The content of the array is of type any (ints, strings, booleans etc)
    *

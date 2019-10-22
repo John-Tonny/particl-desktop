@@ -78,7 +78,7 @@ function getAuthentication(url) {
 }
 
 function loadMarketAuthentication() {
-    // let key = "dev1.vpub.xyz:";
+    // let key = "dev1.vircle.xyz:";
     let key = "localhost:3000";
     let value = {
         name: "market",

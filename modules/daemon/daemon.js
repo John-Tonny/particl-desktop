@@ -96,6 +96,7 @@ exports.start = function (wallets, doReindex = false) {
       }
       wallets = wallets.map(wallet => `-wallet=${wallet}`);
       const deamonArgs = [...process.argv, "-rpccorsdomain=http://localhost:4200", ...wallets, ...addedArgs];
+      log.info(daemonPath);
       log.info(`starting daemon: ${deamonArgs.join(' ')}`);
 
       const child = spawn(daemonPath, deamonArgs)

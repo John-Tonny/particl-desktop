@@ -1,12 +1,12 @@
 {
-  "name": "vpub-desktop",
+  "name": "vircle-desktop",
   "version": "2.0.0-alpha",
   "branch": "market",
   "license": "GPL-2.0",
-  "description": "Vpub Desktop - decentralized marketplace, private currency, messaging & self-governance",
-  "homepage": "https://www.vpub.info",
+  "description": "Vircle Desktop - decentralized marketplace, private currency, messaging & self-governance",
+  "homepage": "https://www.vircle.info",
   "keywords": [
-    "vpub",
+    "vircle",
     "angular2",
     "angular4",
     "angular-cli",
@@ -14,7 +14,7 @@
     "webpack",
     "typescript"
   ],
-  "author": "Vpub contributors",
+  "author": "Vircle contributors",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -46,10 +46,10 @@
     "travis:test": "ng test --single-run --code-coverage",
     "start": "yarn run start:electron:fast"
   },
-  "productName": "Vpub Desktop",
+  "productName": "Vircle Desktop",
   "build": {
     "electronVersion": "4.0.3",
-    "appId": "info.vpub.desktop",
+    "appId": "info.vircle.desktop",
     "npmRebuild": true,
     "directories": {
       "buildResources": "resources",
@@ -114,11 +114,11 @@
       "uninstallerIcon": "resources/icon.ico",
       "createDesktopShortcut": "always",
       "createStartMenuShortcut": true,
-      "menuCategory": "Vpub Desktop",
+      "menuCategory": "Vircle Desktop",
       "runAfterFinish": true
     },
     "linux": {
-      "maintainer": "vpub contributors <vp@vpub.org>",
+      "maintainer": "vircle contributors <vp@vircle.org>",
       "artifactName": "${name}-${version}-${os}-${arch}.${ext}",
       "target": [
         {
@@ -140,11 +140,11 @@
           ]
         }
       ],
-      "executableName": "Vpub Desktop",
+      "executableName": "Vircle Desktop",
       "desktop": {
-        "Comment": "Vpub, P2P Privacy ecosystem",
-        "Icon": "vpub-desktop",
-        "Name": "Vpub Desktop",
+        "Comment": "Vircle, P2P Privacy ecosystem",
+        "Icon": "vircle-desktop",
+        "Name": "Vircle Desktop",
         "StartupNotify": "true",
         "Terminal": "false",
         "Type": "Application",
@@ -157,7 +157,7 @@
     "asar": true,
     "asarUnpack": [
       "node_modules/sqlite3/**/*",
-      "node_modules/vpub-marketplace/**/*"
+      "node_modules/vircle-marketplace/**/*"
     ]
   },
   "dependencies": {
@@ -175,7 +175,7 @@
     "lodash": "^4.17.5",
     "ng2-nvd3": "^2.0.0",
     "node-unzip-2": "^0.2.1",
-    "vpub-marketplace": "^0.0.51",
+    "vircle-marketplace": "^0.0.51",
     "rx-ipc-electron": "^0.1.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.20"

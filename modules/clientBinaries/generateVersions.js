@@ -1,8 +1,8 @@
 var got = require("got");
 var fs = require('fs');
 
-var releasesURL = "https://api.github.com/repos/vpub/vpub-core/releases";
-var signaturesURL = "https://api.github.com/repos/vpub/gitian.sigs/contents";
+var releasesURL = "https://api.github.com/repos/vircle/vircle-core/releases";
+var signaturesURL = "https://api.github.com/repos/vircle/gitian.sigs/contents";
 var maintainer = "tecnovert";
 
 /*
@@ -93,13 +93,13 @@ var getAssetDetails = function (asset, hashes, version) {
         url: asset.browser_download_url,
         type: data.type,
         sha256: data.sha256,
-        bin: `vpub-${version}/bin/${bin}`
+        bin: `vircle-${version}/bin/${bin}`
       },
       bin: bin,
       commands: {
         sanity: {
           args: ["-version"],
-          output: ["Vpub Core Daemon", version]
+          output: ["Vircle Core Daemon", version]
         }
       }
     }
@@ -135,7 +135,7 @@ var getHashesForPlatform = function (platform, path, hashes) {
 
 /*
  * Entry point
- * get Vpub latest release files
+ * get Vircle latest release files
  */
 got(`${releasesURL}`).then(response => {
   const body = JSON.parse(response.body);
@@ -174,7 +174,7 @@ got(`${releasesURL}`).then(response => {
       // prepare JSON object for the output file
       var json = {
         clients: {
-          vpubd: {
+          vircled: {
             version: tag,
             platforms: {}
           }
@@ -189,7 +189,7 @@ got(`${releasesURL}`).then(response => {
       })
 
       // include entries in JSON object
-      var platforms = json.clients.vpubd.platforms;
+      var platforms = json.clients.vircled.platforms;
       binaries.forEach(binary => {
         // define an empty object for current platform if not already defined
         if (!platforms[binary.platform]) {

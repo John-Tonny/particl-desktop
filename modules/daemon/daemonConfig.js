@@ -13,7 +13,7 @@ if (isEmptyObject(_options)) {
   _options = _processOpts.parse();
 }
 
-const conFilePath = path.join( cookie.getVpubPath(_options), 'vpub.conf');
+const conFilePath = path.join( cookie.getVpubPath(_options), 'vircle.conf');
 const IPC_CHANNEL = 'rpc-configuration';
 const SAFE_KEYS = ['addressindex'];
 
@@ -86,14 +86,14 @@ const formatSettingsOutput = function(rawConfig) {
 }
 
 const readConfigFile = function () {
-  log.debug('Attempting to read vpubd config from: ', conFilePath);
+  log.debug('Attempting to read vircled config from: ', conFilePath);
   if (fs.existsSync(conFilePath)) {
     try {
       const p = new iniParser();
       const result = p.parse(fs.readFileSync(conFilePath, 'utf-8'));
       return deepClone(result);
     } catch (err) {
-      log.error(`vpubd config file parsing failed from ${conFilePath}`);
+      log.error(`vircled config file parsing failed from ${conFilePath}`);
       log.error(`parsing error: ${err.message}`);
     }
   }
@@ -220,7 +220,7 @@ const saveSettings = function(networkOpt) {
           if (error) {
             log.error(`Failed updating ${conFilePath}`, err.stack);
           } else {
-            log.info('Successfully set vpubd configuration at', conFilePath);
+            log.info('Successfully set vircled configuration at', conFilePath);
           }
         });
       }

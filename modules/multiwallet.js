@@ -13,7 +13,7 @@ exports.getPath = function () {
     .replace('sunos',   'linux');
 
   if (platform == 'linux') {
-    return path.join(app.getPath('home'), '.vpub');
+    return path.join(app.getPath('home'), '.vircle');
   } else {
     return app.getPath('userData');
   }

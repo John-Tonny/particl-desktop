@@ -11,11 +11,11 @@ const rxIpc       = require('rx-ipc-electron/lib/main').default;
 
 /* correct appName and userData to respect Linux standards */
 if (process.platform === 'linux') {
-  app.setName('vpub-desktop');
+  app.setName('vircle-desktop');
   app.setPath('userData', `${app.getPath('appData')}/${app.getName()}`);
-  child_process.spawnSync('killall',['-9','vpubd']);
+  child_process.spawnSync('killall',['-9','vircled']);
 }else if(process.platform === 'win32'){
-  // child_process.spawnSync("cmd.exe",['/c','taskkill','/im','vpub*','/f','/t']);
+  // child_process.spawnSync("cmd.exe",['/c','taskkill','/im','vircle*','/f','/t']);
 }
 
 /* check for paths existence and create */
@@ -271,11 +271,11 @@ function makeTray() {
       submenu: [
         {
           label: 'About ' + app.getName(),
-          click() { electron.shell.openExternal('https://vpub.io/#about'); }
+          click() { electron.shell.openExternal('https://vircle.io/#about'); }
         },
         {
-          label: 'Visit Vpub.io',
-          click() { electron.shell.openExternal('https://vpub.io'); }
+          label: 'Visit Vircle.io',
+          click() { electron.shell.openExternal('https://vircle.io'); }
         },
         {
           label: 'Visit Electron',
@@ -294,7 +294,7 @@ function makeTray() {
   // }
 
   // Set the tray icon
-  tray.setToolTip('Vpub ' + app.getVersion());
+  tray.setToolTip('Vircle ' + app.getVersion());
   tray.setContextMenu(contextMenu)
 
   // Always show window when tray icon clicked

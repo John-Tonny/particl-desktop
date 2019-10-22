@@ -34,7 +34,7 @@ export class RpcStateService extends StateService implements OnDestroy {
   /**
    * Make an RPC Call that saves the response in the state service.
    *
-   * @param {string} method  The JSON-RPC method to call, see ```./vpubd help```
+   * @param {string} method  The JSON-RPC method to call, see ```./vircled help```
    *
    * The rpc call and state update will only take place while `this._enableState` is `true`
    *

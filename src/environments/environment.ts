@@ -7,11 +7,11 @@ declare const require: any;
 export const environment = {
   production: false,
   envName: 'dev',
-  releasesUrl: 'https://api.github.com/repos/vpub/vpub-desktop/releases/latest',
+  releasesUrl: 'https://api.github.com/repos/vircle/vircle-desktop/releases/latest',
   version: require('../../package.json').version,
-  marketVersion: require('../../node_modules/vpub-marketplace/package.json').version,
+  marketVersion: require('../../node_modules/vircle-marketplace/package.json').version,
   vpubHost: 'localhost',
-  vpubPort: 51955,
+  vpubPort: 19092,
   marketHost: 'localhost',
   marketPort: 3000,
   isTesting: false

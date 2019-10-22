@@ -23,7 +23,7 @@ export class PaymentService {
         'update',
         templateId,
         'SALE',
-        'VPUB',
+        'VCL',
         basePrice,
         domesticPrice,
         internationalPrice,

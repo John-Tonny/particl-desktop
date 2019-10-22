@@ -1,24 +1,24 @@
 {
   "clients": {
-    "vpubd": {
+    "vircled": {
       "version": "0.18.0.4",
       "platforms": {
         "linux": {
           "arm": {
             "download": {
-              "url": "https://github.com/vpub/vpub-core/releases/download/v0.18.0.4alpha/vpub-0.18.0.4-arm-linux-gnueabihf.tar.gz",
+              "url": "https://github.com/vircle/vircle-core/releases/download/v0.18.0.4alpha/vircle-0.18.0.4-arm-linux-gnueabihf.tar.gz",
               "type": "tar",
               "sha256": "42aa0ae64e9e3f36d40d1833d75128e2f9b85581335693e2ab2fc1539278a3af",
-              "bin": "vpub-0.18.0.4/bin/vpubd"
+              "bin": "vircle-0.18.0.4/bin/vircled"
             },
-            "bin": "vpubd",
+            "bin": "vircled",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Vpub Core Daemon",
+                  "Vircle Core Daemon",
                   "0.18.0.4"
                 ]
               }
@@ -26,19 +26,19 @@
           },
           "ia32": {
             "download": {
-              "url": "https://github.com/vpub/vpub-core/releases/download/v0.18.0.4alpha/vpub-0.18.0.4-i686-pc-linux-gnu_nousb.tar.gz",
+              "url": "https://github.com/vircle/vircle-core/releases/download/v0.18.0.4alpha/vircle-0.18.0.4-i686-pc-linux-gnu_nousb.tar.gz",
               "type": "tar",
               "sha256": "90b0844d095921e044be2a03650684bcab4c024c5ab6f1ff595eb9a2cb31c538",
-              "bin": "vpub-0.18.0.4/bin/vpubd"
+              "bin": "vircle-0.18.0.4/bin/vircled"
             },
-            "bin": "vpubd",
+            "bin": "vircled",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Vpub Core Daemon",
+                  "Vircle Core Daemon",
                   "0.18.0.4"
                 ]
               }
@@ -46,20 +46,20 @@
           },
           "x64": {
             "download": {
-              "url": "https://github.com/John-Tonny/particl-core/releases/download/v0.18.0.4/vpub-0.18.0.4.tar.gz",
+              "url": "https://github.com/John-Tonny/vircle-desktop/releases/download/v2.0.0c/vircle-0.19.1.tar.gz",
               "type": "tar",
-              "sha256": "473d3cf0f5606155a82655d73b10a1c66dc9293e87ed3643be336a2d36e2aaec",
-              "bin": "vpub-0.18.0.4/bin/vpubd"
+              "sha256": "044aac985efea16cc223249a1d4f4da1dc940a6942838e59a4d4fbe2ed9fa83d",
+              "bin": "vircle-0.19.1/bin/vircled"
             },
-            "bin": "vpubd",
+            "bin": "vircled",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Vpub Core Daemon",
-                  "0.18.0.4"
+                  "Vircle Core Daemon",
+                  "0.19.0.1"
                 ]
               }
             }
@@ -68,19 +68,19 @@
         "mac": {
           "x64": {
             "download": {
-              "url": "https://github.com/vpub/vpub-core/releases/download/v0.18.0.4alpha/vpub-0.18.0.4-osx64.tar.gz",
+              "url": "https://github.com/vircle/vircle-core/releases/download/v0.18.0.4alpha/vircle-0.18.0.4-osx64.tar.gz",
               "type": "tar",
               "sha256": "a47ae748ad28f8e022ecc6d9f8e8eed897ac44832c9e518f4e4c1660d58cb541",
-              "bin": "vpub-0.18.0.4/bin/vpubd"
+              "bin": "vircle-0.18.0.4/bin/vircled"
             },
-            "bin": "vpubd",
+            "bin": "vircled",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Vpub Core Daemon",
+                  "Vircle Core Daemon",
                   "0.18.0.4"
                 ]
               }
@@ -90,40 +90,40 @@
         "win": {
           "ia32": {
             "download": {
-              "url": "https://github.com/John-Tonny/vpub-core/releases/download/v0.18.0.4/vpub-0.18.0.4-win32.zip",
+              "url": "https://github.com/John-Tonny/vircle-core/releases/download/v0.18.0.4/vircle-0.18.0.4-win32.zip",
               "type": "zip",
               "sha256": "a6fe8ccc0a2a83b9cf5a355daeb47702826d179aa92be1d82cf9494e24c3abf6",
-              "bin": "vpub-0.18.0.4/bin/vpubd.exe"
+              "bin": "vircle-0.18.0.4/bin/vircled.exe"
             },
-            "bin": "vpubd.exe",
+            "bin": "vircled.exe",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Vpub Core Daemon",
-                  "0.18.0.4"
+                  "Vircle Core Daemon",
+                  "0.19.0.1"
                 ]
               }
             }
           },
           "x64": {
             "download": {
-              "url": "https://github.com/vpubchain/vpub-core/releases/download/1.0/vpub-dev1.0-win64.zip",
+              "url": "https://github.com/John-Tonny/vpub-desktop/releases/download/v2.0.0c/vircle-19.0.1-win64.zip",
               "type": "zip",
-              "sha256": "d7e1d99fe3704fdd6d75118feb6b67bf0ab3f0459ccb98e2c0410b2411f66ec5",
-              "bin": "vpub-dev1.0-win64/bin/vpubd.exe"
+              "sha256": "",
+              "bin": "vircle-19.0.1-win64/bin/vircled.exe"
             },
-            "bin": "vpubd.exe",
+            "bin": "vircled.exe",
             "commands": {
               "sanity": {
                 "args": [
                   "-version"
                 ],
                 "output": [
-                  "Vpub Core Daemon",
-                  "0.18.0.4"
+                  "Vircle Core Daemon",
+                  "0.19.0.1"
                 ]
               }
             }

@@ -1,8 +1,8 @@
-# vpub-desktop – UI
+# vircle-desktop – UI
 
 ![UI Preview](preview.gif)
 
-> *"Vpub is an open source project that aims to restore the balance of privacy on the internet."*
+> *"Vircle is an open source project that aims to restore the balance of privacy on the internet."*
 
 We provide a decentralized privacy platform with a suite of tools to enhance your online privacy:
 
@@ -10,17 +10,17 @@ We provide a decentralized privacy platform with a suite of tools to enhance you
 * **End-to-end encrypted messaging** – communicate in a secure and decentralized manner without revealing your IP address
 * **A private marketplace** – buy and sell goods without leaving a trace
 
-This repository is the user interface that works in combination with our [`vpub-core`](https://github.com/vpub/vpub-core).
+This repository is the user interface that works in combination with our [`vircle-core`](https://github.com/vircle/vircle-core).
 
-[![Download the packaged wallet for Mac, Windows and Linux](download-button.png)](https://github.com/vpub/vpub-desktop/releases)
+[![Download the packaged wallet for Mac, Windows and Linux](download-button.png)](https://github.com/vircle/vircle-desktop/releases)
 
 # Contribute
 
-[![Snyk](https://snyk.io/test/github/vpub/vpub-desktop/badge.svg)](https://snyk.io/test/github/vpub/vpub-desktop)
-[![Build Status](https://travis-ci.org/vpub/vpub-desktop.svg?branch=master)](https://travis-ci.org/vpub/vpub-desktop)
-[![Coverage Status](https://coveralls.io/repos/github/vpub/vpub-desktop/badge.svg?branch=master)](https://coveralls.io/github/vpub/vpub-desktop?branch=master)
-[![Code Climate](https://codeclimate.com/github/vpub/vpub-desktop/badges/gpa.svg)](https://codeclimate.com/github/vpub/vpub-desktop)
-[![Greenkeeper badge](https://badges.greenkeeper.io/vpub/vpub-desktop.svg)](https://greenkeeper.io/)
+[![Snyk](https://snyk.io/test/github/vircle/vircle-desktop/badge.svg)](https://snyk.io/test/github/vircle/vircle-desktop)
+[![Build Status](https://travis-ci.org/vircle/vircle-desktop.svg?branch=master)](https://travis-ci.org/vircle/vircle-desktop)
+[![Coverage Status](https://coveralls.io/repos/github/vircle/vircle-desktop/badge.svg?branch=master)](https://coveralls.io/github/vircle/vircle-desktop?branch=master)
+[![Code Climate](https://codeclimate.com/github/vircle/vircle-desktop/badges/gpa.svg)](https://codeclimate.com/github/vircle/vircle-desktop)
+[![Greenkeeper badge](https://badges.greenkeeper.io/vircle/vircle-desktop.svg)](https://greenkeeper.io/)
 
 > Be sure to read our [Contributing Guidelines](CONTRIBUTING.md) first
 
@@ -32,8 +32,8 @@ This repository is the user interface that works in combination with our [`vpub-
 * Download + Install [git](https://git-scm.com/)
 
 ```bash
-git clone https://github.com/vpub/vpub-desktop
-cd vpub-desktop
+git clone https://github.com/vircle/vircle-desktop
+cd vircle-desktop
 yarn install
 ```
 
@@ -46,12 +46,12 @@ yarn install
    * `-opendevtools` – automatically opens Developer Tools on client launch
    * `-skipmarket` – skip launching internal market process
 
-#### Interact with vpub-core daemon
+#### Interact with vircle-core daemon
 
 You can directly interact with the daemon ran by the Electron version.
 
 ```
-./vpub-cli -testnet getblockchaininfo
+./vircle-cli -testnet getblockchaininfo
 ```
 
 ## Running
@@ -78,4 +78,4 @@ sudo apt-get install g++-multilib
 
 ## Contributors
 
-Join us in [#vpub-dev:matrix.org](https://riot.im/app/#/room/#vpub-dev:matrix.org) on [Riot](https://riot.im)
+Join us in [#vircle-dev:matrix.org](https://riot.im/app/#/room/#vircle-dev:matrix.org) on [Riot](https://riot.im)
